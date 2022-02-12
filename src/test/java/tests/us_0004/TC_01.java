@@ -6,7 +6,7 @@ public class TC_01 {
     /*
      * TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
      * TC_002 Yönetici Olarak
-     *Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+     * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
 
      * TC_003 Yönetici olarak
      * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
@@ -24,10 +24,14 @@ public class TC_01 {
      * Otel Management Linkini Tikla ,  Otel List Linkini Tikla,
      * (LIST OF HOTELS tablosunda, Code,Name,Adrress, Phone,Email yazdigin verilerden herhangi birini gir.
      * Search Buttununa tikla
-     * Kayit olup olmadigini test et.
+     * Kayit olup olmadigini test et..
 
 
      */
 
+@Test
+    public void test01(){
 
+
+}
 }
