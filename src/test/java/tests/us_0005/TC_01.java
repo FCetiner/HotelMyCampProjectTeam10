@@ -8,5 +8,6 @@ public class TC_01 {
     public void test() {
         System.out.println("true = " + true);
         System.out.println("false = " + false);
+        System.out.println("this = " + this);
     }
 }
