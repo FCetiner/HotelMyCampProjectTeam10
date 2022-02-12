@@ -1,7 +1,6 @@
-package tests.us_0005;
+package tests.us_0005Murat;
 
 import org.testng.annotations.Test;
-import utilities.Driver;
 
 public class TC_01 {
     @Test

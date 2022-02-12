@@ -1,4 +1,4 @@
-package tests.us_0001;
+package tests.us_0001Ferhat;
 
 import org.testng.annotations.Test;
 

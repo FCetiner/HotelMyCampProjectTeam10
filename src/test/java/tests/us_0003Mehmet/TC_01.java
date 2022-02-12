@@ -1,4 +1,4 @@
-package tests.us_0003;
+package tests.us_0003Mehmet;
 
 import org.testng.annotations.Test;
 

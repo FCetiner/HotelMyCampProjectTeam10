@@ -1,6 +1,4 @@
-package tests.us_0004;
-
-import org.testng.annotations.Test;
+package tests.us_0004Hadi;
 
 public class TC_01 {
     /*
