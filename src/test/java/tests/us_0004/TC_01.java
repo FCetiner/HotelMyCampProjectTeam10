@@ -35,7 +35,7 @@ public class TC_01 {
      * Otel Management Linkini Tikla ,  Otel List Linkini Tikla,
      * (LIST OF HOTELS tablosunda, Code,Name,Adrress, Phone,Email yazdigin verilerden herhangi birini gir.
      * Search Buttununa tikla
-     * Kayit olup olmadigini test et...
+     * Kayit olup olmadigini test et....
      */
 
 
