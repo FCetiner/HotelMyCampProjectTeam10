@@ -9,7 +9,8 @@ public class US00010 {
     public void tc01 (){
         System.out.println("deneme :)");
         System.out.println("deneme :)");
-        System.out.println("deneme :)");
+        System.out.println("deneme");
+        System.out.println("deneme");
     }
 
 }
