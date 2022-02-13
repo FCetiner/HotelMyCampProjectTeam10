@@ -42,8 +42,12 @@ public class TC_01 {
 
     // TC_002 Yönetici Olarak
     // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-
     hmcPage.girisYap();
+
+    // TC_003 Yönetici olarak
+    // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+    // Otel Management Linkini Tikla ,  Otel List Linkini Tikla, Add Otel Linkini Tikla,
+    // Create Hotel formunu gorunuru oldugunu test et.
 
 }
 
