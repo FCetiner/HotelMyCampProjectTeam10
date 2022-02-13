@@ -11,5 +11,6 @@ public class TC_01 {
     public void test() {
         HMCPage hmcPage=new HMCPage();
         hmcPage.anasayfaGiris();
+        System.out.println("deneme");
     }
 }
