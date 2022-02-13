@@ -1,6 +1,7 @@
 package tests.us_0001;
 
 import org.testng.annotations.Test;
+import pages.HMCPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -8,7 +9,7 @@ import utilities.ReusableMethods;
 public class TC_01 {
     @Test
     public void test() {
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        ReusableMethods.waitForPageToLoad(5);
+        HMCPage hmcPage=new HMCPage();
+        hmcPage.anasayfaGiris();
     }
 }
