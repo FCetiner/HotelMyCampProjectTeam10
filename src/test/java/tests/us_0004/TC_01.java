@@ -102,6 +102,7 @@ public class TC_01 {
     select.selectByVisibleText("Hotel Type1");
 
     hmcPage.AddHotelSaveButton.click();
+    hmcPage.AddHotelOkButton.click();
 
 
 }

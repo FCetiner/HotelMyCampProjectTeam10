@@ -48,6 +48,9 @@ public class HMCPage {
     @FindBy(xpath = "//button[@id='btnSubmit']")
     public WebElement AddHotelSaveButton;
 
+    @FindBy(xpath = "//button[@Class='btn btn-primary']")
+    public WebElement AddHotelOkButton;
+
 
     public void girisYap() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
