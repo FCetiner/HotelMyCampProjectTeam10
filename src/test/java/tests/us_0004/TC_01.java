@@ -1,12 +1,16 @@
 package tests.us_0004;
 
 import org.testng.annotations.Test;
+import pages.HMCPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 public class TC_01 {
     /*
      * TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
+
      * TC_002 Yönetici Olarak
-     *Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+     * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
 
      * TC_003 Yönetici olarak
      * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
@@ -31,6 +35,15 @@ public class TC_01 {
 
 @Test
     public void test01(){
+    HMCPage hmcPage=new HMCPage();
+    //TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
+
+     Driver.getDriver().get(ConfigReader.getProperty("HMVUrl"));
+
+    // TC_002 Yönetici Olarak
+    // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+
+    hmcPage.girisYap();
 
 }
 
