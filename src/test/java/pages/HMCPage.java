@@ -32,11 +32,35 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
+    @FindBy(xpath ="//span[text()='Hotel Management']")
+    public WebElement hotelManagementLinki;
+
+    @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
+    public WebElement hotelListLinki;
+
+    @FindBy(xpath = "//a[@class='btn btn-circle btn-default']")
+    public WebElement addHotelLinki;
+
+    @FindBy(xpath = "//div[@Class='caption']")
+    public WebElement CreatHotelYazi;
+
+    @FindBy(xpath = "//input[@id='Code']")
+    public WebElement AddHotelCode;
+
+    @FindBy(xpath = "//select[@id='IDGroup']")
+    public WebElement IDGroupkutusu;
+
+    @FindBy(xpath = "//button[@id='btnSubmit']")
+    public WebElement AddHotelSaveButton;
+
+    @FindBy(xpath = "//button[@Class='btn btn-primary']")
+    public WebElement AddHotelOkButton;
+
 
     public void girisYap() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         ilkLoginLinki.click();
-        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
         passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         loginButonu.click();
     }
