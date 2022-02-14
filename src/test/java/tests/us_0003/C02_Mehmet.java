@@ -11,5 +11,6 @@ public class C02_Mehmet {
         hmcPage.anasayfaGiris();
         System.out.println("deneme");
         System.out.println("deneme2");
+        System.out.println("deneme3");
     }
 }
