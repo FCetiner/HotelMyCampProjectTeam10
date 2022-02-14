@@ -20,7 +20,7 @@ public class TC_002 {
         //Hotel List menüsüne tıklayın
         hmcPage.hotelListLinki.click();
         //Details butonuna tıklayın
-         // hmcPage.detailsLinki.click();
+
         //"Edit Hotel" başlığının görünürlüğünü kontrol edin
         //Assert.assertTrue();
     }
