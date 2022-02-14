@@ -11,6 +11,8 @@ public class HMCPage {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    //***************Ferhat-Funda Hanim-Çagri Bey**************************
+
 
     public void anasayfaGiris(){
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
