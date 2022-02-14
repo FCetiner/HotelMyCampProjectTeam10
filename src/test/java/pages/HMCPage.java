@@ -8,15 +8,22 @@ import utilities.Driver;
 
 public class HMCPage {
     public HMCPage() {
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[text()='Log in']")
-    public WebElement firstLoginButton;
+    public void anasayfaGiris(){
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+    }
 
+
+    //Yönetici Giriş yap methodu olusturulacak
+    //Kullanici Giriş yao methodu oluşturulacak
+
+    @FindBy(xpath = "//a[text()='Log in']")
+    public WebElement ilkLoginLinki;
 
     @FindBy(xpath = "//input[@id='UserName']")
-
     public WebElement usernameBox;
 
     @FindBy(xpath = "//input[@id='Password']")
@@ -25,41 +32,36 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
-    @FindBy(xpath = "//span[@class='username username-hide-on-mobile']")
-    public WebElement managerYaziLinki;
-
-    @FindBy(xpath = "//span[text()='ListOfUsers']")
-    public WebElement listOfUsersYaziElementi;
-
-    @FindBy(xpath = "//span[text()='Hotel Management']")
+    @FindBy(xpath ="//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
     @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
     public WebElement hotelListLinki;
 
-    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[1]")
-    public WebElement detailsLinki;
-    @FindBy(xpath = "(//div[@class='caption'])[1]")
-    public WebElement editYaziLinki;
+    @FindBy(xpath = "//a[@class='btn btn-circle btn-default']")
+    public WebElement addHotelLinki;
 
-    public void bekle(int saniye) {
+    @FindBy(xpath = "//div[@Class='caption']")
+    public WebElement CreatHotelYazi;
 
-        try {
-            Thread.sleep(saniye * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+    @FindBy(xpath = "//input[@id='Code']")
+    public WebElement AddHotelCode;
 
-    //Yönetici Giriş yap methodu olusturulacak
-    public void yoneticiGirisYap() {
+    @FindBy(xpath = "//select[@id='IDGroup']")
+    public WebElement IDGroupkutusu;
+
+    @FindBy(xpath = "//button[@id='btnSubmit']")
+    public WebElement AddHotelSaveButton;
+
+    @FindBy(xpath = "//button[@Class='btn btn-primary']")
+    public WebElement AddHotelOkButton;
+
+
+    public void girisYap() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        firstLoginButton.click();
-        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        ilkLoginLinki.click();
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
         passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         loginButonu.click();
     }
-    //Kullanici Giriş yap  methodu oluşturulacak
-
-
 }

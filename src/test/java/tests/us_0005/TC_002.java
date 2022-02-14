@@ -14,13 +14,13 @@ public class TC_002 {
         //geçerli bir username girin
         //geçerli bir password girin
         //Log in  tusuna basin
-        hmcPage.yoneticiGirisYap();
+        hmcPage.girisYap();
         //Hotel Management menüsüne tıklayın
         hmcPage.hotelManagementLinki.click();
         //Hotel List menüsüne tıklayın
         hmcPage.hotelListLinki.click();
         //Details butonuna tıklayın
-          hmcPage.detailsLinki.click();
+         // hmcPage.detailsLinki.click();
         //"Edit Hotel" başlığının görünürlüğünü kontrol edin
         //Assert.assertTrue();
     }
