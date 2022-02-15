@@ -98,6 +98,24 @@ public class HMCPage {
     @FindBy(xpath = "//h1[.='Log in']")
     public WebElement loginPageLoginTextWebElement;
 
+    @FindBy(xpath = "//a[.='Hotelmycamp']")
+    public WebElement mainPageHotelMyCampTextWebElement;
+
+    @FindBy (id = "checkin_date")
+    public WebElement mainPageCheckInDateBox;
+
+    @FindBy(id = "checkout_date")
+    public WebElement mainPageCheckOutDateBox;
+
+    @FindBy(id = "IDRoomType")
+    public WebElement mainPageRoomTypeDropDown;
+
+    @FindBy(id = "AdultCount")
+    public WebElement mainPageAdultCountDropdown;
+
+    @FindBy(xpath = "//input[@value='Check Availability']")
+    public WebElement mainPageCheckAvailabilityButton;
+
 
 
     @FindBy(xpath = "//a[text()='Log in']")
@@ -118,6 +136,20 @@ public class HMCPage {
 
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement createOkButton;
+
+    @FindBy(xpath = "//h2[.='Welcome To Our Hotel']")
+    public WebElement mainPageSayfaOrtasiWelcomToOurHotelYaziElementi;
+
+    @FindBy(xpath = "(//span[@class='icon-facebook'])[1]")
+    public WebElement mainPageilkFacebookIkonu;
+
+    @FindBy(xpath = "(//span[@class='icon-google-plus'])[1]")
+    public WebElement mainPageilkGooglePlusIkonu;
+
+    @FindBy(xpath = "(//span[@class='icon-instagram'])[1]")
+    public WebElement mainPageilkInstagramIkonu;
+
+
 
 
 
