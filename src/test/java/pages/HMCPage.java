@@ -12,8 +12,20 @@ public class HMCPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
+
     public void anasayfaGiris(){
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+    }
+
+    public void girisYap() {
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+
+        ilkLoginLinki.click();
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
+        passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        loginButonu.click();
+
     }
 
 
@@ -61,6 +73,31 @@ public class HMCPage {
 
     @FindBy(xpath = "//button[@Class='btn btn-sm yellow filter-submit margin-bottom']")
     public WebElement SearchBoxButton;
+    //**************MAIN PAGE NAVBAR LOCATELERI*******************
+    @FindBy(id = "navHome")
+    public WebElement mainPageHomeButton;
+
+    @FindBy(id = "navRooms")
+    public WebElement mainPageRoomsButton;
+
+    @FindBy(id = "navRestaurant")
+    public WebElement mainPageRestaurantButton;
+
+    @FindBy(id = "navAbout")
+    public WebElement mainPageAboutButton;
+
+    @FindBy(id = "navBlog")
+    public WebElement mainPageBlogButton;
+
+    @FindBy(id = "navContact")
+    public WebElement mainPageContactButton;
+
+    //*************************************************
+
+    @FindBy(xpath = "//h1[.='Log in']")
+    public WebElement loginPageLoginTextWebElement;
+
+
 
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement logInButtonu;
@@ -84,14 +121,10 @@ public class HMCPage {
 
 
 
-    public void girisYap() {
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
-        ilkLoginLinki.click();
-        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
-        passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
-        loginButonu.click();
 
-    }
 
 }
+
+
+
