@@ -140,13 +140,13 @@ public class HMCPage {
     @FindBy(xpath = "//h2[.='Welcome To Our Hotel']")
     public WebElement mainPageSayfaOrtasiWelcomToOurHotelYaziElementi;
 
-    @FindBy(xpath = "(//span[@class='icon-facebook'])[1]")
+    @FindBy(xpath = "(//a[@href='#'])[1]")
     public WebElement mainPageilkFacebookIkonu;
 
-    @FindBy(xpath = "(//span[@class='icon-google-plus'])[1]")
+    @FindBy(xpath = "(//a[@href='#'])[2]")
     public WebElement mainPageilkGooglePlusIkonu;
 
-    @FindBy(xpath = "(//span[@class='icon-instagram'])[1]")
+    @FindBy(xpath = "(//a[@href='#'])[3]")
     public WebElement mainPageilkInstagramIkonu;
 
 
