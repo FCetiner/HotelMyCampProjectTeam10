@@ -97,6 +97,24 @@ public class HMCPage {
     @FindBy(xpath = "//h1[.='Log in']")
     public WebElement loginPageLoginTextWebElement;
 
+    @FindBy(xpath = "//a[.='Hotelmycamp']")
+    public WebElement mainPageHotelMyCampTextWebElement;
+
+    @FindBy (id = "checkin_date")
+    public WebElement mainPageCheckInDateBox;
+
+    @FindBy(id = "checkout_date")
+    public WebElement mainPageCheckOutDateBox;
+
+    @FindBy(id = "IDRoomType")
+    public WebElement mainPageRoomTypeDropDown;
+
+    @FindBy(id = "AdultCount")
+    public WebElement mainPageAdultCountDropdown;
+
+    @FindBy(xpath = "//input[@value='Check Availability']")
+    public WebElement mainPageCheckAvailabilityButton;
+
 
 
 
