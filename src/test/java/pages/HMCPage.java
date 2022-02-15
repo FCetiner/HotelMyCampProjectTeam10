@@ -11,7 +11,7 @@ public class HMCPage {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    //***************Ferhat-Funda Hanim-Çagri Bey**************************
+
 
 
     public void anasayfaGiris(){
@@ -104,3 +104,6 @@ public class HMCPage {
 
 
 }
+
+
+
