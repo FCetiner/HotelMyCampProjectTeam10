@@ -20,9 +20,9 @@ public class TC_01 {
         //2-Kullanici home butonuna tiklar
         //Kullanici home sayfasina yönlendirilmelidir
         hmcPage.mainPageHomeButton.click();
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        String expectedUrl="https://www.hotelmycamp.com/";
-        softAssert.assertEquals(actualUrl,expectedUrl,"Home button is not working");
+        String actualTitle=Driver.getDriver().getTitle();
+        String expectedTitle="Hotelmycamp - Home";
+        softAssert.assertEquals(actualTitle,expectedTitle,"Home button is not working");
         //3-Kullanici rooms butonuna tiklar
         //Kullanicinin rooms sayfasina yönlendirilmelidir
         hmcPage.mainPageRoomsButton.click();
