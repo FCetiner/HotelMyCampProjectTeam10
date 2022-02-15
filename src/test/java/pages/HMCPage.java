@@ -19,10 +19,11 @@ public class HMCPage {
     }
 
     public void girisYap() {
+
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
         ilkLoginLinki.click();
-        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
         passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         loginButonu.click();
 
