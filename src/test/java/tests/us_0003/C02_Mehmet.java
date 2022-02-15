@@ -13,5 +13,6 @@ public class C02_Mehmet {
         System.out.println("deneme2");
         System.out.println("deneme3");
         System.out.println("deneme4");
+        System.out.println("denme5");
     }
 }
