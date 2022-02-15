@@ -99,6 +99,27 @@ public class HMCPage {
 
 
 
+    @FindBy(xpath = "//a[text()='Log in']")
+    public WebElement logInButtonu;
+
+    @FindBy(xpath = "//span[text()='Create a new account']")
+    public WebElement createNewAccount;
+
+    @FindBy(xpath = "//input[@id='UserName']")
+    public WebElement createUsername;
+
+
+    @FindBy(xpath = "//input[@id='btnSubmit']")
+    public WebElement createSaveButton;
+
+    @FindBy(xpath = "/div[@class='bootbox-body']")
+    public WebElement createSaveTexti;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement createOkButton;
+
+
+
 
 
 
