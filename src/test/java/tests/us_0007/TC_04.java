@@ -58,12 +58,20 @@ public class TC_04 {
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
 
-        actions.click(roomsPage.codeBox).sendKeys((WebElement) faker.code()).
+        actions.click(roomsPage.codeBox).sendKeys("9999").
                 sendKeys(Keys.TAB).sendKeys(faker.name().name())
                 .sendKeys(Keys.TAB).sendKeys(faker.address().city())
                 .sendKeys(Keys.TAB).sendKeys(faker.toString())
                 .sendKeys(Keys.TAB).sendKeys(faker.commerce().price()).perform();
 
+        roomsPage.roomTypeButon.click();
+        select.getFirstSelectedOption();
+
+        actions.click(roomsPage.maxAdultButon).sendKeys("2")
+                .sendKeys(Keys.TAB).sendKeys("2").perform();
+
+        roomsPage.saveButon.click();
 
 
-    }
+
+    }}

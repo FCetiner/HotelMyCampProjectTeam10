@@ -41,6 +41,28 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//input[@id='Location']")
     public WebElement locationButon ;
 
+    @FindBy(xpath = "//select[@id='IDGroupRoomType']")
+    public WebElement roomTypeButon ;
+
+    @FindBy(xpath = "//input[@id='MaxAdultCount']")
+    public WebElement maxAdultButon ;
+
+    @FindBy(xpath = "//input[@id='IsAvailable']")
+    public WebElement isAvailableButon ;
+
+    @FindBy(xpath = "//button[@class='btn green']")
+    public WebElement saveButon ;
+
+    @FindBy(xpath = "//button[@id='btnDelete']")
+    public WebElement deleteButon ;
+
+
+
+
+
+
+
+
 
 
 
