@@ -16,6 +16,8 @@ public class HotelListPage {
 
     @FindBy(xpath = "//span[@class='username username-hide-on-mobile']")
     public WebElement managerYaziLinki;
+    @FindBy(xpath = "//a[@class ='btn btn-xs default']")
+    public WebElement detailsLink;
 
 
 

@@ -21,6 +21,7 @@ public class TC_002 {
         hmcPage.hotelListLinki.click();
         //Details butonuna tıklayın
 
+
         //"Edit Hotel" başlığının görünürlüğünü kontrol edin
         //Assert.assertTrue();
     }
