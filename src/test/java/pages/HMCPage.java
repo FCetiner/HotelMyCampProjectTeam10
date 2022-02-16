@@ -15,10 +15,8 @@ public class HMCPage {
     public void anasayfaGiris(){
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
     }
-
-
-    //Yönetici Giriş yap methodu olusturulacak
-    //Kullanici Giriş yao methodu oluşturulacak
+    @FindBy (xpath = "(//a[@class='nav-link'])[7]")
+    public WebElement anasayfaLogin;
 
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement ilkLoginLinki;
@@ -31,6 +29,9 @@ public class HMCPage {
 
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
+
+    @FindBy (xpath ="//li[@class='dropdown dropdown-user']" )
+    public WebElement managerDrapDown;
 
     @FindBy(xpath ="//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
@@ -63,7 +64,7 @@ public class HMCPage {
     public WebElement SearchBoxButton;
 
 
-    public void girisYap() {
+    public void yoneticigirisYap() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
         ilkLoginLinki.click();

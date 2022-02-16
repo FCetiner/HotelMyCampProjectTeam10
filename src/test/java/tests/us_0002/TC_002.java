@@ -1,18 +1,19 @@
 package tests.us_0002;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.HMCPage;
+
 public class TC_002 {
-    //1-Yönetici login in buttonuna tıklar
-    //2-Username textbox'a tiklar
-    //3-Doğru kullanıcı adını yazar
-    //4-Password textbox'a tıklar
-    //5-doğru kullanıcı şifresini girer
-    //6-Login bottonuna basar
-    //7-Yönetici, LISTOFUSERS yazısını görerek giriş yabildiğini doğrular
+    @Test
+    public void yoneticiGirisTesti() {
 
+        HMCPage hmcPage = new HMCPage();
+        hmcPage.anasayfaGiris();
+        hmcPage.yoneticigirisYap();
+        Assert.assertTrue(hmcPage.managerDrapDown.isDisplayed());
 
-
-
-
+    }
 
 
 

@@ -51,7 +51,7 @@ public class TC_01 {
         HMCPage hmcPage = new HMCPage();
         //Yönetici Olarak giris yap
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-         hmcPage.girisYap();
+         hmcPage.yoneticigirisYap();
     }
 
     @Test
@@ -60,7 +60,7 @@ public class TC_01 {
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
         HMCPage hmcPage = new HMCPage();
-        hmcPage.girisYap();
+        hmcPage.yoneticigirisYap();
 
         // Otel Management Linkini Tikla
         hmcPage.hotelManagementLinki.click();
@@ -81,7 +81,7 @@ public class TC_01 {
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-        hmcPage.girisYap();
+        hmcPage.yoneticigirisYap();
 
         // Otel Management Linkini Tikla
         hmcPage.hotelManagementLinki.click();
@@ -134,7 +134,7 @@ public class TC_01 {
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-        hmcPage.girisYap();
+        hmcPage.yoneticigirisYap();
 
         // Otel Management Linkini Tikla
         hmcPage.hotelManagementLinki.click();

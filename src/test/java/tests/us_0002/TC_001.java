@@ -1,9 +1,7 @@
 package tests.us_0002;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HMCPage;
 
 public class TC_001 {
     //1-Yönetici olarak url' e gider
@@ -15,12 +13,18 @@ public class TC_001 {
     //7-Yönetici anasayfadaki blog webelementini görür
     //8-Yönetici anasayfadaki contact webelementini görür
     //9-Yönetici anasayfadaki login in webelementini görür
-HMCPage hmcPage =new HMCPage();
+
+
     @Test
-    public void test(){
-       hmcPage.anasayfaGiris();
+    public void anasayfaTesti(){
+        Page page=new Page();
+        page.anasayfaGiris();
+        Assert.assertTrue(page.hotelMyCampYazisi.isDisplayed());
+
+        for (int i = 0; i < page.anasayfadakiWebElementler.size(); i++) {
+            Assert.assertTrue(page.anasayfadakiWebElementler.get(i).isDisplayed());
+        }
+        Assert.assertTrue(page.anasayfaLogin.isDisplayed());
     }
-    @FindBy (xpath = "(//a[@class='nav-link'])[7]")
-    public WebElement anasayfaLogin;
 
 }
