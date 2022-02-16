@@ -7,14 +7,16 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class HMCPage {
+
+
     public HMCPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    //***************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
-
-    public void anasayfaGiris(){
+    public void anasayfaGiris() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
     }
 
@@ -45,7 +47,7 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
-    @FindBy(xpath ="//span[text()='Hotel Management']")
+    @FindBy(xpath = "//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
     @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
@@ -156,8 +158,4 @@ public class HMCPage {
 
 
 
-
 }
-
-
-
