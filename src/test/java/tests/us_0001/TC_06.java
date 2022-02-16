@@ -31,7 +31,8 @@ public class TC_06 extends TestBaseRapor {
         //3-ViewRoomDetail tiklar
         hmcPage.mainPageViewRoomDetailsWebElementList.get(1).click();
         //4-Room özellikleri bulunan sayfaya gider
-
+        //
+        System.out.println();
     }
 
 
