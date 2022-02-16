@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HMCPage {
     public HMCPage() {
 
@@ -148,6 +150,17 @@ public class HMCPage {
 
     @FindBy(xpath = "(//a[@href='#'])[3]")
     public WebElement mainPageilkInstagramIkonu;
+
+    @FindBy(xpath = "//div[@class='d-flex justify-content-center']")
+    public List<WebElement> mainPageServiceLogoWebElementListesi;
+
+    @FindBy(xpath = "(//h2[@class='mb-4'])[3]")
+    public WebElement mainPageOurRoomsTitleWebElement;
+
+    @FindBy(className = "pt-1")
+    public List<WebElement> mainPageViewRoomDetailsWebElementList;
+
+
 
 
 
