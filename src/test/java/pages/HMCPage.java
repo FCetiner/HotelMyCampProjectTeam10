@@ -6,15 +6,19 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HMCPage {
+
+
     public HMCPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    //***************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
-
-    public void anasayfaGiris(){
+    public void anasayfaGiris() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
     }
 
@@ -45,7 +49,7 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
-    @FindBy(xpath ="//span[text()='Hotel Management']")
+    @FindBy(xpath = "//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
     @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
@@ -98,6 +102,24 @@ public class HMCPage {
     @FindBy(xpath = "//h1[.='Log in']")
     public WebElement loginPageLoginTextWebElement;
 
+    @FindBy(xpath = "//a[.='Hotelmycamp']")
+    public WebElement mainPageHotelMyCampTextWebElement;
+
+    @FindBy (id = "checkin_date")
+    public WebElement mainPageCheckInDateBox;
+
+    @FindBy(id = "checkout_date")
+    public WebElement mainPageCheckOutDateBox;
+
+    @FindBy(id = "IDRoomType")
+    public WebElement mainPageRoomTypeDropDown;
+
+    @FindBy(id = "AdultCount")
+    public WebElement mainPageAdultCountDropdown;
+
+    @FindBy(xpath = "//input[@value='Check Availability']")
+    public WebElement mainPageCheckAvailabilityButton;
+
 
 
     @FindBy(xpath = "//a[text()='Log in']")
@@ -119,6 +141,30 @@ public class HMCPage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement createOkButton;
 
+    @FindBy(xpath = "//h2[.='Welcome To Our Hotel']")
+    public WebElement mainPageSayfaOrtasiWelcomToOurHotelYaziElementi;
+
+    @FindBy(xpath = "(//a[@href='#'])[1]")
+    public WebElement mainPageilkFacebookIkonu;
+
+    @FindBy(xpath = "(//a[@href='#'])[2]")
+    public WebElement mainPageilkGooglePlusIkonu;
+
+    @FindBy(xpath = "(//a[@href='#'])[3]")
+    public WebElement mainPageilkInstagramIkonu;
+
+    @FindBy(xpath = "//div[@class='d-flex justify-content-center']")
+    public List<WebElement> mainPageServiceLogoWebElementListesi;
+
+    @FindBy(xpath = "(//h2[@class='mb-4'])[3]")
+    public WebElement mainPageOurRoomsTitleWebElement;
+
+    @FindBy(className = "pt-1")
+    public List<WebElement> mainPageViewRoomDetailsWebElementList;
+
+
+
+
 
 
 
@@ -126,6 +172,3 @@ public class HMCPage {
 
 
 }
-
-
-

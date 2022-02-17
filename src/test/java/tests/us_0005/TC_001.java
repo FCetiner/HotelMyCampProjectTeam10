@@ -3,6 +3,7 @@ package tests.us_0005;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
+import pages.HotelListPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
@@ -14,6 +15,7 @@ public class TC_001 extends TestBaseRapor {
     public void test() throws IOException {
 
         HMCPage hmcPage = new HMCPage();
+        HotelListPage hotelListPage=new HotelListPage();
         extentTest = extentReports.createTest("log in", "giris yapildi");
         //Hotel anasayfasina gidin
         // Login butonuna tıklayın
@@ -23,13 +25,13 @@ public class TC_001 extends TestBaseRapor {
         hmcPage.girisYap();
         extentTest.pass("Basarili giris yapildi");
         //"manager" yazisinin gorundugunu kontrol edin
-        //Assert.assertTrue(hmcPage.managerYaziLinki.isDisplayed());
+        Assert.assertTrue(hotelListPage.managerYaziLinki.isDisplayed());
         extentTest.pass("manager yazisi gorunuyor");
-      // ReusableMethods.waitForVisibility(hmcPage.managerYaziLinki, 2);
+        ReusableMethods.waitForVisibility(hotelListPage.managerYaziLinki, 2);
 
-        // ReusableMethods.getScreenshot("Giris yapildi");
+        ReusableMethods.getScreenshot("Giris yapildi");
         extentTest.info("driver kapatildi");
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
 
     }
