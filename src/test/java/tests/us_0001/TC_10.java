@@ -4,7 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
+import utilities.Driver;
 import utilities.JSUtils;
+import utilities.ReusableMethods;
 
 public class TC_10 {
     //TC10-Instagram fotograflari gorunebilir olmali
@@ -12,12 +14,10 @@ public class TC_10 {
     public void test(){
         HMCPage hmcPage=new HMCPage();
         hmcPage.anasayfaGiris();
-        JSUtils.scrollIntoVIewJS(hmcPage.mainPageInstagramFotograflari1);
-
-        Assert.assertTrue(hmcPage.mainPageInstagramFotograflari1.isDisplayed());
-        Assert.assertTrue(hmcPage.mainPageInstagramFotograflari2.isDisplayed());
-        Assert.assertTrue(hmcPage.mainPageInstagramFotograflari3.isDisplayed());
-        Assert.assertTrue(hmcPage.mainPageInstagramFotograflari4.isDisplayed());
+        JSUtils.scrollIntoVIewJS(hmcPage.mainPagesectionInstagram);
+        ReusableMethods.waitFor(3);
+        hmcPage.mainPageInstagramFotograflarListesi.stream().forEach(t-> Assert.assertTrue(t.isDisplayed()));
+        Driver.closeDriver();
 
     }
 }

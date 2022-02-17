@@ -76,8 +76,7 @@ public class TC_04 {
                 .sendKeys(Keys.TAB).sendKeys("2").perform();
 
 
-    }
-}
+
         roomsPage.saveButon.click();
 
     }
