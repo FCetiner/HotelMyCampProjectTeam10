@@ -143,6 +143,8 @@ public class KullaniciHotelReservationPage {
     @FindBy(xpath = "//button[@type='button']")
     public WebElement rezervasyonKapatmaButonu;
 
+    @FindBy(xpath = "(//div[@class='row'])[2]")
+    public WebElement bosAlan;
 
 
 
