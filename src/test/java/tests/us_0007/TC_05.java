@@ -30,7 +30,7 @@ public class TC_05 {
     }
 
     /*Step 3
-     **"Hotel Management" sekmesinden "Hotelş Rooms" butonuna tıklanır  */
+     **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
     public void test03(){
         HMCPage hmcPage = new HMCPage();
@@ -39,6 +39,7 @@ public class TC_05 {
         roomsPage.hotelRoomsLink.click();
     }
 
+
     @Test
     public void test04(){
         HotelRoomsPage roomsPage=new HotelRoomsPage();
@@ -46,12 +47,15 @@ public class TC_05 {
     }
 
     @Test
-    public void test05(){
+    public void test05() throws InterruptedException {
 
         HotelRoomsPage roomsPage=new HotelRoomsPage();
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(3000);
         roomsPage.deleteButon.click();
+        roomsPage.continueOkButon.click();
+        roomsPage.errorOkButon.click();
 
 
     }

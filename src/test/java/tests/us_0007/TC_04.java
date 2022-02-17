@@ -33,7 +33,7 @@ public class TC_04 {
     }
 
     /*Step 3
-     **"Hotel Management" sekmesinden "Hotelş Rooms" butonuna tıklanır  */
+     **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
     public void test03(){
         HMCPage hmcPage = new HMCPage();
@@ -42,12 +42,16 @@ public class TC_04 {
         roomsPage.hotelRoomsLink.click();
     }
 
+    /*Step4
+    **İlk sıradaki "Details" butonu tıklanır     */
     @Test
     public void test04(){
         HotelRoomsPage roomsPage=new HotelRoomsPage();
         roomsPage.detailsLink.click();
     }
 
+    /*Step5
+    **Sayfadaki tüm bilgiler değiştirilerek "Save" butonuna tıklanır */
     @Test
     public void test05(){
         HotelRoomsPage roomsPage=new HotelRoomsPage();
@@ -72,6 +76,7 @@ public class TC_04 {
 
         roomsPage.saveButon.click();
 
+    }
 
+}
 
-    }}

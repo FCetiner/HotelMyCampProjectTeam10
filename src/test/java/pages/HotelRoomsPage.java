@@ -56,6 +56,16 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//button[@id='btnDelete']")
     public WebElement deleteButon ;
 
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement continueOkButon ;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement errorOkButon ;
+
+
+
+
+
 
 
 
