@@ -208,19 +208,54 @@ public class HMCPage {
     @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[4]")
     public WebElement mainPageBlogsWebElement4;
 
-    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[1]")
-    public WebElement mainPageInstagramFotograflari1;
+    @FindBy(xpath = "//section[@class='instagram']")
+    public WebElement mainPagesectionInstagram;
 
-    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[2]")
-    public WebElement mainPageInstagramFotograflari2;
+    @FindBy(xpath = "//a[@class='insta-img image-popup']")
+    public List<WebElement> mainPageInstagramFotograflarListesi;
 
-    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[3]")
-    public WebElement mainPageInstagramFotograflari3;
+    @FindBy(xpath = "//footer[@class='ftco-footer ftco-bg-dark ftco-section']")
+    public  WebElement mainPageFooter;
 
-    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[4]")
-    public WebElement mainPageInstagramFotograflari4;
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[1]")
+    public WebElement mainPageUsefulLinkBlog;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[2]")
+    public WebElement mainPageUsefulLinkRooms;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[3]")
+    public WebElement mainPageUsefulLinkAmentitiesTest;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[4]")
+    public WebElement mainPageUsefulLinkGiftCard;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[5]")
+    public WebElement mainPagePrivacyGiftCareer;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[6]")
+    public WebElement mainPagePrivacyAboutUs;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[7]")
+    public WebElement mainPagePrivacyContactUs;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[8]")
+    public WebElement mainPagePrivacyServices;
+
+    @FindBy(xpath = "(//span[@class='text'])[2]")
+    public WebElement mainPageTelephoneLink;
+
+    @FindBy(xpath = "(//span[@class='text'])[3]")
+    public WebElement mainPageEmailLink;
+
+    @FindBy(xpath = "//span[@class='icon-twitter']")
+    public WebElement mainPageFooterTwitterIkon;
+
+    @FindBy(xpath = "(//span[@class='icon-instagram'])[2]")
+    public WebElement mainPageFooterInstagramIkon;
+
+    @FindBy(xpath = "(//span[@class='icon-facebook'])[2]")
+    public WebElement mainPageFooterFacebookIkon;
 
 
 
-
-    }
+}
