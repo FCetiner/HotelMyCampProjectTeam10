@@ -34,7 +34,7 @@ public class TC_04 {
     }
 
     /*Step 3
-     **"Hotel Management" sekmesinden "Hotelş Rooms" butonuna tıklanır  */
+     **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
     public void test03() {
         HMCPage hmcPage = new HMCPage();
@@ -43,12 +43,16 @@ public class TC_04 {
         roomsPage.hotelRoomsLink.click();
     }
 
+    /*Step4
+    **İlk sıradaki "Details" butonu tıklanır     */
     @Test
     public void test04() {
         HotelRoomsPage roomsPage = new HotelRoomsPage();
         roomsPage.detailsLink.click();
     }
 
+    /*Step5
+    **Sayfadaki tüm bilgiler değiştirilerek "Save" butonuna tıklanır */
     @Test
     public void test05() {
         HotelRoomsPage roomsPage = new HotelRoomsPage();
@@ -59,12 +63,25 @@ public class TC_04 {
         Actions actions = new Actions(Driver.getDriver());
         Faker faker = new Faker();
 
-        actions.click(roomsPage.codeBox).sendKeys((WebElement) faker.code()).
+        actions.click(roomsPage.codeBox).sendKeys("9999").
                 sendKeys(Keys.TAB).sendKeys(faker.name().name())
                 .sendKeys(Keys.TAB).sendKeys(faker.address().city())
                 .sendKeys(Keys.TAB).sendKeys(faker.toString())
                 .sendKeys(Keys.TAB).sendKeys(faker.commerce().price()).perform();
 
+        roomsPage.roomTypeButon.click();
+        select.getFirstSelectedOption();
+
+        actions.click(roomsPage.maxAdultButon).sendKeys("2")
+                .sendKeys(Keys.TAB).sendKeys("2").perform();
+
 
     }
 }
+        roomsPage.saveButon.click();
+
+    }
+
+}
+
+

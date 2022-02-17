@@ -1,5 +1,6 @@
 package tests.us_0001;
 
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
@@ -7,6 +8,8 @@ import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
+
+
 
 public class TC_05 extends TestBaseRapor {
 
@@ -29,6 +32,7 @@ public class TC_05 extends TestBaseRapor {
         extentTest.pass("Servis logolarinin bulundugu goruldu");
         Driver.closeDriver();
     }
+
 
 
     
