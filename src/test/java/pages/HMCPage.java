@@ -6,15 +6,19 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HMCPage {
+
+
     public HMCPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    //***************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
-
-    public void anasayfaGiris(){
+    public void anasayfaGiris() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
     }
 
@@ -45,7 +49,7 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
-    @FindBy(xpath ="//span[text()='Hotel Management']")
+    @FindBy(xpath = "//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
     @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
@@ -149,6 +153,16 @@ public class HMCPage {
     @FindBy(xpath = "(//a[@href='#'])[3]")
     public WebElement mainPageilkInstagramIkonu;
 
+    @FindBy(xpath = "//div[@class='d-flex justify-content-center']")
+    public List<WebElement> mainPageServiceLogoWebElementListesi;
+
+    @FindBy(xpath = "(//h2[@class='mb-4'])[3]")
+    public WebElement mainPageOurRoomsTitleWebElement;
+
+    @FindBy(className = "pt-1")
+    public List<WebElement> mainPageViewRoomDetailsWebElementList;
+
+
 
 
 
@@ -158,6 +172,3 @@ public class HMCPage {
 
 
 }
-
-
-
