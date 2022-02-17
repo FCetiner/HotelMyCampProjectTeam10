@@ -1,10 +1,14 @@
 package pages;
 
+import jdk.jfr.consumer.RecordedMethod;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtils;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -159,16 +163,64 @@ public class HMCPage {
     @FindBy(xpath = "(//h2[@class='mb-4'])[3]")
     public WebElement mainPageOurRoomsTitleWebElement;
 
-    @FindBy(className = "pt-1")
-    public List<WebElement> mainPageViewRoomDetailsWebElementList;
+    @FindBy(xpath = "(//a[.='View Room Details '])[1]")
+    public WebElement mainPageViewRoomDetailsWebElement1;
+
+    @FindBy(xpath = "(//a[.='View Room Details '])[2]")
+    public WebElement mainPageViewRoomDetailsWebElement2;
+
+    @FindBy(xpath = "(//a[.='View Room Details '])[3]")
+    public WebElement mainPageViewRoomDetailsWebElement3;
+
+    @FindBy(xpath = "(//a[.='View Room Details '])[4]")
+    public WebElement mainPageViewRoomDetailsWebElement4;
+
+    @FindBy(xpath = "(//a[.='View Room Details '])[5]")
+    public WebElement mainPageViewRoomDetailsWebElement5;
+
+    @FindBy(xpath = "(//a[.='View Room Details '])[6]")
+    public WebElement mainPageViewRoomDetailsWebElement6;
+
+    @FindBy(xpath = "(//div[@class='block-18 text-center'])[1]")
+    public WebElement mainPageOtelBilgileriBasliklari1;
+
+    @FindBy(xpath = "(//div[@class='block-18 text-center'])[2]")
+    public WebElement mainPageOtelBilgileriBasliklari2;
+
+    @FindBy(xpath = "(//div[@class='block-18 text-center'])[3]")
+    public WebElement mainPageOtelBilgileriBasliklari3;
+
+    @FindBy(xpath = "(//div[@class='block-18 text-center'])[4]")
+    public WebElement mainPageOtelBilgileriBasliklari4;
+
+    @FindBy(xpath = "(//div[@class='container'])[13]")
+    public WebElement mainPagemisafirYorumlariWebElemet;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[1]")
+    public WebElement mainPageBlogsWebElement1;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[2]")
+    public WebElement mainPageBlogsWebElement2;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[3]")
+    public WebElement mainPageBlogsWebElement3;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[4]")
+    public WebElement mainPageBlogsWebElement4;
+
+    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[1]")
+    public WebElement mainPageInstagramFotograflari1;
+
+    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[2]")
+    public WebElement mainPageInstagramFotograflari2;
+
+    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[3]")
+    public WebElement mainPageInstagramFotograflari3;
+
+    @FindBy(xpath = "(//a[@class='insta-img image-popup'])[4]")
+    public WebElement mainPageInstagramFotograflari4;
 
 
 
 
-
-
-
-
-
-
-}
+    }

@@ -21,6 +21,7 @@ public class TC_05 extends TestBaseRapor {
         HMCPage hmcPage=new HMCPage();
        //1-kullanici url'e gider
         hmcPage.anasayfaGiris();
+        extentTest=extentReports.createTest("TC05 ","Service ikonlarinin gorunurlugu test edildi");
         extentTest.info("Ana Sayfaya gidildi");
         ReusableMethods.waitForPageToLoad(10);
         //2-Sayfada aşagi gider

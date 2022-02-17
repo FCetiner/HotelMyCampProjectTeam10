@@ -14,7 +14,7 @@ public class TC_01 extends TestBaseRapor {
 //TC_01-Kullanıcı,  Home, Rooms, Restaurant, AboutBlog, Contact, ve Log in  butonlarini  tiklayabilmeli
     @Test
     public void test() {
-
+        extentTest=extentReports.createTest("TC01 ","NevBar Butonlarinin ilgili sayfaya yonlendirdigi test edildi");
         HMCPage hmcPage=new HMCPage();
         SoftAssert softAssert=new SoftAssert();
         //1-kullanici url'e gider
