@@ -203,17 +203,8 @@ public class HMCPage {
     @FindBy(xpath = "(//a[.='View Room Details '])[6]")
     public WebElement mainPageViewRoomDetailsWebElement6;
 
-    @FindBy(xpath = "(//div[@class='block-18 text-center'])[1]")
-    public WebElement mainPageOtelBilgileriBasliklari1;
-
-    @FindBy(xpath = "(//div[@class='block-18 text-center'])[2]")
-    public WebElement mainPageOtelBilgileriBasliklari2;
-
-    @FindBy(xpath = "(//div[@class='block-18 text-center'])[3]")
-    public WebElement mainPageOtelBilgileriBasliklari3;
-
-    @FindBy(xpath = "(//div[@class='block-18 text-center'])[4]")
-    public WebElement mainPageOtelBilgileriBasliklari4;
+    @FindBy(xpath = "//div[@class='block-18 text-center']")
+    public List<WebElement> mainPageHappyGuestsBasliklarListesi;
 
     @FindBy(xpath = "(//div[@class='container'])[13]")
     public WebElement mainPagemisafirYorumlariWebElemet;
@@ -278,6 +269,8 @@ public class HMCPage {
     @FindBy(xpath = "(//span[@class='icon-facebook'])[2]")
     public WebElement mainPageFooterFacebookIkon;
 
+    @FindBy(id = "section-counter")
+    public WebElement sectionCounterOtelBilgileriBolumu;
 
 
 }

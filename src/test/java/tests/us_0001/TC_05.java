@@ -30,7 +30,6 @@ public class TC_05 extends TestBaseRapor {
         extentTest.info("Servis logolarının bulundugu bolume inildi");
         hmcPage.mainPageServiceLogoWebElementListesi.stream().forEach(t-> Assert.assertTrue(t.isDisplayed()));
         extentTest.pass("Servis logolarinin bulundugu goruldu");
-        Driver.closeDriver();
     }
 
 
