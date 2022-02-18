@@ -2,7 +2,6 @@ package tests.us_0005;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -29,7 +28,7 @@ public class TC_003 {
         //Hotel List menüsüne tıklayın
         hmcPage.hotelListLinki.click();
         //Details butonuna tıklayın
-        hotelListPage.detailsLink.click();
+        hotelListPage.detailsElement.click();
 
         //Code kutusuna  bir Kod girin
         String ilkSayfa = Driver.getDriver().getWindowHandle();

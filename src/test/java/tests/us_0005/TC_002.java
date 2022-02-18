@@ -22,10 +22,10 @@ public class TC_002 {
         //Hotel List menüsüne tıklayın
         hmcPage.hotelListLinki.click();
         //Details butonuna tıklayın
-        hotelListPage.detailsLink.click();
+        hotelListPage.detailsElement.click();
 
         //"Edit Hotel" başlığının görünürlüğünü kontrol edin
 
-        Assert.assertTrue(hotelListPage.editYaziLinki.isDisplayed());
+        Assert.assertTrue(hotelListPage.editTextElement.isDisplayed());
     }
 }
