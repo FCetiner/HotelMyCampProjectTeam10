@@ -10,6 +10,7 @@ import utilities.Driver;
 
 public class TC_02 {
 
+    HMCPage hmcPage =new HMCPage();
     /*
 
       **Step1
@@ -18,8 +19,7 @@ public class TC_02 {
 
     @Test
     public void test01(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
         hmcPage.anasayfaGiris();
     }
 
@@ -28,8 +28,7 @@ public class TC_02 {
      */
     @Test
     public void test02(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
         hmcPage.girisYap();
     }
 

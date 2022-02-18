@@ -10,16 +10,18 @@ import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
 import pages.HotelRoomsPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class TC_04 {
+    HotelRoomsPage roomsPage=new HotelRoomsPage();
 
+    HMCPage hmcPage = new HMCPage();
     /*Step 1
      *Kullanıcı url yi girer */
 
     @Test
     public void test01(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
         hmcPage.anasayfaGiris();
     }
     /*Step 2
@@ -27,8 +29,7 @@ public class TC_04 {
      */
     @Test
     public void test02(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
         hmcPage.girisYap();
     }
 
@@ -36,9 +37,9 @@ public class TC_04 {
      **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
     public void test03(){
-        HMCPage hmcPage = new HMCPage();
+
         hmcPage.hotelManagementLinki.click();
-        HotelRoomsPage roomsPage = new HotelRoomsPage();
+
         roomsPage.hotelRoomsLink.click();
     }
 
@@ -46,7 +47,7 @@ public class TC_04 {
     **İlk sıradaki "Details" butonu tıklanır     */
     @Test
     public void test04(){
-        HotelRoomsPage roomsPage=new HotelRoomsPage();
+
         roomsPage.detailsLink.click();
     }
 
@@ -54,7 +55,7 @@ public class TC_04 {
     **Sayfadaki tüm bilgiler değiştirilerek "Save" butonuna tıklanır */
     @Test
     public void test05(){
-        HotelRoomsPage roomsPage=new HotelRoomsPage();
+
         roomsPage.hotelIdbox.click();
         Select select = new Select(roomsPage.hotelIdbox);
         select.getFirstSelectedOption();
@@ -62,17 +63,23 @@ public class TC_04 {
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
 
-        actions.click(roomsPage.codeBox).sendKeys("9999").
-                sendKeys(Keys.TAB).sendKeys(faker.name().name())
-                .sendKeys(Keys.TAB).sendKeys(faker.address().city())
-                .sendKeys(Keys.TAB).sendKeys(faker.toString())
-                .sendKeys(Keys.TAB).sendKeys(faker.commerce().price()).perform();
+        actions.click(roomsPage.codeBox).sendKeys(Keys.CLEAR).sendKeys("9999").
+                sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.name().name())
+                .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.address().city())
+                .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.toString())
+                .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.commerce().price())
+                .perform();
+
+        ReusableMethods.waitFor(3);
 
         roomsPage.roomTypeButon.click();
         select.getFirstSelectedOption();
+        ReusableMethods.waitFor(3);
+        actions.click(roomsPage.maxAdultButon).sendKeys(Keys.CLEAR).sendKeys("2")
+                .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys("2").perform();
 
-        actions.click(roomsPage.maxAdultButon).sendKeys("2")
-                .sendKeys(Keys.TAB).sendKeys("2").perform();
+
+        roomsPage.isAvailableButon.click();
 
         roomsPage.saveButon.click();
 
