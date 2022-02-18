@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelRoomReservationPage;
+import utilities.ReusableMethods;
 
 public class TC_03 {
     @Test
@@ -14,7 +15,7 @@ public class TC_03 {
         HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();
         Assert.assertTrue(hotelRoomReservationPage.systemManagementButton.isDisplayed());
         hotelRoomReservationPage.hotelManagementButtonu.click();
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         hotelRoomReservationPage.roomReservationsButton.click();
 
     }

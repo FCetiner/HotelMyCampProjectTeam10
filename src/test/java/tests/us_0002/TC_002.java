@@ -10,7 +10,7 @@ public class TC_002 {
 
         HMCPage hmcPage = new HMCPage();
         hmcPage.anasayfaGiris();
-        hmcPage.girisYap();
+        hmcPage.yoneticigirisYap();
         Assert.assertTrue(hmcPage.managerDrapDown.isDisplayed());
 
     }

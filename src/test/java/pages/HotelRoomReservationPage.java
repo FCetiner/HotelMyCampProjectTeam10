@@ -75,7 +75,29 @@ WebElement homePageLoginButton;
     @FindBy(xpath = "//input[@id='AdultAmount']")
     public WebElement adultAmount;
 
+    @FindBy (xpath = "//input[@id='ChildrenAmount']")
+    public WebElement childrenAmount;
 
+    @FindBy (xpath = "//input[@id='ContactNameSurname']")
+    public WebElement contactNameSurname;
+
+    @FindBy (xpath = "//input[@id='ContactPhone']")
+    public WebElement contactPhone;
+
+    @FindBy (xpath = "//input[@id='ContactEmail']")
+    public WebElement contactEmail;
+
+    @FindBy (xpath = "//input[@id='Notes']")
+    public WebElement notes;
+
+    @FindBy(xpath = "//input[@id='Approved']")
+    public WebElement approvedElementi;
+
+    @FindBy (xpath = "//input[@id='IsPaid']")
+    public WebElement isPaidEmenti;
+
+    @FindBy (xpath = "//button[@id='btnSubmit']")
+    public WebElement saveButonu;
 
 
 

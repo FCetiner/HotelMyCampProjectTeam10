@@ -10,7 +10,8 @@ import pages.HotelRoomsPage;
 public class TC_03 {
 
     /* Step 1
-     **Log-in yapıldıktan sonra "Hotel Management" sekmesinden "Hotel Rooms" sayfasına girilebilmeli ve "List Of Rooms" yazısı görülmeli
+     **Log-in yapıldıktan sonra "Hotel Management" sekmesinden "Hotel Rooms" sayfasına girilebilmeli
+     * ve "List Of Rooms" yazısı görülmeli
      **Kullanıcı url yi girer */
 
     @Test
@@ -24,8 +25,9 @@ public class TC_03 {
      */
     @Test
     public void test02(){
-        HMCPage hmcPage =new HMCPage();
+            HMCPage hmcPage =new HMCPage();
         SoftAssert softAssert=new SoftAssert();
+        softAssert.assertTrue(hmcPage.hotelManagementLinki.isDisplayed());
         hmcPage.girisYap();
     }
 
