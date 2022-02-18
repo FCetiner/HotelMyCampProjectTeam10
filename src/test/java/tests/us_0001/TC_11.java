@@ -7,8 +7,9 @@ import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
 import utilities.Driver;
 import utilities.JSUtils;
+import utilities.TestBaseRapor;
 
-public class TC_11 {
+public class TC_11 extends TestBaseRapor {
     //TC11-Sayfanin en altinda bulunan  linkler ilgili sayfaya yonlendirmeli
     HMCPage hmcPage=new HMCPage();
     SoftAssert softAssert=new SoftAssert();
