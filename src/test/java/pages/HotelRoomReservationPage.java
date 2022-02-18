@@ -45,11 +45,56 @@ public class HotelRoomReservationPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void hotelManagementTextKontrol(){
         hotelManagementText.click();
         roomReservationTextBox.click();
         Assert.assertTrue(Driver.getDriver().getTitle().contains("List Of Reservations"));
     }
+
+
 
 
 
