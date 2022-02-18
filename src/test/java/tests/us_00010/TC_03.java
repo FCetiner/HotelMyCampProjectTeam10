@@ -7,8 +7,10 @@ import org.testng.annotations.Test;
 import pages.KullaniciHotelReservationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC_03 {
+public class TC_03 extends TestBaseRapor {
     KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
     @Test
     public void testCase03() throws InterruptedException {
@@ -26,13 +28,16 @@ public class TC_03 {
         // Sagdaki "Twin" katagorisonuclarini kontrol eder
         // Sagdaki "Double-double" katagori sonuclarini kontrol eder
         // Sagdaki "Studio" katagori sonuclarini kontrol eder
+        extentTest=extentReports.createTest("TC_03","Cikan oda secenekleri tiklayabilmeli ve \"Categories\" text altindaki sonuclari tiklayabilmeli");
             Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
-            hmcPage10.logInButtonu.click();
+            extentTest.info("URL e gidildi");
+        /* hmcPage10.logInButtonu.click();
+        extentTest.info("Log in buttonuna tiklanildi");
             hmcPage10.usernameBox.sendKeys("Firuze"+ Keys.ENTER);
             hmcPage10.passwordBox.sendKeys("12345Aa."+ Keys.ENTER);
-            hmcPage10.ikinciLoginButonu.click();
+            hmcPage10.ikinciLoginButonu.click(); */
             hmcPage10.roomsButton.click();
-
+        extentTest.info("\"Rooms\" buttonuna tiklanildi");
 
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN)
@@ -97,8 +102,9 @@ public class TC_03 {
                 .perform();
 
            // Assert.assertTrue(hmcPage10.twinRoom.isEnabled(),"erisilemiyor");
-        Thread.sleep(1000);
-        Driver.getDriver().close();
+        ReusableMethods.waitFor(1);
+        extentTest.pass("Categories text yazisi altindaki oda type'lerinin erisebilirligi kontrol edildi");
+
     }
 
 }
