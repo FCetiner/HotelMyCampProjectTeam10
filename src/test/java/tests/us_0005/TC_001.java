@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelListPage;
-import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
@@ -25,9 +24,9 @@ public class TC_001 extends TestBaseRapor {
         hmcPage.girisYap();
         extentTest.pass("Basarili giris yapildi");
         //"manager" yazisinin gorundugunu kontrol edin
-        Assert.assertTrue(hotelListPage.managerYaziLinki.isDisplayed());
+        Assert.assertTrue(hotelListPage.managerTextElement.isDisplayed());
         extentTest.pass("manager yazisi gorunuyor");
-        ReusableMethods.waitForVisibility(hotelListPage.managerYaziLinki, 2);
+        ReusableMethods.waitForVisibility(hotelListPage.managerTextElement, 2);
 
         ReusableMethods.getScreenshot("Giris yapildi");
         extentTest.info("driver kapatildi");
