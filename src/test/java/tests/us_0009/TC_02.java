@@ -1,9 +1,7 @@
 package tests.us_0009;
 
-import com.aventstack.extentreports.ExtentTest;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.Us_0009Page;
+import pages.HotelRoomReservationPage;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
@@ -17,8 +15,8 @@ public class TC_02 extends TestBaseRapor {
     @Test
     public void test() {
 
-        Us_0009Page us_0009Page=new Us_0009Page();
-        us_0009Page.HMCLogin();
+        HotelRoomReservationPage elements=new HotelRoomReservationPage();
+        elements.HMCLogin();
 
 
     }
