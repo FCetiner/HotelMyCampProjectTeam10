@@ -13,9 +13,8 @@ public class HotelRoomReservationPage {
     }
 
 //***************Gokhan Bey-Hacer Hanim**************************
-@FindBy(id = "navLogon")
-WebElement homePageLoginButton;
-
+    @FindBy(id = "navLogon")
+    WebElement homePageLoginButton;
     @FindBy(id="UserName")
     WebElement usernameTextBox;
     @FindBy(id="Password")
@@ -23,16 +22,20 @@ WebElement homePageLoginButton;
     @FindBy(id="btnSubmit")
     WebElement loginPageLoginButton;
 
+    @FindBy(xpath = "//span[text()='Hotel Management']")
+    WebElement hotelManagementText;
+    @FindBy(xpath = "((//ul[@class='sub-menu'])[3]/li)[3]")
+    WebElement roomReservationTextBox;
 
 
-    public void HMCLogin(){
-        HotelRoomReservationPage elements=new HotelRoomReservationPage();
+    public void HMCLogin() throws InterruptedException {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        elements.homePageLoginButton.click();
-        elements.usernameTextBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
-        elements.passwordTextBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
-        elements.loginPageLoginButton.click();
+        homePageLoginButton.click();
+        usernameTextBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        passwordTextBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        loginPageLoginButton.click();
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Admin"));
+
 
 
 
@@ -40,6 +43,13 @@ WebElement homePageLoginButton;
 
     }
 
+
+
+    public void hotelManagementTextKontrol(){
+        hotelManagementText.click();
+        roomReservationTextBox.click();
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("List Of Reservations"));
+    }
 
 
 

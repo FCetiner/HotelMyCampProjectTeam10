@@ -13,7 +13,7 @@ public class TC_02 extends TestBaseRapor {
     5- Title'in Admin yazisi icerdigini gorur.
 */
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
 
         HotelRoomReservationPage elements=new HotelRoomReservationPage();
         elements.HMCLogin();
