@@ -60,4 +60,111 @@ public class KullaniciHotelReservationPage {
 
     @FindBy(xpath = "//input[@value='Search']")
     public WebElement searchButton;
+
+    @FindBy(xpath = "(//a[@class='btn-custom'])[8]")
+    public WebElement bookNow8;
+
+    @FindBy(xpath = "(//a[@class='btn-custom'])[6]")
+    public WebElement bookNow6;
+
+    @FindBy(xpath = "//a[@href='/Rooms/6']")
+    public WebElement singleRoom;
+
+
+    @FindBy(xpath = "//a[@href='/Rooms/7']")
+    public WebElement doubleRoom;
+    @FindBy(xpath = "//a[@href='/Rooms/8']")
+    public WebElement tribleRoom;
+    @FindBy(xpath = "//a[@href='/Rooms/317']")
+    public WebElement quadRoom;
+    @FindBy(xpath = "//a[@href='/Rooms/318']")
+    public WebElement queenRoom;
+    @FindBy(xpath = "//a[@href='/Rooms/319']")
+    public WebElement kingRoom;
+    @FindBy(xpath = "//a[@href='/Rooms/320']")
+    public WebElement twinRoom;
+
+    @FindBy(xpath = "//a[@href='/Rooms/321']")
+    public WebElement doubleDoubleRoom;
+
+    @FindBy(xpath = "//a[@href='/Rooms/322']")
+    public WebElement studioRoom;
+
+    @FindBy(xpath = "//select[@title='Select Room Type']")
+    public WebElement selectRoomType;
+
+    @FindBy(xpath = "//a[.='Triple room']")
+    public WebElement odaSec;
+
+    @FindBy(xpath = "//a[.='King room']")
+    public WebElement odaSeciminegit;
+
+    @FindBy(xpath = "//input[@id='checkin_date']")
+    public WebElement checkin_date;
+
+    @FindBy(xpath = "//input[@id='checkout_date']")
+    public WebElement checkout_date;
+
+
+    @FindBy(xpath = "//select[@id='AdultCount']")
+    public WebElement AdultCount;
+
+    @FindBy(xpath = "//select[@id='ChildrenCount']")
+    public WebElement ChildrenCount;
+
+    @FindBy(xpath = "//input[@placeholder='Name On Credit Card']")
+    public WebElement nameOnCreditCard;
+
+    @FindBy(xpath = "//input[@placeholder='Credit Card Number']")
+    public WebElement creditCardNumber;
+
+    @FindBy(xpath = "//select[@title='Select Expiration Year For Credit Card']")
+    public WebElement SelectExpirationYearForCreditCard;
+
+    @FindBy(xpath = "//select[@id='CreditCardExpirationMonth']")
+    public WebElement SelectExpirationMonthForCreditCard;
+
+    @FindBy(xpath = "//input[@id='CVV']")
+    public WebElement CVV;
+
+    @FindBy(xpath = "//textarea[@id='Message']")
+    public WebElement message;
+
+    @FindBy(xpath = "//input[@value='Book this room']")
+    public WebElement bookthisroom;
+
+
+    @FindBy(xpath = "//div[@class='bootbox-body']")
+    public WebElement rezervasyonText;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement rezervasyonOkButonu;
+
+    @FindBy(xpath = "//a[.='Reservations']")
+    public WebElement reservationsButton;
+
+    @FindBy(xpath = "//h1[@class='mb-4 bread']")
+    public WebElement reservationsTextStr;
+
+    @FindBy(xpath = "(//tbody//tr//th)[5]")
+    public WebElement approved;
+
+
+    @FindBy(xpath = "(//tbody//tr//th)[4]")
+    public WebElement endDate;
+
+    @FindBy(xpath = "(//tbody//tr//th)[3]")
+    public WebElement startDate;
+
+    @FindBy(xpath = "(//tbody//tr//th)[2]")
+    public WebElement price;
+
+    @FindBy(xpath = "(//tbody//tr//th)[1]")
+    public WebElement room;
+
+    @FindBy(xpath = "//li[.='Profile']")
+    public WebElement profileUrldekiButton;
+
+
+
 }

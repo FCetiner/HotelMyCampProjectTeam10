@@ -1,10 +1,16 @@
 package pages;
 
+import jdk.jfr.consumer.RecordedMethod;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtils;
+import utilities.ReusableMethods;
+
+import java.util.List;
 
 import java.util.List;
 
@@ -15,14 +21,18 @@ public class HMCPage {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+
+
     //***************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
     public void anasayfaGiris() {
+
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
     }
 
-    public void girisYap() {
+   public void yoneticigirisYap() {
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
@@ -33,9 +43,11 @@ public class HMCPage {
 
     }
 
+    @FindBy( xpath ="//a[text()='Hotelmycamp']")
+    public WebElement hotelMyCampYazisi;
 
-    //Yönetici Giriş yap methodu olusturulacak
-    //Kullanici Giriş yao methodu oluşturulacak
+    @FindBy (xpath = "//li[@class='nav-item']")
+    public List<WebElement> anasayfadakiWebElementler;
 
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement ilkLoginLinki;
@@ -49,7 +61,10 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
-    @FindBy(xpath = "//span[text()='Hotel Management']")
+    @FindBy (xpath ="//li[@class='dropdown dropdown-user']" )
+    public WebElement managerDrapDown;
+
+    @FindBy(xpath ="//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
     @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
@@ -78,6 +93,7 @@ public class HMCPage {
 
     @FindBy(xpath = "//button[@Class='btn btn-sm yellow filter-submit margin-bottom']")
     public WebElement SearchBoxButton;
+
     //**************MAIN PAGE NAVBAR LOCATELERI*******************
     @FindBy(id = "navHome")
     public WebElement mainPageHomeButton;
@@ -153,22 +169,108 @@ public class HMCPage {
     @FindBy(xpath = "(//a[@href='#'])[3]")
     public WebElement mainPageilkInstagramIkonu;
 
+    public void girisYap() {
+
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+
+        ilkLoginLinki.click();
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        loginButonu.click();
+
+    }
     @FindBy(xpath = "//div[@class='d-flex justify-content-center']")
     public List<WebElement> mainPageServiceLogoWebElementListesi;
 
     @FindBy(xpath = "(//h2[@class='mb-4'])[3]")
     public WebElement mainPageOurRoomsTitleWebElement;
 
-    @FindBy(className = "pt-1")
-    public List<WebElement> mainPageViewRoomDetailsWebElementList;
+    @FindBy(xpath = "(//a[.='View Room Details '])[1]")
+    public WebElement mainPageViewRoomDetailsWebElement1;
 
+    @FindBy(xpath = "(//a[.='View Room Details '])[2]")
+    public WebElement mainPageViewRoomDetailsWebElement2;
 
+    @FindBy(xpath = "(//a[.='View Room Details '])[3]")
+    public WebElement mainPageViewRoomDetailsWebElement3;
 
+    @FindBy(xpath = "(//a[.='View Room Details '])[4]")
+    public WebElement mainPageViewRoomDetailsWebElement4;
 
+    @FindBy(xpath = "(//a[.='View Room Details '])[5]")
+    public WebElement mainPageViewRoomDetailsWebElement5;
 
+    @FindBy(xpath = "(//a[.='View Room Details '])[6]")
+    public WebElement mainPageViewRoomDetailsWebElement6;
 
+    @FindBy(xpath = "//div[@class='block-18 text-center']")
+    public List<WebElement> mainPageHappyGuestsBasliklarListesi;
 
+    @FindBy(xpath = "(//div[@class='container'])[13]")
+    public WebElement mainPagemisafirYorumlariWebElemet;
 
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[1]")
+    public WebElement mainPageBlogsWebElement1;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[2]")
+    public WebElement mainPageBlogsWebElement2;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[3]")
+    public WebElement mainPageBlogsWebElement3;
+
+    @FindBy(xpath = "(//div[@class='text mt-3 d-block'])[4]")
+    public WebElement mainPageBlogsWebElement4;
+
+    @FindBy(xpath = "//section[@class='instagram']")
+    public WebElement mainPagesectionInstagram;
+
+    @FindBy(xpath = "//a[@class='insta-img image-popup']")
+    public List<WebElement> mainPageInstagramFotograflarListesi;
+
+    @FindBy(xpath = "//footer[@class='ftco-footer ftco-bg-dark ftco-section']")
+    public  WebElement mainPageFooter;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[1]")
+    public WebElement mainPageUsefulLinkBlog;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[2]")
+    public WebElement mainPageUsefulLinkRooms;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[3]")
+    public WebElement mainPageUsefulLinkAmentitiesTest;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[4]")
+    public WebElement mainPageUsefulLinkGiftCard;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[5]")
+    public WebElement mainPagePrivacyGiftCareer;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[6]")
+    public WebElement mainPagePrivacyAboutUs;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[7]")
+    public WebElement mainPagePrivacyContactUs;
+
+    @FindBy(xpath = "(//a[@class='py-2 d-block'])[8]")
+    public WebElement mainPagePrivacyServices;
+
+    @FindBy(xpath = "(//span[@class='text'])[2]")
+    public WebElement mainPageTelephoneLink;
+
+    @FindBy(xpath = "(//span[@class='text'])[3]")
+    public WebElement mainPageEmailLink;
+
+    @FindBy(xpath = "//span[@class='icon-twitter']")
+    public WebElement mainPageFooterTwitterIkon;
+
+    @FindBy(xpath = "(//span[@class='icon-instagram'])[2]")
+    public WebElement mainPageFooterInstagramIkon;
+
+    @FindBy(xpath = "(//span[@class='icon-facebook'])[2]")
+    public WebElement mainPageFooterFacebookIkon;
+
+    @FindBy(id = "section-counter")
+    public WebElement sectionCounterOtelBilgileriBolumu;
 
 
 }

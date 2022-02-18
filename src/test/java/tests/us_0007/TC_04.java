@@ -20,48 +20,50 @@ public class TC_04 {
      *Kullanıcı url yi girer */
 
     @Test
-    public void test01(){
-
+    public void test01() {
+        HMCPage hmcPage = new HMCPage();
+        SoftAssert softAssert = new SoftAssert();
         hmcPage.anasayfaGiris();
     }
+
     /*Step 2
      **Geçerli bilgilerle Log-in yapılır
      */
     @Test
-    public void test02(){
-
+    public void test02() {
+        HMCPage hmcPage = new HMCPage();
+        SoftAssert softAssert = new SoftAssert();
         hmcPage.girisYap();
     }
 
     /*Step 3
      **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
-    public void test03(){
-
+    public void test03() {
+        HMCPage hmcPage = new HMCPage();
         hmcPage.hotelManagementLinki.click();
-
         roomsPage.hotelRoomsLink.click();
     }
 
     /*Step4
     **İlk sıradaki "Details" butonu tıklanır     */
     @Test
-    public void test04(){
-
+    public void test04() {
+        HotelRoomsPage roomsPage = new HotelRoomsPage();
         roomsPage.detailsLink.click();
     }
 
     /*Step5
     **Sayfadaki tüm bilgiler değiştirilerek "Save" butonuna tıklanır */
     @Test
-    public void test05(){
-
+    public void test05() {
+        HotelRoomsPage roomsPage = new HotelRoomsPage();
         roomsPage.hotelIdbox.click();
         Select select = new Select(roomsPage.hotelIdbox);
         select.getFirstSelectedOption();
 
-        Actions actions=new Actions(Driver.getDriver());
-        Faker faker=new Faker();
+        Actions actions = new Actions(Driver.getDriver());
+        Faker faker = new Faker();
 
         actions.click(roomsPage.codeBox).sendKeys(Keys.CLEAR).sendKeys("9999").
                 sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.name().name())
@@ -81,9 +83,12 @@ public class TC_04 {
 
         roomsPage.isAvailableButon.click();
 
+
+
         roomsPage.saveButon.click();
 
     }
 
 }
+
 
