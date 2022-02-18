@@ -12,6 +12,8 @@ import utilities.ReusableMethods;
 
 import java.util.List;
 
+import java.util.List;
+
 public class HMCPage {
 
 
@@ -19,14 +21,18 @@ public class HMCPage {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+
+
     //***************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
     public void anasayfaGiris() {
+
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
     }
 
-    public void girisYap() {
+   public void yoneticigirisYap() {
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
@@ -37,9 +43,11 @@ public class HMCPage {
 
     }
 
+    @FindBy( xpath ="//a[text()='Hotelmycamp']")
+    public WebElement hotelMyCampYazisi;
 
-    //Yönetici Giriş yap methodu olusturulacak
-    //Kullanici Giriş yao methodu oluşturulacak
+    @FindBy (xpath = "//li[@class='nav-item']")
+    public List<WebElement> anasayfadakiWebElementler;
 
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement ilkLoginLinki;
@@ -53,7 +61,10 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
-    @FindBy(xpath = "//span[text()='Hotel Management']")
+    @FindBy (xpath ="//li[@class='dropdown dropdown-user']" )
+    public WebElement managerDrapDown;
+
+    @FindBy(xpath ="//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
     @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
@@ -82,6 +93,7 @@ public class HMCPage {
 
     @FindBy(xpath = "//button[@Class='btn btn-sm yellow filter-submit margin-bottom']")
     public WebElement SearchBoxButton;
+
     //**************MAIN PAGE NAVBAR LOCATELERI*******************
     @FindBy(id = "navHome")
     public WebElement mainPageHomeButton;
@@ -157,6 +169,16 @@ public class HMCPage {
     @FindBy(xpath = "(//a[@href='#'])[3]")
     public WebElement mainPageilkInstagramIkonu;
 
+    public void girisYap() {
+
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+
+        ilkLoginLinki.click();
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        loginButonu.click();
+
+    }
     @FindBy(xpath = "//div[@class='d-flex justify-content-center']")
     public List<WebElement> mainPageServiceLogoWebElementListesi;
 
