@@ -272,5 +272,6 @@ public class HMCPage {
     @FindBy(id = "section-counter")
     public WebElement sectionCounterOtelBilgileriBolumu;
 
+    //
 
 }
