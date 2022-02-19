@@ -2,7 +2,7 @@
 <suite name="us_0005">
     <test name="Test1">
         <classes>
-            <!-- yorum  -->
+            <!-- yorum yazma -->
             <class name="tests.us_0005.TC_001"></class>
             <class name="tests.us_0005.TC_002"></class>
             <class name="tests.us_0005.TC_003"></class>
