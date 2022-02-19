@@ -8,13 +8,14 @@ import pages.HMCPage;
 
 public class TC_01 {
 
+    HMCPage hmcPage =new HMCPage();
     /*  Yönetici olarak anasayfaya gidebilmeli
      **Kullanıcı url yi girer */
 
     @Test
     public void test01(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
+
         hmcPage.anasayfaGiris();
     }
 
@@ -23,7 +24,6 @@ public class TC_01 {
 
     @Test
     public void test02(){
-        HMCPage hmcPage =new HMCPage();
         Assert.assertTrue(hmcPage.ilkLoginLinki.isDisplayed());
     }
 }
