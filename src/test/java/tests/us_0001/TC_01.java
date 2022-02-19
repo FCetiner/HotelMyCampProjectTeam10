@@ -84,6 +84,7 @@ public class TC_01 extends TestBaseRapor {
         softAssert.assertTrue(isAboutPage,"About button is not working");
         softAssert.assertAll();
         extentTest.pass("About button ilgili sayfaya yonlendirme yapmaktadir");
+        //
     }
 
     @Test
