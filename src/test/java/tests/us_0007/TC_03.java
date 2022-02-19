@@ -9,14 +9,16 @@ import pages.HotelRoomsPage;
 
 public class TC_03 {
 
+    HMCPage hmcPage =new HMCPage();
+    HotelRoomsPage roomsPage = new HotelRoomsPage();
     /* Step 1
      **Log-in yapıldıktan sonra "Hotel Management" sekmesinden "Hotel Rooms" sayfasına girilebilmeli ve "List Of Rooms" yazısı görülmeli
      **Kullanıcı url yi girer */
 
     @Test
     public void test01(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
+
         hmcPage.anasayfaGiris();
     }
     /*Step 2
@@ -24,8 +26,7 @@ public class TC_03 {
      */
     @Test
     public void test02(){
-        HMCPage hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
+
         hmcPage.girisYap();
     }
 
@@ -33,9 +34,9 @@ public class TC_03 {
       **"Hotel Management" sekmesinden "Hotelş Rooms" butonuna tıklanır  */
     @Test
     public void test03(){
-        HMCPage hmcPage = new HMCPage();
+
         hmcPage.hotelManagementLinki.click();
-        HotelRoomsPage roomsPage = new HotelRoomsPage();
+
         roomsPage.hotelRoomsLink.click();
          }
 
@@ -44,7 +45,7 @@ public class TC_03 {
      * */
     @Test
     public void test04(){
-        HotelRoomsPage roomsPage=new HotelRoomsPage();
+
         Assert.assertTrue(roomsPage.roomKontrolLink.isDisplayed());
     }
 }
