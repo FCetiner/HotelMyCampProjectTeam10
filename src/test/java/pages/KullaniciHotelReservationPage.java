@@ -60,6 +60,8 @@ public class KullaniciHotelReservationPage {
 
     @FindBy(xpath = "//input[@value='Search']")
     public WebElement searchButton;
+<<<<<<< HEAD
+=======
 
 
     @FindBy(xpath = "(//div[text()='User Data was inserted successfully'])[1]")
@@ -173,4 +175,5 @@ public class KullaniciHotelReservationPage {
     public WebElement profileUrldekiButton;
 
 
+>>>>>>> main
 }
