@@ -1,13 +1,17 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class HMCPage {
-   public HMCPage() {
+import java.util.List;
+
+
+public class HotelListPage {
+    public HotelListPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -22,9 +26,8 @@ public class HMCPage {
     public void girisYap() {
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-
         ilkLoginLinki.click();
-        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
         passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         loginButonu.click();
 
@@ -151,6 +154,22 @@ public class HMCPage {
     public WebElement mainPageilkInstagramIkonu;
 
 
+    @FindBy(xpath = "(//input[@Class='form-control form-filter input-sm'])[3]")
+    public WebElement ListOfHotelsUsername;
+
+    @FindBy(xpath = "//td[text()='mustafa']")
+    public WebElement ListOfHotelsKayitUsername;
+
+    @FindBy(xpath = "//td[text()='hana@gmail.com']")
+    public WebElement ListOfHotelsKayiEmail;
+
+    @FindBy (xpath = "//thead//tr[1]//th")
+    public List<WebElement> headerBirinciSatirDatalar;
+
+
+    }
+
+    //***************Hadi Bey-Murat Bey**************************
 
 
 
@@ -158,7 +177,16 @@ public class HMCPage {
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
