@@ -16,7 +16,7 @@ public class TC_03 extends TestBaseRapor {
     @Test
     public void test(){
         HMCPage hmcPage=new HMCPage();
-        extentTest=extentReports.createTest("Room reservation Bolumu","Room reservation guncelleme yapilabiliyor mu testi");
+        extentTest=extentReports.createTest("Room reservation Testi","Room reservation guncelleme yapilabiliyor mu testi");
         //1-kullanici url'e gider
         hmcPage.anasayfaGiris();
         extentTest.info("Anasayfaya gidildi");

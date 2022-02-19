@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
 import utilities.Driver;
 import utilities.JSUtils;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_11 extends TestBaseRapor {
@@ -17,6 +18,7 @@ public class TC_11 extends TestBaseRapor {
     @BeforeMethod
     public void sayfayaGit(){
         hmcPage.anasayfaGiris();
+        ReusableMethods.waitFor(3);
         JSUtils.scrollIntoVIewJS(hmcPage.mainPageFooter);
     }
 
