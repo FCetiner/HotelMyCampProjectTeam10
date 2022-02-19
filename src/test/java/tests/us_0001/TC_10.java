@@ -18,7 +18,7 @@ public class TC_10 extends TestBaseRapor {
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");
         JSUtils.scrollIntoVIewJS(hmcPage.mainPagesectionInstagram);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         hmcPage.mainPageInstagramFotograflarListesi.stream().forEach(t-> Assert.assertTrue(t.isDisplayed()));
         extentTest.pass("Instagram resimleri gorulmektedir");
 
