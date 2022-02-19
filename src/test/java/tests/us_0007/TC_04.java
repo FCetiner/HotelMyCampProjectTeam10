@@ -81,6 +81,7 @@ public class TC_04 {
                 .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys("2").perform();
 
 
+
         roomsPage.isAvailableButon.click();
 
 
