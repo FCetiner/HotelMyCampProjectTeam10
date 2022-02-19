@@ -6,56 +6,60 @@ import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelListPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.io.IOException;
+
 public class TC_004 extends TestBaseRapor {
-   @Test
-   public void test(){
-       HMCPage hmcPage = new HMCPage();
-       HotelListPage hotelListPage = new HotelListPage();
-Actions actions = new Actions(Driver.getDriver());
-       extentTest = extentReports.createTest("TC_004", "Yönetici olarak yapılan guncellemeyi gorebilmeli");
-       //Hotel anasayfasina gidin
-       extentTest.info("web sitesi başarılıyla açıldı");
+    @Test
+    public void test() throws IOException {
+        HMCPage hmcPage = new HMCPage();
+        HotelListPage hotelListPage = new HotelListPage();
+        Actions actions = new Actions(Driver.getDriver());
+        extentTest = extentReports.createTest("TC_004", "Yönetici olarak yapılan guncellemeyi gorebilmeli");
 
-       // Login butonuna tıklayın
-       extentTest.info("web sitesi başarılıyl");
+        //Hotel anasayfasina gidin
+        extentTest.info("web sitesi başarılıyla açıldı");
 
-       //geçerli bir username girin
-       extentTest.info("geçerli bir username girildi");
+        // Login butonuna tıklayın
+        extentTest.info("web sitesi başarılıyl");
 
-       //geçerli bir password girin
-       extentTest.info("geçerli bir password girildi");
+        //geçerli bir username girin
+        extentTest.info("geçerli bir username girildi");
 
-       //Log in  tusuna basin
-       hmcPage.girisYap();
-       extentTest.pass("Yönetici olarak giriş yapıldı");
+        //geçerli bir password girin
+        extentTest.info("geçerli bir password girildi");
 
-       //Hotel Management menüsüne tıklayın
-       hmcPage.hotelManagementLinki.click();
-       extentTest.pass("Management menüsü tıklandı");
+        //Log in  tusuna basin
+        hmcPage.girisYap();
+        extentTest.pass("Yönetici olarak giriş yapıldı");
 
-       //Hotel List menüsüne tıklayın
-       hmcPage.hotelListLinki.click();
-       extentTest.pass("Hotel List menüsü tıklandı");
+        //Hotel Management menüsüne tıklayın
+        hmcPage.hotelManagementLinki.click();
+        extentTest.pass("Management menüsü tıklandı");
 
-       //IDHotel  arama kutusuna IDHotel  no girin
+        //Hotel List menüsüne tıklayın
+        hmcPage.hotelListLinki.click();
+        extentTest.pass("Hotel List menüsü tıklandı");
+
+        //IDHotel  arama kutusuna IDHotel  no girin
         hotelListPage.searchCodeBox.click();
         extentTest.pass("Code arama kutusuna tıklandı");
-        hotelListPage.searchCodeBox.sendKeys("161803");
-        extentTest.info("Code arama kutusuna 161803 yazıldı");
+        hotelListPage.searchCodeBox.sendKeys(hotelListPage.idString);
+        extentTest.info("Code arama kutusuna" + hotelListPage.idString + "yazıldı");
 
-       //Search buttonu tiklayin
+        //Search buttonu tiklayin
         hotelListPage.searchBoxButton.click();
         extentTest.pass("Search butonu tıklandı");
 
 
-       //Degistirilen Hotel billgilerini kontrol edin
-       Assert.assertTrue(hotelListPage.foundedDetailsElement.isDisplayed());
-       extentTest.pass("Aranan hotel bulundu");
+        //Degistirilen Hotel billgilerini kontrol edin
+        Assert.assertTrue(hotelListPage.foundedDetailsElement.isDisplayed());
+        extentTest.pass("Aranan hotel bulundu");
+        ReusableMethods.getScreenshot("Aranan hotel bulundu");
 
 
-
-   }
+    }
 
 }
