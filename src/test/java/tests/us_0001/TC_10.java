@@ -14,7 +14,7 @@ public class TC_10 extends TestBaseRapor {
     @Test
     public void test(){
         HMCPage hmcPage=new HMCPage();
-        extentTest=extentReports.createTest("TC_10","Instagram resimleri gorunurlugu testi");
+        extentTest=extentReports.createTest("TC10 Instagram resimleri gorunurlugu testi","Instagram resimleri gorunurlugu testi");
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");
         JSUtils.scrollIntoVIewJS(hmcPage.mainPagesectionInstagram);

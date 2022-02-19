@@ -31,7 +31,7 @@ public class TC_04 extends TestBaseRapor{
         //2-Sayfada aşagi gider ve Welcome to Hotel yazisini gorur
         extentTest=extentReports.createTest("TC04 Sosyal Medya hesaplari linkleri testi","Welcome to Hotel Basligi gorunurlugu test edildi");
         extentTest.info("Anasayfaya gidildi");
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         JSUtils.scrollIntoVIewJS(hmcPage.mainPageSayfaOrtasiWelcomToOurHotelYaziElementi);
         softAssert.assertTrue(hmcPage.mainPageSayfaOrtasiWelcomToOurHotelYaziElementi.isDisplayed());
         extentTest.info("Welcome to Hotel yazi elementi goruldu");
