@@ -35,6 +35,7 @@ public class TC_01 extends TestBaseRapor {
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
          hotelListPage.girisYap();
          Driver.closeDriver();
+         hotelListPage.girisYap();
     }
 
     @Test
@@ -42,7 +43,9 @@ public class TC_01 extends TestBaseRapor {
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+
         HotelListPage hotelListPage=new HotelListPage();
+        hotelListPage.girisYap();
         hotelListPage.girisYap();
 
         // Otel Management Linkini Tikla
@@ -66,6 +69,7 @@ public class TC_01 extends TestBaseRapor {
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
        hotelListPage.girisYap();
+        hotelListPage.girisYap();
 
         // Otel Management Linkini Tikla
        hotelListPage.hotelManagementLinki.click();
@@ -118,6 +122,7 @@ Driver.closeDriver();
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+        hotelListPage.girisYap();
         hotelListPage.girisYap();
 
         // Otel Management Linkini Tikla

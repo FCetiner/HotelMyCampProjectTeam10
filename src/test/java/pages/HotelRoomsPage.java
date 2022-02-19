@@ -26,6 +26,60 @@ public class HotelRoomsPage {
     public WebElement roomKontrolLink;
 
 
+<<<<<<< HEAD
+=======
+    @FindBy(xpath = "//select[@id='IDHotel']")
+    public WebElement hotelIdbox ;
+
+    @FindBy(xpath = "//input[@id='Code']")
+    public WebElement codeBox ;
+
+    @FindBy(xpath = "//input[@id='Name']")
+    public WebElement nameBox ;
+
+    @FindBy(xpath = "//input[@id='Code']")
+    public WebElement codeButon ;
+
+    @FindBy(xpath = "//input[@id='Location']")
+    public WebElement locationButon ;
+
+    @FindBy(xpath = "//select[@id='IDGroupRoomType']")
+    public WebElement roomTypeButon ;
+
+    @FindBy(xpath = "//input[@id='MaxAdultCount']")
+    public WebElement maxAdultButon ;
+
+    @FindBy(xpath = "//input[@id='IsAvailable']")
+    public WebElement isAvailableButon ;
+
+    @FindBy(xpath = "//button[@class='btn green']")
+    public WebElement saveButon ;
+
+    @FindBy(xpath = "//button[@id='btnDelete']")
+    public WebElement deleteButon ;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement continueOkButon ;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement errorOkButon ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> main
 
 
 
