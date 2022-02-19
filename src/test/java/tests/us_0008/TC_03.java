@@ -18,5 +18,6 @@ public class TC_03 {
         ReusableMethods.waitFor(3);
         hotelRoomReservationPage.roomReservationsButton.click();
 
+
     }
 }
