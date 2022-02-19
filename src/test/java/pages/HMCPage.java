@@ -1,3 +1,4 @@
+
 package pages;
 
 import jdk.jfr.consumer.RecordedMethod;
@@ -275,3 +276,4 @@ public class HMCPage {
     //
 
 }
+
