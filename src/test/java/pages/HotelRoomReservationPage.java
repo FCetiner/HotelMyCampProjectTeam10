@@ -48,6 +48,9 @@ WebElement homePageLoginButton;
     @FindBy(xpath = "(//span[@class='title'])[3]")
     public WebElement hotelManagementButtonu;
 
+    @FindBy (xpath = "(//span[@class='title'])[2]")
+    public WebElement userManagemetElement;
+
     @FindBy (xpath="/html/body/div[3]/div[1]/div/ul/li[3]/ul/li[2]/ul/li[3]/a")
     public WebElement roomReservationsButton;
 
@@ -99,8 +102,12 @@ WebElement homePageLoginButton;
     @FindBy (xpath = "//button[@id='btnSubmit']")
     public WebElement saveButonu;
 
-
-
-
-
+@FindBy(xpath = "(//button[@class='btn default'])[2]")
+public WebElement baslangicDate;
+@FindBy(xpath = "(//button[@class='btn default'])[3]")
+    public WebElement bitisDate;
+@FindBy (xpath = "@FindBy (//div[@class='bootbox)\n")
+public WebElement saveDogrulama;
+@FindBy (xpath = "//button[@class='btn btn-primary']")
+public WebElement okButton;
 }

@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelRoomReservationPage;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC_03 {
+public class TC_03 extends TestBaseRapor {
     @Test
     public void rezervasyonSayfasıTesti () throws InterruptedException {
         HMCPage hmcPage=new HMCPage();
@@ -17,7 +18,11 @@ public class TC_03 {
         hotelRoomReservationPage.hotelManagementButtonu.click();
         ReusableMethods.waitFor(3);
         hotelRoomReservationPage.roomReservationsButton.click();
+        Assert.assertTrue(hotelRoomReservationPage.addRoomReservationButton.isDisplayed());
 
-
+        extentTest=extentReports.createTest("Reservation sayfasina giris testi","Reservation sayfasina basarili giris yapildi");
+        extentTest.pass("Reservation sayfasina basarili giris yapildi");
+        hmcPage.anasayfaGiris();
+        hmcPage.loginOutElementi.click();
     }
 }

@@ -1,13 +1,14 @@
-package tests.smokTest;
+package tests.smokeTest;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.HMCPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class YoneticiGirisiPozitifTest extends TestBaseRapor {
-
+@Test
     public void yoneticigirisYap() {
         HMCPage hmcPage =new HMCPage();
         extentTest=extentReports.createTest("Pozitif smoke test","Yönetici başarili giriş yapabildi");
@@ -23,6 +24,8 @@ public class YoneticiGirisiPozitifTest extends TestBaseRapor {
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.managerDrapDown.isDisplayed());
         extentTest.pass("Yonetici başarili giriş yapabilmiştir");
+        hmcPage.anasayfaGiris();
+        hmcPage.loginOutElementi.click();
 
 
     }

@@ -1,9 +1,10 @@
-package tests.smokTest;
+package tests.smokeTest;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class YoneticiGirisNegativeTest extends TestBaseRapor {
@@ -23,6 +24,7 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.girisYapilamadiYazisi.isDisplayed());
         extentTest.pass("Yanlis usurname testi pass");
+
     }
     @Test
     public void yanlisPasswordTest(){
@@ -30,7 +32,7 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         extentTest=extentReports.createTest("Negatif smoke test","Yönetici yanliş password ile giriş yapilamadi");
         hmcPage.anasayfaGiris();
         extentTest.info("Url' e giriş yapildi");
-        hmcPage.ilkLoginLinki.click();
+       hmcPage.ilkLoginLinki.click();
         hmcPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
         hmcPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCWrongPassword"));
         hmcPage.loginButonu.click();
@@ -49,5 +51,6 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.girisYapilamadiYazisi.isDisplayed());
         extentTest.pass("Yanlis usurname ve password testi pass");
+        Driver.closeDriver();
     }
 }

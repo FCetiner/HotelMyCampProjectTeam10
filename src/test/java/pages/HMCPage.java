@@ -61,6 +61,10 @@ public class HMCPage {
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
 
+    @FindBy(id = "navLogout")
+    public WebElement loginOutElementi;
+
+
     //xpath ="//li[text()='Username or password is incorrect, please correct them and try again']"
     @FindBy (id = "divMessageResult")
     public WebElement girisYapilamadiYazisi;
