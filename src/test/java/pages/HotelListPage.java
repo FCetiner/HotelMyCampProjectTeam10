@@ -1,5 +1,7 @@
 package pages;
 
+
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -221,4 +223,9 @@ public class HotelListPage {
 
     @FindBy(xpath = "//div[text()='Would you like to continue?']")
     public WebElement deleteAlertTextWebElement;
-        }
+
+
+    Faker faker = new Faker();
+    public String idString=faker.idNumber().invalid();
+}
+

@@ -12,16 +12,18 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-import java.util.Set;
+import java.io.IOException;
+
 
 public class TC_003 extends TestBaseRapor {
     @Test
-    public void test() throws InterruptedException {
+    public void test() throws InterruptedException, IOException {
         HMCPage hmcPage = new HMCPage();
         HotelListPage hotelListPage = new HotelListPage();
         Actions actions = new Actions(Driver.getDriver());
         Faker faker = new Faker();
         extentTest = extentReports.createTest("TC_003", "Yönetici olarak otel bilgilerini güncelleyebilmeli");
+
         //Hotel anasayfasina gidin
         extentTest.info("web sitesi başarılıyla açıldı");
 
@@ -60,14 +62,17 @@ public class TC_003 extends TestBaseRapor {
 
         hotelListPage.codeBox.clear();
         extentTest.info("Code kutusu temizlendi");
+
         actions.click(hotelListPage.codeBox)
 
-                .sendKeys("161803")
+                .sendKeys(hotelListPage.idString)
                 .sendKeys(Keys.TAB)
+
                 //Name kutusuna bir İsim girin
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.DELETE)
                 .sendKeys(faker.name().fullName())
+
                 //Adress kutusuna  Adres girin
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.DELETE)
@@ -77,13 +82,14 @@ public class TC_003 extends TestBaseRapor {
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.DELETE)
                 .sendKeys(faker.phoneNumber().phoneNumber())
+
                 //Mail kutusuna Email Adresi girin
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.DELETE)
                 .sendKeys(faker.internet().emailAddress())
                 .perform();
 
-        extentTest.pass("Code kutusuna 161803 yazıldı");
+        extentTest.pass("Code kutusuna" + hotelListPage.idString + " yazıldı");
         extentTest.info("Name kutusuna geçiş yapıldı ve temizlendi");
         extentTest.pass("Name kutusuna isim yazıldı");
         extentTest.info("Adress kutusuna geçiş yapıldı ve temizlendi");
@@ -99,14 +105,17 @@ public class TC_003 extends TestBaseRapor {
         select.selectByValue("2");
         extentTest.info("Group dropdowna geçiş yapıldı");
         extentTest.pass("Hotel Type1 seçildi");
+
         //Save butonuna tıklayın
         hotelListPage.saveButton.click();
         extentTest.pass("Save butonuna tıklandı");
+
         // Ok butonuna tiklayiniz
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         Assert.assertTrue(hotelListPage.okButton.isDisplayed());
         hotelListPage.okButton.click();
         extentTest.pass("OK butonuna tıklandı");
+        ReusableMethods.getScreenshot("OK butonuna tıklandı");
 
 
     }
