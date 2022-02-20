@@ -2,56 +2,40 @@ package tests.us_0004;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HMCPage;
-import utilities.ConfigReader;
+import pages.HotelListPage;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 
-public class TC_01 {
-    /*
-     * TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
-
-     * TC_002 Yönetici Olarak
-     * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-
-     * TC_003 Yönetici olarak
-     * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-     * Otel Management Linkini Tikla ,  Otel List Linkini Tikla, Add Otel Linkini Tikla,
-     * Create Hotel "Create Hotel" yazini gorunuru oldugunu test et.
-
-     * TC_004 Yönetici olarak
-     * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-     * Otel Management Linkini Tikla ,  Otel List Linkini Tikla, Add Otel Linkini Tikla,
-     * Create Hotel formunu daki Code,Name,Adrress, Phone,Email,IDGroup ilgili alanlari doldur
-     * Save Buttunan basıp kaydet.
-
-     *TC_005 Yönetici olarak
-     * Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-     * Otel Management Linkini Tikla ,  Otel List Linkini Tikla,
-     * (LIST OF HOTELS tablosunda, Code,Name,Adrress, Phone,Email yazdigin verilerden herhangi birini gir.
-     * Search Buttununa tikla
-     * Kayit olmadugunu test et....
-     */
-
+public class TC_01 extends TestBaseRapor {
 
     @Test
     public void test01() {
+
         //TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
-        Driver.getDriver().get("https://www.hotelmycamp.com/");
+        HotelListPage hotelListPage = new HotelListPage();
+        extentTest = extentReports.createTest("test01", "Anasayfa Giris Testi");
+        hotelListPage.anasayfaGiris();
+        extentTest.pass("Anasayfa Giris Basarli");
+        //Driver.getDriver().get("https://www.hotelmycamp.com/");
+        Driver.closeDriver();
     }
+
+
 
     @Test
     public void test02() { // TC_002
 
-        HMCPage hmcPage = new HMCPage();
+        HotelListPage hotelListPage=new HotelListPage();
         //Yönetici Olarak giris yap
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-         hmcPage.girisYap();
+         hotelListPage.girisYap();
+         Driver.closeDriver();
+         hotelListPage.girisYap();
     }
 
     @Test
@@ -59,45 +43,49 @@ public class TC_01 {
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-        HMCPage hmcPage = new HMCPage();
-        hmcPage.girisYap();
+
+        HotelListPage hotelListPage=new HotelListPage();
+        hotelListPage.girisYap();
+        hotelListPage.girisYap();
 
         // Otel Management Linkini Tikla
-        hmcPage.hotelManagementLinki.click();
+        hotelListPage.hotelManagementLinki.click();
 
         //Otel List Linkini Tikla,
-        hmcPage.hotelListLinki.click();
+        hotelListPage.hotelListLinki.click();
 
         //Add Otel Linkini Tikla
-        hmcPage.addHotelLinki.click();
+        hotelListPage.addHotelLinki.click();
 
         // Create Hotel "Create Hotel" yazini gorunuru oldugunu test et.
-        Assert.assertTrue(hmcPage.CreatHotelYazi.isDisplayed());
+        Assert.assertTrue(hotelListPage.CreatHotelYazi.isDisplayed());
+        Driver.closeDriver();
     }
 
     @Test
     public void test04() { // TC_004
-        HMCPage hmcPage = new HMCPage();
+        HotelListPage hotelListPage=new HotelListPage();
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-        hmcPage.girisYap();
+       hotelListPage.girisYap();
+        hotelListPage.girisYap();
 
         // Otel Management Linkini Tikla
-        hmcPage.hotelManagementLinki.click();
+       hotelListPage.hotelManagementLinki.click();
 
         //Otel List Linkini Tikla,
-        hmcPage.hotelListLinki.click();
+        hotelListPage.hotelListLinki.click();
 
         //Add Otel Linkini Tikla
-        hmcPage.addHotelLinki.click();
+       hotelListPage.addHotelLinki.click();
 
         // Create Hotel formunu daki Code,Name,Adrress, Phone,Email,IDGroup ilgili alanlari doldur
         Actions actions = new Actions(Driver.getDriver());
         Faker faker = new Faker();
         String email = faker.internet().emailAddress();
 
-        actions.click(hmcPage.AddHotelCode)
+        actions.click(hotelListPage.AddHotelCode)
 
                 // Code textbox doldurunuz
                 .sendKeys(faker.address().zipCode())
@@ -115,39 +103,48 @@ public class TC_01 {
                 .sendKeys(faker.internet().emailAddress())
                 .sendKeys(Keys.TAB).sendKeys(Keys.PAGE_DOWN).perform();
         // Hotel tipi seciniz
-        Select select = new Select(hmcPage.IDGroupkutusu);
+        Select select = new Select(hotelListPage.IDGroupkutusu);
         select.selectByVisibleText("Hotel Type1");
 
         // Save Buttunan basıp kaydet.
-        hmcPage.AddHotelSaveButton.click();
+        hotelListPage.AddHotelSaveButton.click();
 
         //Otel başarıyla eklendi Ok buttununa basınız.
-        hmcPage.AddHotelOkButton.click();
-
+        hotelListPage.AddHotelOkButton.click();
+Driver.closeDriver();
 
     }
 
     @Test
     public void test05() { // TC_005
-        HMCPage hmcPage = new HMCPage();
+        HotelListPage hotelListPage=new HotelListPage();
 
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-        hmcPage.girisYap();
+        hotelListPage.girisYap();
+        hotelListPage.girisYap();
 
         // Otel Management Linkini Tikla
-        hmcPage.hotelManagementLinki.click();
+        hotelListPage.hotelManagementLinki.click();
 
         // Otel List Linkini Tikla,
-        hmcPage.hotelListLinki.click();
+        hotelListPage.hotelListLinki.click();
 
         // (LIST OF HOTELS tablosunda, Code,Name,Adrress, Phone,Email yazdigin verilerden herhangi birini gir.
-        hmcPage.EmailtextBox.sendKeys("hana@gmail.com"+Keys.ENTER);
+        hotelListPage.ListOfHotelsUsername.sendKeys("mustafa"+Keys.ENTER);
+        hotelListPage.EmailtextBox.sendKeys("hana@gmail.com"+Keys.ENTER);
         // Search Buttununa tikla
-        hmcPage.SearchBoxButton.click();
+        hotelListPage.SearchBoxButton.click();
 
-        // Kayit olmadugunu test et....
+        // mustafa ve hana@gmail.com kayit oldugunu
+        // Kayit olmadugunu test et.
+
+
+
+
+
+
 
 
 
