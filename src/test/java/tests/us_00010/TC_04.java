@@ -65,7 +65,7 @@ public class TC_04 extends TestBaseRapor {
   actions.sendKeys(Keys.PAGE_DOWN)
           .sendKeys(Keys.PAGE_DOWN)
           .perform();
-
+ReusableMethods.waitFor(5);
 
   hmcPage10.checkin_date.click();
 
