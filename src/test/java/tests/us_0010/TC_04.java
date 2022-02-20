@@ -1,12 +1,10 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import com.github.javafaker.Faker;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.KullaniciHotelReservationPage;
