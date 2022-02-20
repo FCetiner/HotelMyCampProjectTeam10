@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelListPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
@@ -16,12 +17,15 @@ import java.io.IOException;
 
 
 public class TC_003 extends TestBaseRapor {
+    HMCPage hmcPage = new HMCPage();
+    HotelListPage hotelListPage = new HotelListPage();
+    Actions actions = new Actions(Driver.getDriver());
+    Faker faker = new Faker();
+
+
     @Test
     public void test() throws InterruptedException, IOException {
-        HMCPage hmcPage = new HMCPage();
-        HotelListPage hotelListPage = new HotelListPage();
-        Actions actions = new Actions(Driver.getDriver());
-        Faker faker = new Faker();
+
         extentTest = extentReports.createTest("TC_003", "Yönetici olarak otel bilgilerini güncelleyebilmeli");
 
         //Hotel anasayfasina gidin
@@ -100,7 +104,6 @@ public class TC_003 extends TestBaseRapor {
         extentTest.pass("Email kutusuna email yazıldı");
 
         //Group dropdown butondan "Hotel Type1" seçin
-
         Select select = new Select(hotelListPage.groupIdBox);
         select.selectByValue("2");
         extentTest.info("Group dropdowna geçiş yapıldı");
@@ -117,6 +120,9 @@ public class TC_003 extends TestBaseRapor {
         extentTest.pass("OK butonuna tıklandı");
         ReusableMethods.getScreenshot("OK butonuna tıklandı");
 
+
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+        hotelListPage.logOut.click();
 
     }
 }

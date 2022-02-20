@@ -1,10 +1,11 @@
 package tests.us_0005;
 
-import org.openqa.selenium.interactions.Actions;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelListPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
@@ -12,11 +13,13 @@ import utilities.TestBaseRapor;
 import java.io.IOException;
 
 public class TC_004 extends TestBaseRapor {
+
+    HMCPage hmcPage = new HMCPage();
+    HotelListPage hotelListPage = new HotelListPage();
+
     @Test
     public void test() throws IOException {
-        HMCPage hmcPage = new HMCPage();
-        HotelListPage hotelListPage = new HotelListPage();
-        Actions actions = new Actions(Driver.getDriver());
+
         extentTest = extentReports.createTest("TC_004", "Yönetici olarak yapılan guncellemeyi gorebilmeli");
 
         //Hotel anasayfasina gidin
@@ -59,6 +62,10 @@ public class TC_004 extends TestBaseRapor {
         extentTest.pass("Aranan hotel bulundu");
         ReusableMethods.getScreenshot("Aranan hotel bulundu");
 
+
+
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+        hotelListPage.logOut.click();
 
     }
 

@@ -1,6 +1,5 @@
 package tests.us_0005;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
@@ -13,11 +12,13 @@ import java.io.IOException;
 
 
 public class TC_005 extends TestBaseRapor {
+
+    HMCPage hmcPage = new HMCPage();
+    HotelListPage hotelListPage = new HotelListPage();
+
     @Test
     public void test() throws IOException {
-        HMCPage hmcPage = new HMCPage();
-        HotelListPage hotelListPage = new HotelListPage();
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
         extentTest = extentReports.createTest("TC_005", "Yönetici olarak yapılan kayıtları silebilmeli");
 
         //Hotel anasayfasina gidin
@@ -70,7 +71,6 @@ public class TC_005 extends TestBaseRapor {
         extentTest.pass("Sayfa güncellendi");
         extentTest.pass("Silinen hotelin bulunmadığı doğrulandı");
         ReusableMethods.getScreenshot("Silinen hotelin bulunmadığı doğrulandı");
-
-
+        Driver.closeDriver();
     }
 }

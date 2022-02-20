@@ -4,17 +4,22 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelListPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
 public class TC_002 extends TestBaseRapor {
+    HMCPage hmcPage = new HMCPage();
+    HotelListPage hotelListPage = new HotelListPage();
+
     @Test
     public void test() throws IOException {
-        HMCPage hmcPage = new HMCPage();
-        HotelListPage hotelListPage = new HotelListPage();
+
         extentTest = extentReports.createTest("TC_002", "Yönetici olarak otel kayıt formuna ulaşabilmeli");
+
         //Hotel anasayfasina gidin
         extentTest.info("web sitesi başarılıyla açıldı");
 
@@ -47,5 +52,8 @@ public class TC_002 extends TestBaseRapor {
         Assert.assertTrue(hotelListPage.editTextElement.isDisplayed());
         extentTest.pass(" Edit Hotel başlığının görünürlüğünü doğurlandı");
         ReusableMethods.getScreenshot("Edit Hotel başlığının görünürlüğünü doğurlandı");
+
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+        hotelListPage.logOut.click();
     }
 }

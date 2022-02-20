@@ -4,18 +4,19 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelListPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.io.IOException;
 
 public class TC_001 extends TestBaseRapor {
+    HMCPage hmcPage = new HMCPage();
+    HotelListPage hotelListPage = new HotelListPage();
 
     @Test
     public void test() throws IOException {
-
-        HMCPage hmcPage = new HMCPage();
-        HotelListPage hotelListPage = new HotelListPage();
 
         extentTest = extentReports.createTest("TC_001", "Hotel anasayfasina gidilebilmeli ve Yönetici olarak giriş yapabilmeli");
         //Hotel anasayfasina gidin
@@ -41,6 +42,9 @@ public class TC_001 extends TestBaseRapor {
 
         ReusableMethods.getScreenshot("Giris yapildi");
         extentTest.pass("driver başarılıyla kapatıldı");
+
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+        hotelListPage.logOut.click();
 
 
     }
