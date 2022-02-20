@@ -1,3 +1,4 @@
+
 package pages;
 
 import jdk.jfr.consumer.RecordedMethod;
@@ -272,5 +273,7 @@ public class HMCPage {
     @FindBy(id = "section-counter")
     public WebElement sectionCounterOtelBilgileriBolumu;
 
+    //
 
 }
+

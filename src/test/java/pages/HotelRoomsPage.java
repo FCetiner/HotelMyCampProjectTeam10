@@ -26,6 +26,8 @@ public class HotelRoomsPage {
     public WebElement roomKontrolLink;
 
 
+<<<<<<< HEAD
+=======
     @FindBy(xpath = "//select[@id='IDHotel']")
     public WebElement hotelIdbox ;
 
@@ -85,6 +87,7 @@ public class HotelRoomsPage {
 
 
 
+>>>>>>> main
 
 
 
