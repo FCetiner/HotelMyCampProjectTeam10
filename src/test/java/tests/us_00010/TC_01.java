@@ -10,9 +10,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import org.testng.asserts.SoftAssert;
 import pages.KullaniciHotelReservationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ public class TC_01 extends TestBaseRapor {
  "User Data was inserted successfully" texti test edilmeli, "OK" buttonuna tiklanmali */
     @Test
     public void testCase01() {
-        extentTest=extentReports.createTest("TC_01","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
+        extentTest=extentReports.createTest("kullanici yeni kayit olusturma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
 
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
@@ -71,13 +73,15 @@ public class TC_01 extends TestBaseRapor {
         hmcPage10.createSaveButton.click();
         extentTest.info("Kullanici yeni hesap olusturdu");
         extentTest.info("Create account'ta STATE buttonuna yazilamadi");
-
-        Assert.assertTrue(hmcPage10.createSaveTexti.isDisplayed());
+        SoftAssert softAssert=new SoftAssert();
+        softAssert.assertTrue(hmcPage10.createSaveTexti.isDisplayed());
         extentTest.pass("\"User Data was inserted successfully\" yazisi gorulemesi gerekirken gorulemedi.");
 
         hmcPage10.createOkButton.click();
-      //  hmcPage10.createOkButton.click();
+        hmcPage10.createOkButton.click();
         extentTest.info("Yeni hesap olusturturduktan sonra OK buttonu 2 kere tiklanildi");
+      //  Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
+softAssert.assertAll();
     }
 }

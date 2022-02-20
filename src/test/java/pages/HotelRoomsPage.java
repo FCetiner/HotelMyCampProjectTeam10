@@ -26,6 +26,8 @@ public class HotelRoomsPage {
     public WebElement roomKontrolLink;
 
 
+<<<<<<< HEAD
+=======
     @FindBy(xpath = "//select[@id='IDHotel']")
     public WebElement hotelIdbox ;
 
@@ -62,6 +64,14 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement errorOkButon ;
 
+    @FindBy (xpath="//span[@class='username username-hide-on-mobile']")
+    public WebElement managerDropDownButton;
+
+    @FindBy(xpath = "//i[@class='icon-key']")
+    public WebElement logOutButton;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement okButton;
 
 
 
@@ -77,6 +87,7 @@ public class HotelRoomsPage {
 
 
 
+>>>>>>> main
 
 
 
