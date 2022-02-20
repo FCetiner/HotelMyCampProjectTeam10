@@ -43,9 +43,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void testCase01() {
         extentTest=extentReports.createTest("kullanici yeni kayit olusturma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
-
-
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         extentTest.info("Url gidildi");
 
         hmcPage10.logInButtonu.click();
@@ -79,8 +77,8 @@ public class TC_01 extends TestBaseRapor {
 
         hmcPage10.createOkButton.click();
         hmcPage10.createOkButton.click();
-        extentTest.info("Yeni hesap olusturturduktan sonra OK buttonu 2 kere tiklanildi");
-      //  Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+        extentTest.info("Yeni hesap olusturturduktan sonra OK buttonu 2 kere tiklanildi.bir kez tiklanmiyor");
+       Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
 softAssert.assertAll();
     }
