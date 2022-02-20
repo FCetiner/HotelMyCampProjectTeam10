@@ -9,22 +9,22 @@ import utilities.JSUtils;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-public class TC_07 {
+public class TC_07 extends TestBaseRapor{
     //TC_07-Happy Guests, Rooms, Staffs,Destination bolumu gorunur olmali
-    //  extends TestBaseRapor
+
 
     @Test
     public void test(){
         //1-kullanici url'e gider
         HMCPage hmcPage=new HMCPage();
+        extentTest=extentReports.createTest("TC07 Baslik Gorunurlugu Testleri","Happy Guests, Rooms, Staffs,Destination elementlerinin gorunurlugu test edildi");
         hmcPage.anasayfaGiris();
-    //    extentTest.info("anasayfaya gidildi");
-    //    extentTest=extentReports.createTest("TC_07","Happy Guests, Rooms, Staffs,Destination elementlerinin gorunurlugu test edildi");
+        ReusableMethods.waitFor(4);
+        extentTest.info("anasayfaya gidildi");
         JSUtils.scrollIntoVIewJS(hmcPage.sectionCounterOtelBilgileriBolumu);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         hmcPage.mainPageHappyGuestsBasliklarListesi.stream().forEach(t-> Assert.assertTrue(t.isDisplayed()));
-        Driver.closeDriver();
-        //    extentTest.pass("Tum otel basliklari gorunur oldugu test edildi");
+        extentTest.pass("Tum otel basliklari gorunur oldugu test edildi");
     }
 
 }

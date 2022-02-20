@@ -1,5 +1,6 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,12 +10,14 @@ import utilities.Driver;
 
 import java.util.List;
 
+
 public class HotelRoomReservationPage {
     public HotelRoomReservationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
 //***************Gokhan Bey-Hacer Hanim**************************
+
     @FindBy(id = "navLogon")
     WebElement homePageLoginButton;
     @FindBy(id="UserName")
@@ -38,12 +41,8 @@ public class HotelRoomReservationPage {
         loginPageLoginButton.click();
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Admin"));
 
-
-
-
-
-
     }
+
 
 
 
@@ -128,6 +127,7 @@ public class HotelRoomReservationPage {
 
     @FindBy(xpath = "//input[@id='AdultAmount']")
     public WebElement adultAmount;
+
 
 
 
