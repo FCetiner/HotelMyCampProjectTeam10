@@ -16,7 +16,7 @@ public class TC_02 extends TestBaseRapor {
     @Test
     public void testCase02(){
 
-        extentTest=extentReports.createTest("testCase02","\"Rooms\" tiklayarak, \"Advanced Search\"'de katagorileri secerek \"search\" yapabilmeli");
+        extentTest=extentReports.createTest("kullanici giris yapma ve oda arama","\"Rooms\" tiklayarak, \"Advanced Search\"'de katagorileri secerek \"search\" yapabilmeli");
         KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
 
         Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));

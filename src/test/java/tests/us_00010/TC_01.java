@@ -42,7 +42,7 @@ public class TC_01 extends TestBaseRapor {
  "User Data was inserted successfully" texti test edilmeli, "OK" buttonuna tiklanmali */
     @Test
     public void testCase01() {
-        extentTest=extentReports.createTest("kayit olma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
+        extentTest=extentReports.createTest("kullanici yeni kayit olusturma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
 
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));

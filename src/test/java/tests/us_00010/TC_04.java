@@ -38,7 +38,7 @@ public class TC_04 extends TestBaseRapor {
  @Test
  public void testCase04(){
 
-  extentTest=extentReports.createTest("testCase04","\"Book this room\" tiklayarak,\"Reservation was made successfully\" yazisi test edilerek,\"OK\" tiklayabilmeli");
+  extentTest=extentReports.createTest("kullanıcı kalacagi tarihlerde rezerve yapar","\"Book this room\" tiklayarak,\"Reservation was made successfully\" yazisi test edilerek,\"OK\" tiklayabilmeli");
   KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
 
   Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));

@@ -15,7 +15,7 @@ public class TC_03 extends TestBaseRapor {
     @Test
     public void testCase03() throws InterruptedException {
 
-        extentTest=extentReports.createTest("testCase03","Cikan oda secenekleri tiklayabilmeli ve \"Categories\" text altindaki sonuclari tiklayabilmeli");
+        extentTest=extentReports.createTest("odalara bakma ve gorunurlugunu test etme","Cikan oda secenekleri tiklayabilmeli ve \"Categories\" text altindaki sonuclari tiklayabilmeli");
         KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
 
         Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));

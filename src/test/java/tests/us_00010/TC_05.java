@@ -21,7 +21,7 @@ public class TC_05 extends TestBaseRapor {
         //"User Menu" altindaki "Reservations" buttonuna tiklanir
         //"Reservations" sayfasindaki reserve edilen oda kullanici sayfasinda gorulur
 
-        extentTest=extentReports.createTest("testCase05","\"User menu\"den \"Reservations\" butonunu tiklayarak, otel reservasyonlarini gorebilmeli.");
+        extentTest=extentReports.createTest("kullanicinin yaptıgi rezervasyonu gorme ","\"User menu\"den \"Reservations\" butonunu tiklayarak, otel reservasyonlarini gorebilmeli.");
         KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
