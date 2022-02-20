@@ -165,6 +165,11 @@ public class KullaniciHotelReservationPage {
     @FindBy(xpath = "//li[.='Profile']")
     public WebElement profileUrldekiButton;
 
+    @FindBy(xpath = "//li[@id='navLogout']")
+    public WebElement logOut;
+
+
+
 
 
 }

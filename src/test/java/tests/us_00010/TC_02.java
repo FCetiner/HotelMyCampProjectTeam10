@@ -5,33 +5,25 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import pages.KullaniciHotelReservationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
-    KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
+
     @Test
-    public void testCase02() throws InterruptedException {
-        /*
-"http://www.hotelmycamp.com/ url'e gidilir
-"Rooms" buttonu tiklanır
-"Advanced Search" textin altindaki boxlar birer tab inilerek doldurulmali
-"Check in Date" boxuna tiklanmali ve otelde kalis sure araligini belirlemeli,
-"Select Room Type" boxuna tiklanmali, type secilmeli
-"Select Adult Count" boxuna tiklanmali, kisi sayi secilmeli
-"0 Children" boxuna tiklanmali, cocuk sayisi secilmeli
-"Location" boxuna tiklanmali ve bos birakmali
-"Search" buttonuna tiklanmali
-"Rooms" sayfasina gittigi test edilir   */
-        extentTest=extentReports.createTest("TC_02","\"Rooms\" tiklayarak, \"Advanced Search\"'de katagorileri secerek \"search\" yapabilmeli");
+    public void testCase02(){
+
+        extentTest=extentReports.createTest("testCase02","\"Rooms\" tiklayarak, \"Advanced Search\"'de katagorileri secerek \"search\" yapabilmeli");
+        KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
+
         Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
         extentTest.info("Url gidildi");
 
-       hmcPage10.logInButtonu.click();
+        hmcPage10.logInButtonu.click();
         extentTest.info("\"Log in\" buttonuna tiklanildi");
-
         hmcPage10.usernameBox.sendKeys("Firuze"+ Keys.ENTER);
         hmcPage10.passwordBox.sendKeys("12345Aa."+ Keys.ENTER);
         hmcPage10.ikinciLoginButonu.click();

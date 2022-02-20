@@ -14,26 +14,26 @@ import java.io.IOException;
 
 public class TC_05 extends TestBaseRapor {
     @Test
-    public void testCase5() throws IOException {
+    public void testCase05() throws InterruptedException {
         //http://www.hotelmycamp.com/ url'e gidilir
         //"Log in" butonuna tıklar
         //"Username" ve "password" bilgileri girilir ve "Log in" linkine tiklanir
         //"User Menu" altindaki "Reservations" buttonuna tiklanir
         //"Reservations" sayfasindaki reserve edilen oda kullanici sayfasinda gorulur
 
-        extentTest=extentReports.createTest("TC_05","\"User menu\"den \"Reservations\" butonunu tiklayarak, otel reservasyonlarini gorebilmeli.");
+        extentTest=extentReports.createTest("testCase05","\"User menu\"den \"Reservations\" butonunu tiklayarak, otel reservasyonlarini gorebilmeli.");
         KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         extentTest.info("Url gidilir");
 
-    /*   hmcPage10.logInButtonu.click();
+        hmcPage10.logInButtonu.click();
         extentTest.info("\"Log in\" butonuna tıklar");
 
         hmcPage10.usernameBox.sendKeys("Firuze"+ Keys.ENTER);
         hmcPage10.passwordBox.sendKeys("12345Aa."+ Keys.ENTER);
         hmcPage10.ikinciLoginButonu.click();
-        extentTest.info("\"Username\" ve \"password\" bilgileri girilir ve \"Log in\" linkine tiklanir");*/
+        extentTest.info("\"Username\" ve \"password\" bilgileri girilir ve \"Log in\" linkine tiklanir");
 
         hmcPage10.profileUrldekiButton.click();
 
@@ -59,5 +59,4 @@ public class TC_05 extends TestBaseRapor {
         extentTest.pass("\"Reservations\" sayfasindaki reserve edilen oda kullanici sayfasinda gorulur");
         extentTest.info("Reserve edilen ayni oda, ayni tarihte baska kullanici tarafindan da reserve edilebiliniyor");
     }
-
 }
