@@ -92,7 +92,7 @@ public class TC_04 {
     //14-Price kismina  price degeri girin
     @Test
     public void test14() {
-        actions.click(roomsPage.priceBox).sendKeys(Keys.CLEAR).sendKeys(faker.commerce().price()).perform();
+        actions.click(roomsPage.priceBox).sendKeys(Keys.CLEAR).sendKeys("200").perform();
         ReusableMethods.waitFor(2);
     }
     //15-Room Type dropDown dan oda tipini belirleyin
