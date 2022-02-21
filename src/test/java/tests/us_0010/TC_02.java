@@ -1,4 +1,4 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -35,20 +35,30 @@ public class TC_02 extends TestBaseRapor {
         hmcPage10.checkInDateTextBox.click();
         hmcPage10.checkInDateTextBox.sendKeys("08/15/2021"+ Keys.ENTER);
         hmcPage10.checOutDateTextBox.click();
+        extentTest.info("Giris tarihi girildi");
+
         hmcPage10.checOutDateTextBox.sendKeys("08/29/2021"+ Keys.ENTER);
+        extentTest.info("Cikis tarihi girildi");
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView(true);", hmcPage10.searchButton);
+
         Select objSelect = new Select(hmcPage10.selectRoomTextBox);
         objSelect.selectByIndex(6);
+
         Select objSelect1 = new Select(hmcPage10.selectAdultTextBox);
         objSelect1.selectByIndex(5);
+
         Select objSelect2 = new Select(hmcPage10.selectChildrenTextBox);
         objSelect2.selectByIndex(5);
-        extentTest.info("\"Advanced Search\" textin altindaki boxlar dolduruldu");
 
+        extentTest.info("\"Advanced Search\" textin altindaki boxlar dolduruldu");
         hmcPage10.searchButton.click();
+        extentTest.info("Arama  buttonuna tiklanildi");
 
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Rooms"));
         extentTest.pass("\"Rooms\" sayfasina gidildigi test edildi");
+
+        Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
+        hmcPage10.logOut.click();
     }
 }

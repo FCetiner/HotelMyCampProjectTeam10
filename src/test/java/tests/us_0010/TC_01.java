@@ -1,24 +1,15 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import org.testng.asserts.SoftAssert;
 import pages.KullaniciHotelReservationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TC_01 extends TestBaseRapor {
     KullaniciHotelReservationPage hmcPage10 = new KullaniciHotelReservationPage();
@@ -43,9 +34,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void testCase01() {
         extentTest=extentReports.createTest("kullanici yeni kayit olusturma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
-
-
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         extentTest.info("Url gidildi");
 
         hmcPage10.logInButtonu.click();
@@ -67,7 +56,7 @@ public class TC_01 extends TestBaseRapor {
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB).sendKeys(faker.address().fullAddress())
                 .sendKeys(Keys.TAB).sendKeys(faker.job().position())
-                .sendKeys(Keys.TAB).sendKeys("15.05.1996")
+                .sendKeys(Keys.TAB).sendKeys("15.05.1994")
                 .sendKeys(Keys.TAB)
                 .perform();
         hmcPage10.createSaveButton.click();
@@ -75,12 +64,12 @@ public class TC_01 extends TestBaseRapor {
         extentTest.info("Create account'ta STATE buttonuna yazilamadi");
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(hmcPage10.createSaveTexti.isDisplayed());
-        extentTest.pass("\"User Data was inserted successfully\" yazisi gorulemesi gerekirken gorulemedi.");
+        extentTest.pass("\"User Data was inserted successfully\" yazisi gorulemesi gerekirken gorulemedi...");
 
         hmcPage10.createOkButton.click();
         hmcPage10.createOkButton.click();
-        extentTest.info("Yeni hesap olusturturduktan sonra OK buttonu 2 kere tiklanildi");
-      //  Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+        extentTest.info("Yeni hesap olusturturduktan sonra OK buttonu 2 kere tiklanildi.bir kez tiklanmiyor");
+       Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
 softAssert.assertAll();
     }
