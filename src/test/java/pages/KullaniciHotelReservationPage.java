@@ -61,6 +61,14 @@ public class KullaniciHotelReservationPage {
     @FindBy(xpath = "//input[@value='Search']")
     public WebElement searchButton;
 
+
+
+    @FindBy(xpath = "(//div[text()='User Data was inserted successfully'])[1]")
+    public WebElement guncelSaveMetni;
+
+    @FindBy(xpath = "//button[text()='OK']")
+    public WebElement successOkButonu;
+
     @FindBy(xpath = "(//a[@class='btn-custom'])[8]")
     public WebElement bookNow8;
 
@@ -140,11 +148,35 @@ public class KullaniciHotelReservationPage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement rezervasyonOkButonu;
 
-    @FindBy(xpath = "//button[@type='button']")
-    public WebElement rezervasyonKapatmaButonu;
+    @FindBy(xpath = "//a[.='Reservations']")
+    public WebElement reservationsButton;
 
-    @FindBy(xpath = "(//div[@class='row'])[2]")
-    public WebElement bosAlan;
+    @FindBy(xpath = "//h1[@class='mb-4 bread']")
+    public WebElement reservationsTextStr;
+
+    @FindBy(xpath = "(//tbody//tr//th)[5]")
+    public WebElement approved;
+
+
+    @FindBy(xpath = "(//tbody//tr//th)[4]")
+    public WebElement endDate;
+
+    @FindBy(xpath = "(//tbody//tr//th)[3]")
+    public WebElement startDate;
+
+    @FindBy(xpath = "(//tbody//tr//th)[2]")
+    public WebElement price;
+
+    @FindBy(xpath = "(//tbody//tr//th)[1]")
+    public WebElement room;
+
+    @FindBy(xpath = "//li[.='Profile']")
+    public WebElement profileUrldekiButton;
+
+    @FindBy(xpath = "//li[@id='navLogout']")
+    public WebElement logOut;
+
+
 
 
 

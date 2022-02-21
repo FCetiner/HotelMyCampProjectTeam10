@@ -4,29 +4,27 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
+import utilities.Driver;
 import utilities.JSUtils;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-public class TC_07 {
+public class TC_07 extends TestBaseRapor{
     //TC_07-Happy Guests, Rooms, Staffs,Destination bolumu gorunur olmali
-    //extends TestBaseRapor
+
 
     @Test
     public void test(){
         //1-kullanici url'e gider
         HMCPage hmcPage=new HMCPage();
+        extentTest=extentReports.createTest("TC07 Baslik Gorunurlugu Testleri","Happy Guests, Rooms, Staffs,Destination elementlerinin gorunurlugu test edildi");
         hmcPage.anasayfaGiris();
-    //    extentTest.info("anasayfaya gidildi");
-    //    extentTest=extentReports.createTest("TC_07","Happy Guests, Rooms, Staffs,Destination elementlerinin gorunurlugu test edildi");
-        JSUtils.scrollIntoVIewJS(hmcPage.mainPageOtelBilgileriBasliklari1);
-        SoftAssert softAssert=new SoftAssert();
-        softAssert.assertTrue(hmcPage.mainPageOtelBilgileriBasliklari1.isDisplayed());
-        softAssert.assertTrue(hmcPage.mainPageOtelBilgileriBasliklari2.isDisplayed());
-        softAssert.assertTrue(hmcPage.mainPageOtelBilgileriBasliklari3.isDisplayed());
-        softAssert.assertTrue(hmcPage.mainPageOtelBilgileriBasliklari4.isDisplayed());
-
-        softAssert.assertAll();
-        //    extentTest.pass("Tum otel basliklari gorunur oldugu test edildi");
+        ReusableMethods.waitFor(4);
+        extentTest.info("anasayfaya gidildi");
+        JSUtils.scrollIntoVIewJS(hmcPage.sectionCounterOtelBilgileriBolumu);
+        ReusableMethods.waitFor(5);
+        hmcPage.mainPageHappyGuestsBasliklarListesi.stream().forEach(t-> Assert.assertTrue(t.isDisplayed()));
+        extentTest.pass("Tum otel basliklari gorunur oldugu test edildi");
     }
 
 }

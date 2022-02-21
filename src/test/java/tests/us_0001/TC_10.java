@@ -7,17 +7,20 @@ import pages.HMCPage;
 import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC_10 {
+public class TC_10 extends TestBaseRapor {
     //TC10-Instagram fotograflari gorunebilir olmali
     @Test
     public void test(){
         HMCPage hmcPage=new HMCPage();
+        extentTest=extentReports.createTest("TC10 Instagram resimleri gorunurlugu testi","Instagram resimleri gorunurlugu testi");
         hmcPage.anasayfaGiris();
+        extentTest.info("anasayfaya gidildi");
         JSUtils.scrollIntoVIewJS(hmcPage.mainPagesectionInstagram);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         hmcPage.mainPageInstagramFotograflarListesi.stream().forEach(t-> Assert.assertTrue(t.isDisplayed()));
-        Driver.closeDriver();
+        extentTest.pass("Instagram resimleri gorulmektedir");
 
     }
 }

@@ -1,5 +1,6 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,15 +10,16 @@ import utilities.Driver;
 
 import java.util.List;
 
+
 public class HotelRoomReservationPage {
     public HotelRoomReservationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
 //***************Gokhan Bey-Hacer Hanim**************************
-@FindBy(id = "navLogon")
-WebElement homePageLoginButton;
 
+    @FindBy(id = "navLogon")
+    WebElement homePageLoginButton;
     @FindBy(id="UserName")
     WebElement usernameTextBox;
     @FindBy(id="Password")
@@ -25,21 +27,72 @@ WebElement homePageLoginButton;
     @FindBy(id="btnSubmit")
     WebElement loginPageLoginButton;
 
+    @FindBy(xpath = "//span[text()='Hotel Management']")
+    WebElement hotelManagementText;
+    @FindBy(xpath = "((//ul[@class='sub-menu'])[3]/li)[3]")
+    WebElement roomReservationTextBox;
 
 
-    public void HMCLogin(){
-        HotelRoomReservationPage elements=new HotelRoomReservationPage();
+    public void HMCLogin() throws InterruptedException {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        elements.homePageLoginButton.click();
-        elements.usernameTextBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
-        elements.passwordTextBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
-        elements.loginPageLoginButton.click();
+        homePageLoginButton.click();
+        usernameTextBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        passwordTextBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        loginPageLoginButton.click();
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Admin"));
 
+    }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void hotelManagementTextKontrol(){
+        hotelManagementText.click();
+        roomReservationTextBox.click();
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("List Of Reservations"));
     }
 
     @FindBy(xpath = "(//span[@class='title'])[1]")
@@ -96,6 +149,7 @@ WebElement homePageLoginButton;
     @FindBy(xpath = "//input[@id='Approved']")
     public WebElement approvedElementi;
 
+
     @FindBy (xpath = "//input[@id='IsPaid']")
     public WebElement isPaidEmenti;
 
@@ -110,4 +164,5 @@ public WebElement baslangicDate;
 public WebElement saveDogrulama;
 @FindBy (xpath = "//button[@class='btn btn-primary']")
 public WebElement okButton;
+
 }
