@@ -136,7 +136,7 @@ public class TC_06 {
     //22-Sayfanın altındaki ok tuşuna basılarak sayfanın basina gidin
     @Test
     public void test21() {
-        roomsPage.managerDropDownButton.click();
+        roomsPage.arrowUpButton.click();
         ReusableMethods.waitFor(2);
     }
     //23-"Create Hotelroom" yazısının görünürlüğünu test edin

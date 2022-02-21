@@ -66,8 +66,11 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement errorOkButon ;
 
-    @FindBy (xpath="//span[@class='username username-hide-on-mobile']")
+    @FindBy (xpath="//i[@class='dropdown dropdown-user']")
     public WebElement managerDropDownButton;
+
+    @FindBy (xpath="//i[@class='icon-arrow-up']")
+    public WebElement arrowUpButton;
 
     @FindBy(xpath = "//i[@class='icon-key']")
     public WebElement logOutButton;

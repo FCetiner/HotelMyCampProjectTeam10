@@ -30,7 +30,7 @@ public class TC_01 extends TestBaseRapor {
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(4);
         hmcPage.ilkLoginLinki.click();
-        extentTest.info("\"Log in\" buttonuna tiklanildi");
+        extentTest.info("\"Log in\" linkine tiklanildi");
 
     }
 
