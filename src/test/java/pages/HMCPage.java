@@ -24,7 +24,7 @@ public class HMCPage {
 
 
 
-    //***************Ferhat-Funda Hanim-Çagri Bey**************************
+    //*****************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
     public void anasayfaGiris() {
