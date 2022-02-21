@@ -22,20 +22,23 @@ public class TC_01 extends TestBaseRapor {
         hotelListPage.anasayfaGiris();
         extentTest.pass("Anasayfa Giris Basarli");
         //Driver.getDriver().get("https://www.hotelmycamp.com/");
-        Driver.closeDriver();
+
     }
 
 
 
     @Test
     public void test02() { // TC_002
-
         HotelListPage hotelListPage=new HotelListPage();
         //Yönetici Olarak giris yap
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-         hotelListPage.girisYap();
-         Driver.closeDriver();
-         hotelListPage.girisYap();
+        extentTest = extentReports.createTest("test02", "Anasayfa Giris Testi");
+        hotelListPage.girisYap();
+        extentTest.pass("Anasayfa Giris Basarli");
+        hotelListPage.anasayfaGiris();
+        hotelListPage.loginOutElementi.click();
+
+
     }
 
     @Test
@@ -43,42 +46,54 @@ public class TC_01 extends TestBaseRapor {
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-
         HotelListPage hotelListPage=new HotelListPage();
+        extentTest = extentReports.createTest("test03", "Anasayfa Giris Testi");
         hotelListPage.girisYap();
-        hotelListPage.girisYap();
+        extentTest.pass("Anasayfa Giris Basarli");
 
         // Otel Management Linkini Tikla
         hotelListPage.hotelManagementLinki.click();
+        extentTest.pass("Hotel Managent Linkini Tiklanmasi Basarili");
 
         //Otel List Linkini Tikla,
         hotelListPage.hotelListLinki.click();
+        extentTest.pass("Hotel List Linkini Tiklanmasi Basarili");
 
         //Add Otel Linkini Tikla
         hotelListPage.addHotelLinki.click();
+        extentTest.pass("Add Hotel Linki Tiklanmasi Basarili");
 
         // Create Hotel "Create Hotel" yazini gorunuru oldugunu test et.
         Assert.assertTrue(hotelListPage.CreatHotelYazi.isDisplayed());
-        Driver.closeDriver();
+        System.out.println("Create Hotel Kayit Formu==>"+hotelListPage.CreatHotelYazi.getText());
+        extentTest.pass("Create Hotel yazini gorunuru Basarili");
+        hotelListPage.anasayfaGiris();
+        hotelListPage.loginOutElementi.click();
+
     }
 
     @Test
-    public void test04() { // TC_004
+    public void test04() throws InterruptedException { // TC_004
         HotelListPage hotelListPage=new HotelListPage();
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-       hotelListPage.girisYap();
+        extentTest = extentReports.createTest("test04", "Anasayfa Giris Testi");
         hotelListPage.girisYap();
+        extentTest.pass("Anasayfa Giris Basarli");
+
 
         // Otel Management Linkini Tikla
        hotelListPage.hotelManagementLinki.click();
+       extentTest.pass("Hotel Management Linki tiklanmasi Basarili");
 
         //Otel List Linkini Tikla,
         hotelListPage.hotelListLinki.click();
+        extentTest.pass("Hotel List Linkini Tiklanmasi Basarili");
 
         //Add Otel Linkini Tikla
        hotelListPage.addHotelLinki.click();
+       extentTest.pass("Add Hotel Linki Tiklanmasi Basarili");
 
         // Create Hotel formunu daki Code,Name,Adrress, Phone,Email,IDGroup ilgili alanlari doldur
         Actions actions = new Actions(Driver.getDriver());
@@ -105,13 +120,22 @@ public class TC_01 extends TestBaseRapor {
         // Hotel tipi seciniz
         Select select = new Select(hotelListPage.IDGroupkutusu);
         select.selectByVisibleText("Hotel Type1");
+        Assert.assertTrue(hotelListPage.kayitOlunanOtelTipi.isDisplayed());
+        System.out.println("Kayit Olunan Kayit Tipi==>"+ hotelListPage.kayitOlunanOtelTipi.getText());
+
 
         // Save Buttunan basıp kaydet.
+        Thread.sleep(3000);
         hotelListPage.AddHotelSaveButton.click();
 
         //Otel başarıyla eklendi Ok buttununa basınız.
+        Thread.sleep(3000);
         hotelListPage.AddHotelOkButton.click();
-Driver.closeDriver();
+
+        hotelListPage.anasayfaGiris();
+        hotelListPage.loginOutElementi.click();
+
+
 
     }
 
@@ -122,23 +146,37 @@ Driver.closeDriver();
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
+        extentTest = extentReports.createTest("test05", "Anasayfa Giris Testi");
         hotelListPage.girisYap();
-        hotelListPage.girisYap();
+
 
         // Otel Management Linkini Tikla
         hotelListPage.hotelManagementLinki.click();
+        extentTest.pass("Hotel Management Linki Tiklanmasi Basarili");
 
         // Otel List Linkini Tikla,
         hotelListPage.hotelListLinki.click();
+        extentTest.pass("Hotel List Linkini Tiklanmasi Basarili");
 
         // (LIST OF HOTELS tablosunda, Code,Name,Adrress, Phone,Email yazdigin verilerden herhangi birini gir.
-        hotelListPage.ListOfHotelsUsername.sendKeys("mustafa"+Keys.ENTER);
-        hotelListPage.EmailtextBox.sendKeys("hana@gmail.com"+Keys.ENTER);
+        hotelListPage.ListOfHotelsUsername.sendKeys("aslan"+Keys.ENTER);
+        extentTest.pass("ListOf Hotel UserName İsim Yazilmasi Basarili");
+
+        hotelListPage.EmailtextBox.sendKeys("aslan@gmail.com"+Keys.ENTER);
+        extentTest.pass("TextBox Email adresi yazilmasi Basarili");
+
         // Search Buttununa tikla
         hotelListPage.SearchBoxButton.click();
+        extentTest.pass("Search BoxButton Tiklanmasi Basarili");
 
-        // mustafa ve hana@gmail.com kayit oldugunu
-        // Kayit olmadugunu test et.
+        // aslan ve aslan@gmail.com kayit oldugunu test et.
+        Assert.assertTrue(hotelListPage.kayitUserName.isDisplayed());
+        System.out.println("Kayit olunan İsim==>"+hotelListPage.kayitUserName.getText());
+        extentTest.pass("kayit olunan isim kayit olundugu test edildi");
+
+        Assert.assertTrue(hotelListPage.kayitEmail.isDisplayed());
+        System.out.println("Kayit oluna Email Adresi==>"+hotelListPage.kayitEmail.getText());
+        extentTest.pass("kayit olunan email adresi ile kayit olundugu test edildi");
 
 
 

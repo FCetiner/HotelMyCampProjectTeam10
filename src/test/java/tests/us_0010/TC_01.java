@@ -3,10 +3,7 @@ package tests.us_0010;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-<<<<<<< HEAD
-import org.testng.Assert;
-=======
->>>>>>> main
+
 import org.testng.annotations.Test;
 
 import org.testng.asserts.SoftAssert;

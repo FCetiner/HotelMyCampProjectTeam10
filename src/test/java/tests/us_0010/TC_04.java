@@ -6,17 +6,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-<<<<<<< HEAD
-import pages.KullaniciHotelReservationPage;
-import utilities.ConfigReader;
-import utilities.Driver;
-=======
+
 import org.testng.asserts.SoftAssert;
 import pages.KullaniciHotelReservationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+
 import utilities.ReusableMethods;
->>>>>>> main
 import utilities.TestBaseRapor;
 //ANa sayfaya gidilir
 //kullanıcı loginbutonuna tıklar
@@ -40,7 +36,7 @@ import utilities.TestBaseRapor;
 public class TC_04 extends TestBaseRapor {
 
 
-<<<<<<< HEAD
+
     @Test
     public void testCase4() throws InterruptedException {
         extentTest=extentReports.createTest("TC_04","\"Book this room\" tiklayarak,\"Reservation was made successfully\" yazisi test edilerek,\"OK\" tiklayabilmeli");
@@ -128,8 +124,8 @@ public class TC_04 extends TestBaseRapor {
 
         Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
     }
-}
-=======
+
+
  @Test
  public void testCase04(){
 
@@ -217,4 +213,4 @@ public class TC_04 extends TestBaseRapor {
    softAssert.assertAll();
  }}
 
->>>>>>> main
+
