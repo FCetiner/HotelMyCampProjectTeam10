@@ -2,11 +2,11 @@
 <suite name="hotel team10 us_00010">
     <test name="us_00010">
         <classes>
-            <class name="tests.us_00010.TC_01"></class>
-            <class name="tests.us_00010.TC_02"></class>
-            <class name="tests.us_00010.TC_03"></class>
-            <class name="tests.us_00010.TC_04"></class>
-            <class name="tests.us_00010.TC_05"></class>
+            <class name="tests.us_0010.TC_01"></class>
+            <class name="tests.us_0010.TC_02"></class>
+            <class name="tests.us_0010.TC_03"></class>
+            <class name="tests.us_0010.TC_04"></class>
+            <class name="tests.us_0010.TC_05"></class>
         </classes>
     </test>
 </suite>

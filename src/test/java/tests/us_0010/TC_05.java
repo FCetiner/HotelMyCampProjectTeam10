@@ -1,4 +1,4 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import pages.KullaniciHotelReservationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.io.IOException;
