@@ -20,7 +20,9 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         extentTest.info("Url' e giriş yapildi");
         hmcPage.ilkLoginLinki.click();
         hmcPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCWrongUsername"));
+        extentTest.info("Dogru username girisi yapildi");
         hmcPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        extentTest.info("Yanlis password girisi yapildi");
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.girisYapilamadiYazisi.isDisplayed());
         extentTest.pass("Yanlis usurname testi pass");
@@ -32,9 +34,11 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         extentTest=extentReports.createTest("Negatif smoke test","Yönetici yanliş password ile giriş yapilamadi");
         hmcPage.anasayfaGiris();
         extentTest.info("Url' e giriş yapildi");
-       hmcPage.ilkLoginLinki.click();
+        hmcPage.ilkLoginLinki.click();
         hmcPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        extentTest.info("Yanlis username girisi yapildi");
         hmcPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCWrongPassword"));
+        extentTest.info("Dogru password girisi yapildi");
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.girisYapilamadiYazisi.isDisplayed());
         extentTest.pass("Yanlis password testi pass");
@@ -47,7 +51,9 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         extentTest.info("Url' e giriş yapildi");
         hmcPage.ilkLoginLinki.click();
         hmcPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCWrongUsername"));
+        extentTest.info("Yanlis username girisi yapildi");
         hmcPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCWrongPassword"));
+        extentTest.info("Yanlis password girisi yapildi");
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.girisYapilamadiYazisi.isDisplayed());
         extentTest.pass("Yanlis usurname ve password testi pass");
