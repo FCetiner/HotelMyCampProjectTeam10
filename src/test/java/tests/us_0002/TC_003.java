@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
 import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_003 extends TestBaseRapor {
@@ -47,5 +48,6 @@ public class TC_003 extends TestBaseRapor {
         extentTest = extentReports.createTest("Yonetici girisi yanlıs username ve password testi","Yonetici yanlis usename ve password ile giris yapamadi");
         extentTest.pass("Yanlis username ve password ile giris yapilamadi");
         softAssert.assertAll();
+        Driver.closeDriver();
     }
 }
