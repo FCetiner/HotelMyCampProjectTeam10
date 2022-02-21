@@ -1,6 +1,5 @@
 package tests.us_0001;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -18,8 +17,9 @@ public class TC_11 extends TestBaseRapor {
     @BeforeMethod
     public void sayfayaGit(){
         hmcPage.anasayfaGiris();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(5);
         JSUtils.scrollIntoVIewJS(hmcPage.mainPageFooter);
+        ReusableMethods.waitFor(5);
     }
 
     @Test
@@ -163,6 +163,7 @@ public class TC_11 extends TestBaseRapor {
         softAssert.assertTrue(actualUrl.contains("instagram"),"link ilgili sayfaya yonlendirmemektedir");
         softAssert.assertAll();
         extentTest.pass("instagram linki calismaktadir");
+        Driver.closeDriver();
     }
 
 }
