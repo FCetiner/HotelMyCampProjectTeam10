@@ -27,6 +27,70 @@ public class HotelRoomsPage {
 
 
 
+    @FindBy(xpath = "//select[@id='IDHotel']")
+    public WebElement hotelIdbox ;
+
+    @FindBy(xpath = "//input[@id='Code']")
+    public WebElement codeBox ;
+
+    @FindBy(xpath = "//input[@id='Name']")
+    public WebElement nameBox ;
+
+    @FindBy(xpath = "//textarea[@dir='ltr']")
+    public WebElement descriptionBox ;
+
+    @FindBy(xpath = "//input[@id='Price' ]")
+    public WebElement priceBox ;
+
+    @FindBy(xpath = "//input[@id='Location']")
+    public WebElement locationButon ;
+
+    @FindBy(xpath = "//select[@id='IDGroupRoomType']")
+    public WebElement roomTypeButon ;
+
+    @FindBy(xpath = "//input[@id='MaxAdultCount']")
+    public WebElement maxAdultButon ;
+
+    @FindBy(xpath = "//input[@id='IsAvailable']")
+    public WebElement isAvailableButon ;
+
+    @FindBy(xpath = "//button[@id='btnSubmit']")
+    public WebElement saveButon ;
+
+    @FindBy(xpath = "//button[@id='btnDelete']")
+    public WebElement deleteButon ;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement continueOkButon ;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement errorOkButon ;
+
+    @FindBy (xpath="//span[@class='username username-hide-on-mobile']")
+    public WebElement managerDropDownButton;
+
+    @FindBy(xpath = "//i[@class='icon-key']")
+    public WebElement logOutButton;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement okButton;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

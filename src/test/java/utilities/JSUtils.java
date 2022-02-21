@@ -71,7 +71,7 @@ public class JSUtils {
         jse.executeScript(command);
     }
 
-    public void elementiGoreneKadarKaydirVeTikla(WebElement element){
+    public static void elementiGoreneKadarKaydirVeTikla(WebElement element){
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView()",element);
         jse.executeScript("arguments[0].click();", element);

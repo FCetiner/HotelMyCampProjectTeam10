@@ -10,7 +10,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
-public class Driver {
+public class  Driver {
     private static WebDriver driver;
 
     private Driver(){
