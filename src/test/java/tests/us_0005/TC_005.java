@@ -1,7 +1,5 @@
 package tests.us_0005;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
@@ -11,16 +9,18 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.io.IOException;
-import java.util.Set;
+
 
 public class TC_005 extends TestBaseRapor {
+
+    HMCPage hmcPage = new HMCPage();
+    HotelListPage hotelListPage = new HotelListPage();
+
     @Test
     public void test() throws IOException {
-        HMCPage hmcPage = new HMCPage();
-        HotelListPage hotelListPage = new HotelListPage();
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
         extentTest = extentReports.createTest("TC_005", "Yönetici olarak yapılan kayıtları silebilmeli");
-        //Actions actions = new Actions(Driver.getDriver());
+
         //Hotel anasayfasina gidin
         extentTest.info("web sitesi başarılıyla açıldı");
 
@@ -53,7 +53,7 @@ public class TC_005 extends TestBaseRapor {
         ReusableMethods.switchToWindow("Admin - Edit Hotel");
         extentTest.pass("Driver, 'Admin - Edit Hotel' sayfasına başarıyla geçiş yaptı");
         hotelListPage.deleteButtonWebElement.click();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         extentTest.pass("Delete butonu tıklandı");
 
         //"Would you like to continue?" yazısının görünürlüğünü kontrol et
@@ -69,10 +69,8 @@ public class TC_005 extends TestBaseRapor {
         extentTest.pass("Driver,'Admin - List Of Hotels' başlıklı sayfasına başarıyla geçiş yaptı");
         Driver.getDriver().navigate().refresh();
         extentTest.pass("Sayfa güncellendi");
-        extentTest.pass("Silinen hotel bulunmadığı doğrulandı");
-
-
-
-
+        extentTest.pass("Silinen hotelin bulunmadığı doğrulandı");
+        ReusableMethods.getScreenshot("Silinen hotelin bulunmadığı doğrulandı");
+        Driver.closeDriver();
     }
 }
