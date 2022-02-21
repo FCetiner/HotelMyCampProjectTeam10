@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TEAM10_US_0008">
+    <test name="Yonetici rezervasyon testi">
+        <packages>
+            <package name="tests.us_0008"></package>
+        </packages>
+    </test>
+</suite>

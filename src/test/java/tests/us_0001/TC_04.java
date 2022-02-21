@@ -83,7 +83,9 @@ public class TC_04 extends TestBaseRapor{
         softAssert.assertTrue(actualUrl.contains(expectedWord),"instagram sayfasina gidilmedi");
         softAssert.assertAll();
         extentTest.pass("Instagram linki calisiyor");
+        Driver.closeDriver();
     }
 
+ 
 
 }

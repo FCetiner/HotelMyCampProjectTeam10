@@ -227,5 +227,22 @@ public class HotelListPage {
 
     Faker faker = new Faker();
     public String idString=faker.idNumber().invalid();
+
+    @FindBy(xpath = "//a[.='Log out']")
+    public WebElement logOut;
+
+
+    @FindBy(id = "navLogout")
+    public WebElement loginOutElementi;
+
+    @FindBy(xpath = "//*[@id=\"IDGroup\"]/option[3]")
+    public WebElement kayitOlunanOtelTipi;
+
+    @FindBy(xpath = "//*[@id=\"datatable_ajax\"]/tbody/tr/td[3]")
+    public WebElement kayitUserName;
+
+    @FindBy(xpath = "//*[@id=\"datatable_ajax\"]/tbody/tr/td[6]")
+    public WebElement kayitEmail;
+
 }
 

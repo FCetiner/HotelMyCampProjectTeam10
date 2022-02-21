@@ -2,7 +2,7 @@
 <suite name="hotel team10 us_00010">
     <test name="US00010">
         <packages>
-            <package name="tests.us_00010"></package>
+            <package name="tests.us_0010"></package>
         </packages>
     </test>
 </suite>

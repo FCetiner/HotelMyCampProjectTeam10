@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TEAM10_US_0002">
+    <test name="Yonetici giris testi">
+        <packages>
+            <package name="tests.us_0002"></package>
+        </packages>
+    </test>
+</suite>
