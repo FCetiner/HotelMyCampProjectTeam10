@@ -227,5 +227,12 @@ public class HotelListPage {
 
     Faker faker = new Faker();
     public String idString=faker.idNumber().invalid();
+
+    @FindBy(xpath = "//a[.='Log out']")
+    public WebElement logOut;
+
+
+
+
 }
 
