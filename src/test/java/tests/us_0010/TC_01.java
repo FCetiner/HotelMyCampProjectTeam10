@@ -1,4 +1,4 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
@@ -75,7 +75,7 @@ public class TC_01 extends TestBaseRapor {
         extentTest.info("Create account'ta STATE buttonuna yazilamadi");
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(hmcPage10.createSaveTexti.isDisplayed());
-        extentTest.pass("\"User Data was inserted successfully\" yazisi gorulemesi gerekirken gorulemedi.");
+        extentTest.pass("\"User Data was inserted successfully\" yazisi gorulemesi gerekirken gorulemedi...");
 
         hmcPage10.createOkButton.click();
         hmcPage10.createOkButton.click();

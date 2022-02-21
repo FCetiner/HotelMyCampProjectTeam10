@@ -1,4 +1,4 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import com.github.javafaker.Faker;
 import org.checkerframework.checker.units.qual.C;

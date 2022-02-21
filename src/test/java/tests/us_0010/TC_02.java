@@ -1,4 +1,4 @@
-package tests.us_00010;
+package tests.us_0010;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
