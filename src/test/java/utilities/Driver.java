@@ -53,9 +53,9 @@ public class  Driver {
         return driver;
     }
     public static void closeDriver(){
-        if(driver!=null) {
-            driver.quit();
-            driver=null;        //bir sonraki kullanimda null degeri ile baslamasi icin null atadik
+       if(driver!=null) {
+            // driver.quit();
+           // driver=null;        //bir sonraki kullanimda null degeri ile baslamasi icin null atadik
+       }
         }
-}
 }

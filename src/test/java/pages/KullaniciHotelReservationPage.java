@@ -17,8 +17,6 @@ public class KullaniciHotelReservationPage {
     @FindBy(xpath = "//input[@id='UserName']")
     public WebElement createUsername;
 
-
-
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement createSaveButton;
 
@@ -60,9 +58,6 @@ public class KullaniciHotelReservationPage {
 
     @FindBy(xpath = "//input[@value='Search']")
     public WebElement searchButton;
-<<<<<<< HEAD
-=======
-
 
     @FindBy(xpath = "(//div[text()='User Data was inserted successfully'])[1]")
     public WebElement guncelSaveMetni;
@@ -175,5 +170,5 @@ public class KullaniciHotelReservationPage {
     public WebElement profileUrldekiButton;
 
 
->>>>>>> main
 }
+

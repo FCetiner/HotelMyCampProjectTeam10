@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +11,7 @@ import java.util.List;
 
 public class HotelListPage {
     public HotelListPage() {
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -21,18 +21,15 @@ public class HotelListPage {
     }
 
     public void girisYap() {
-
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         ilkLoginLinki.click();
-        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUserName"));
+        usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
         passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         loginButonu.click();
 
     }
 
-
-    //Yönetici Giriş yap methodu olusturulacak
-    //Kullanici Giriş yao methodu oluşturulacak
+        //Kullanici Giriş yao methodu oluşturulacak
 
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement ilkLoginLinki;
@@ -154,29 +151,17 @@ public class HotelListPage {
     @FindBy(xpath = "(//input[@Class='form-control form-filter input-sm'])[3]")
     public WebElement ListOfHotelsUsername;
 
-    @FindBy(xpath = "//td[text()='mustafa']")
-    public WebElement ListOfHotelsKayitUsername;
-
-    @FindBy(xpath = "//td[text()='hana@gmail.com']")
-    public WebElement ListOfHotelsKayiEmail;
-
-    @FindBy (xpath = "//thead//tr[1]//th")
+        @FindBy (xpath = "//thead//tr[1]//th")
     public List<WebElement> headerBirinciSatirDatalar;
 
+    @FindBy(xpath = "//*[@id=\"datatable_ajax\"]/tbody/tr/td[3]")
+    public WebElement kayitUserName;
 
+    @FindBy(xpath = "//*[@id=\"datatable_ajax\"]/tbody/tr/td[6]")
+    public WebElement kayitEmail;
 
-
-
-    //***************Hadi Bey-Murat Bey**************************
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[@id=\"IDGroup\"]/option[3]")
+    public WebElement kayitOlunanOtelTipi;
 
 
     /***************Hadi Bey-Murat Bey*******************/
@@ -221,4 +206,8 @@ public class HotelListPage {
 
     @FindBy(xpath = "//div[text()='Would you like to continue?']")
     public WebElement deleteAlertTextWebElement;
-        }
+
+    @FindBy(id = "navLogout")
+    public WebElement loginOutElementi;
+
+}

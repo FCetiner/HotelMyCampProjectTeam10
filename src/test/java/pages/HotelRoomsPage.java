@@ -26,9 +26,7 @@ public class HotelRoomsPage {
     public WebElement roomKontrolLink;
 
 
-<<<<<<< HEAD
-=======
-    @FindBy(xpath = "//select[@id='IDHotel']")
+   @FindBy(xpath = "//select[@id='IDHotel']")
     public WebElement hotelIdbox ;
 
     @FindBy(xpath = "//input[@id='Code']")
@@ -63,37 +61,6 @@ public class HotelRoomsPage {
 
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement errorOkButon ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> main
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
