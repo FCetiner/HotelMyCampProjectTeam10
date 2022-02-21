@@ -1,26 +1,27 @@
 package tests.us_0002;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
+import utilities.TestBaseRapor;
 
-public class TC_001 {
-    //1-Yönetici olarak url' e gider
-    //2-Yönetici anasayfadaki HOTELMYCAMP webelementini görür
-    //3-Yönetici anasayfadaki home webelementini görür
-    //4-Yönetici anasayfadaki romms webelementini görür
-    //5-Yönetici anasayfadaki restaurant webelementini görür
-    //6-Yönetici anasayfadaki about webelementini görür
-    //7-Yönetici anasayfadaki blog webelementini görür
-    //8-Yönetici anasayfadaki contact webelementini görür
-    //9-Yönetici anasayfadaki login in webelementini görür
-HMCPage hmcPage =new HMCPage();
+public class TC_001 extends TestBaseRapor {
+
     @Test
-    public void test(){
-       hmcPage.anasayfaGiris();
+    public void anasayfaTesti(){
+
+        HMCPage hmcpage=new HMCPage();
+        hmcpage.anasayfaGiris();
+        Assert.assertTrue(hmcpage.hotelMyCampYazisi.isDisplayed());
+        extentTest=extentReports.createTest("Anasayfa giris testi","Basarili giris yapilabildi");
+        extentTest.pass("Anasayfaya basarili giris yapılabildi");
+
+        for (int i = 0; i < hmcpage.anasayfadakiWebElementler.size(); i++) {
+            Assert.assertTrue(hmcpage.anasayfadakiWebElementler.get(i).isDisplayed());
+        }
+        Assert.assertTrue(hmcpage.ilkLoginLinki.isDisplayed());
+        extentTest.pass("Anasayfada ki web elementler gorundu");
+
     }
-    @FindBy (xpath = "(//a[@class='nav-link'])[7]")
-    public WebElement anasayfaLogin;
 
 }
