@@ -101,6 +101,9 @@ public class HotelRoomReservationPage {
     @FindBy(xpath = "(//span[@class='title'])[3]")
     public WebElement hotelManagementButtonu;
 
+    @FindBy (xpath = "(//span[@class='title'])[2]")
+    public WebElement userManagemetElement;
+
     @FindBy (xpath="/html/body/div[3]/div[1]/div/ul/li[3]/ul/li[2]/ul/li[3]/a")
     public WebElement roomReservationsButton;
 
@@ -128,12 +131,38 @@ public class HotelRoomReservationPage {
     @FindBy(xpath = "//input[@id='AdultAmount']")
     public WebElement adultAmount;
 
+    @FindBy (xpath = "//input[@id='ChildrenAmount']")
+    public WebElement childrenAmount;
+
+    @FindBy (xpath = "//input[@id='ContactNameSurname']")
+    public WebElement contactNameSurname;
+
+    @FindBy (xpath = "//input[@id='ContactPhone']")
+    public WebElement contactPhone;
+
+    @FindBy (xpath = "//input[@id='ContactEmail']")
+    public WebElement contactEmail;
+
+    @FindBy (xpath = "//input[@id='Notes']")
+    public WebElement notes;
+
+    @FindBy(xpath = "//input[@id='Approved']")
+    public WebElement approvedElementi;
 
 
+    @FindBy (xpath = "//input[@id='IsPaid']")
+    public WebElement isPaidEmenti;
 
+    @FindBy (xpath = "//button[@id='btnSubmit']")
+    public WebElement saveButonu;
 
-
-
-
+@FindBy(xpath = "(//button[@class='btn default'])[2]")
+public WebElement baslangicDate;
+@FindBy(xpath = "(//button[@class='btn default'])[3]")
+    public WebElement bitisDate;
+@FindBy (xpath = "@FindBy (//div[@class='bootbox)\n")
+public WebElement saveDogrulama;
+@FindBy (xpath = "//button[@class='btn btn-primary']")
+public WebElement okButton;
 
 }

@@ -17,7 +17,8 @@ public class TC_03 extends TestBaseRapor {
     HMCPage hmcPage =new HMCPage();
     HotelRoomsPage roomsPage = new HotelRoomsPage();
     /* Step 1
-     **Log-in yapıldıktan sonra "Hotel Management" sekmesinden "Hotel Rooms" sayfasına girilebilmeli ve "List Of Rooms" yazısı görülmeli
+     **Log-in yapıldıktan sonra "Hotel Management" sekmesinden "Hotel Rooms" sayfasına girilebilmeli
+     * ve "List Of Rooms" yazısı görülmeli
      **Kullanıcı url yi girer */
 
     @Test
@@ -34,6 +35,9 @@ public class TC_03 extends TestBaseRapor {
      */
     @Test
     public void test02(){
+            HMCPage hmcPage =new HMCPage();
+        SoftAssert softAssert=new SoftAssert();
+        softAssert.assertTrue(hmcPage.hotelManagementLinki.isDisplayed());
 
         extentTest=extentReports.createTest("TC_03_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.girisYap();
