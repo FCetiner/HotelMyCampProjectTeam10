@@ -73,7 +73,7 @@ public class TC_01 extends TestBaseRapor {
           // "User Data was inserted successfully" texti test edilmeli, "OK" buttonuna tiklanmali
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertFalse(hmcPage10mhmt.createSaveTexti.isDisplayed());
-        extentTest.pass("\"User Data was inserted successfully\" text'i gozlenmesi gerekirken gorulemedi...");
+
 
         hmcPage10mhmt.createOkButton.click();
         hmcPage10mhmt.createOkButton.click();
@@ -81,5 +81,10 @@ public class TC_01 extends TestBaseRapor {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
         softAssert.assertAll();
+
+        extentTest.pass("\"User Data was inserted successfully\" text'i gozlenmesi gerekirken gorulemedi...");
+
+        Driver.closeDriver();
+
     }
 }
