@@ -10,7 +10,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
-public class Driver {
+public class  Driver {
     private static WebDriver driver;
 
     private Driver(){
@@ -54,8 +54,12 @@ public class Driver {
     }
     public static void closeDriver(){
         if(driver!=null) {
+
+            driver.close();
+
             driver.quit();
+
             driver=null;        //bir sonraki kullanimda null degeri ile baslamasi icin null atadik
         }
-}
+    }
 }
