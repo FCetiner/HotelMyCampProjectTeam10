@@ -3,7 +3,6 @@ package tests.us_0001;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
-import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {

@@ -1,10 +1,8 @@
 package tests.us_0001;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
-import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;

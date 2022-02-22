@@ -3,7 +3,6 @@ package tests.us_0007;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
 import pages.HotelRoomsPage;
 import utilities.Driver;

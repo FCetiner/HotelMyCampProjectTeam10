@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelListPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 
@@ -155,6 +156,7 @@ public class TC_01 extends TestBaseRapor {
         hotelListPage.hotelManagementLinki.click();
         extentTest.pass("Hotel Management Linki Tiklanmasi Basarili");
 
+        ReusableMethods.waitFor(3);
         // Otel List Linkini Tikla,
         hotelListPage.hotelListLinki.click();
         extentTest.pass("Hotel List Linkini Tiklanmasi Basarili");

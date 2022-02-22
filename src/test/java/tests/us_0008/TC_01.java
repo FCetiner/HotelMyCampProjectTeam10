@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.HMCPage;
 import utilities.TestBaseRapor;
 
-public class TC_01  extends TestBaseRapor{
+public class TC_01 extends TestBaseRapor{
     HMCPage hmcPage=new HMCPage();
 
     @Test

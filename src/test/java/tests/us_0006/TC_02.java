@@ -1,13 +1,8 @@
 package tests.us_0006;
 
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
-import pages.HotelListPage;
-import pages.HotelRoomsPage;
 import utilities.ConfigReader;
-import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
