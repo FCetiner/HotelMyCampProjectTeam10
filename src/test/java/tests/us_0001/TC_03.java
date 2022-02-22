@@ -12,10 +12,10 @@ import utilities.TestBaseRapor;
 public class TC_03 extends TestBaseRapor {
     //TC_03-Kullanıcı, CHECK-IN DATE, CHECK-OUT DATE, ROOM, CUSTOMER elementlerini update edebilmeli ve
     //Check Availability  butonunu tiklayabilmeli"
-
+    HMCPage hmcPage=new HMCPage();
     @Test
     public void test(){
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
         extentTest=extentReports.createTest("Room reservation Testi","Room reservation guncelleme yapilabiliyor mu testi");
         //1-kullanici url'e gider
         hmcPage.anasayfaGiris();
@@ -40,7 +40,6 @@ public class TC_03 extends TestBaseRapor {
         String actualTitle=Driver.getDriver().getTitle();
         Assert.assertEquals(actualTitle,expectedTitle);
         extentTest.pass("Rooms sayfasina yonlendrime yapildi");
-        Driver.closeDriver();
     }
 
 }

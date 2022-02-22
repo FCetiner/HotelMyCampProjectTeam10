@@ -33,6 +33,7 @@ public class TC_002 extends TestBaseRapor {
         extentTest.info("geçerli bir password girildi");
 
         //Log in  tusuna basin
+        hotelListPage.anasayfaGiris();
         hmcPage.girisYap();
         extentTest.pass("Yönetici olarak giriş yapıldı");
 

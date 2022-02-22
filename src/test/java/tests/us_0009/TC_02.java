@@ -12,13 +12,15 @@ public class TC_02 extends TestBaseRapor {
     4- Yönetici login butonuna basar.
     5- Title'in Admin yazisi icerdigini gorur.
 */
+
+    HotelRoomReservationPage elements=new HotelRoomReservationPage();
     @Test
     public void test() throws InterruptedException {
 
         extentTest=extentReports.createTest("Login Testi","Login testi yapildi.");
         extentTest.info("Anasayfaya gidildi");
 
-        HotelRoomReservationPage elements=new HotelRoomReservationPage();
+        elements=new HotelRoomReservationPage();
         elements.HMCLogin();
         extentTest.pass("Login islemi basarili");
 

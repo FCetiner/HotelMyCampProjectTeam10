@@ -11,12 +11,12 @@ import utilities.TestBaseRapor;
 
 public class TC_07 extends TestBaseRapor{
     //TC_07-Happy Guests, Rooms, Staffs,Destination bolumu gorunur olmali
-
+    HMCPage hmcPage=new HMCPage();
 
     @Test
     public void test(){
         //1-kullanici url'e gider
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
         extentTest=extentReports.createTest("TC07 Baslik Gorunurlugu Testleri","Happy Guests, Rooms, Staffs,Destination elementlerinin gorunurlugu test edildi");
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(4);

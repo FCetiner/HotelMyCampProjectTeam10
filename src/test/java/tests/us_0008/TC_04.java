@@ -15,12 +15,12 @@ import utilities.TestBaseRapor;
 import java.util.List;
 
 public class TC_04 extends TestBaseRapor {
-
+        HMCPage hmcPage=new HMCPage();
     @Test
 public void reservationKayitTesti () throws InterruptedException {
 
         extentTest=extentReports.createTest("Reservation testi","REservation testi yapildi");
-        HMCPage hmcPage =new HMCPage();
+        hmcPage =new HMCPage();
         hmcPage.girisYap();
         HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();
         Assert.assertTrue(hotelRoomReservationPage.systemManagementButton.isDisplayed());

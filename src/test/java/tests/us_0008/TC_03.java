@@ -8,10 +8,11 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_03 extends TestBaseRapor {
+    HMCPage hmcPage=new HMCPage();
     @Test
     public void rezervasyonSayfasıTesti () throws InterruptedException {
         extentTest=extentReports.createTest("Reservation sayfasina giris testi","Reservation sayfasina basarili giris yapildi");
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
         hmcPage.girisYap();
 
         HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();

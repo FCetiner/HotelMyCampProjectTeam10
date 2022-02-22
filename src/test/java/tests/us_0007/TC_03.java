@@ -35,7 +35,7 @@ public class TC_03 extends TestBaseRapor {
      */
     @Test
     public void test02(){
-            HMCPage hmcPage =new HMCPage();
+            hmcPage =new HMCPage();
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(hmcPage.hotelManagementLinki.isDisplayed());
 

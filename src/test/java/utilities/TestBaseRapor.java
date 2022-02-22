@@ -50,8 +50,6 @@ public abstract class TestBaseRapor {
 
      //   Driver.closeDriver();
 
-
-
     }
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)

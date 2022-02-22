@@ -11,9 +11,10 @@ import utilities.TestBaseRapor;
 
 public class TC_10 extends TestBaseRapor {
     //TC10-Instagram fotograflari gorunebilir olmali
+    HMCPage hmcPage=new HMCPage();
     @Test
     public void test(){
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
         extentTest=extentReports.createTest("TC10 Instagram resimleri gorunurlugu testi","Instagram resimleri gorunurlugu testi");
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");
