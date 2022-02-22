@@ -71,6 +71,5 @@ public class TC_005 extends TestBaseRapor {
         extentTest.pass("Sayfa güncellendi");
         extentTest.pass("Silinen hotelin bulunmadığı doğrulandı");
         ReusableMethods.getScreenshot("Silinen hotelin bulunmadığı doğrulandı");
-        Driver.closeDriver();
     }
 }

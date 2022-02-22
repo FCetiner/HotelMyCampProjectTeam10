@@ -8,11 +8,11 @@ import utilities.TestBaseRapor;
 
 public class TC_08 extends TestBaseRapor {
     //TC_08-Misafir yorumlari bolumu gorunur olmali
-
+    HMCPage hmcPage=new HMCPage();
     @Test
     public void test(){
         //1-kullanici url'e gider
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
         extentTest=extentReports.createTest("TC08 Misafir yorumlari gorunurlugu testi","Misafi yorumlari elementi gorunurlugu testi");
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");

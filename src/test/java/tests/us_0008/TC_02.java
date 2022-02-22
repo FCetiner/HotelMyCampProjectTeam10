@@ -6,10 +6,10 @@ import pages.HMCPage;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
-
+    HMCPage hmcPage=new HMCPage();
     @Test
     public void yoneticiGirisTesti (){
-        HMCPage hmcPage =new HMCPage();
+        hmcPage =new HMCPage();
         hmcPage.yoneticigirisYap();
         Assert.assertTrue(hmcPage.managerDrapDown.isDisplayed());
         extentTest=extentReports.createTest("Yonetici giris testi","Yonetici basarili giris yapabildi");

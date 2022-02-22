@@ -12,13 +12,13 @@ import utilities.TestBaseRapor;
 
 
 public class TC_05 extends TestBaseRapor {
-
+    HMCPage hmcPage=new HMCPage();
     //US_05-Kullanıcı, 25/7 Front Desk Restaurant Bar Transfer Services Spa Suites logolari gorunur olmali
 
 
     @Test
     public void test(){
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
        //1-kullanici url'e gider
         hmcPage.anasayfaGiris();
         extentTest=extentReports.createTest("TC05_Service Logolarinin gorunurlugu test edildi ","Service ikonlarinin gorunurlugu test edildi");

@@ -5,12 +5,13 @@ import pages.HotelRoomReservationPage;
 import utilities.TestBaseRapor;
 
 public class TC_04 extends TestBaseRapor {
+    HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();
     @Test
     public void updateReservationInfo() throws InterruptedException {
         extentTest=extentReports.createTest("Update Reservation kontrolü","Update Reservation kontrol ediliyor.");
         extentTest.info("Anasayfaya gidildi");
 
-        HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();
+        hotelRoomReservationPage=new HotelRoomReservationPage();
         hotelRoomReservationPage.HMCLogin();
         extentTest.pass("Login islemi basarili");
         hotelRoomReservationPage.hotelManagementTextKontrol();

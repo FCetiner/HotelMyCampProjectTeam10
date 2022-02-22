@@ -12,12 +12,13 @@ import utilities.TestBaseRapor;
 
 
 public class TC_01 extends TestBaseRapor {
+    HotelListPage hotelListPage=new HotelListPage();
 
     @Test
     public void test01() {
 
         //TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
-        HotelListPage hotelListPage = new HotelListPage();
+        hotelListPage = new HotelListPage();
         extentTest = extentReports.createTest("test01", "Anasayfa Giris Testi");
         hotelListPage.anasayfaGiris();
         extentTest.pass("Anasayfa Giris Basarli");
@@ -29,7 +30,7 @@ public class TC_01 extends TestBaseRapor {
 
     @Test
     public void test02() { // TC_002
-        HotelListPage hotelListPage=new HotelListPage();
+        hotelListPage=new HotelListPage();
         //Yönetici Olarak giris yap
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
         extentTest = extentReports.createTest("test02", "Anasayfa Giris Testi");
@@ -46,7 +47,7 @@ public class TC_01 extends TestBaseRapor {
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
-        HotelListPage hotelListPage=new HotelListPage();
+        hotelListPage=new HotelListPage();
         extentTest = extentReports.createTest("test03", "Anasayfa Giris Testi");
         hotelListPage.girisYap();
         extentTest.pass("Anasayfa Giris Basarli");
@@ -74,7 +75,7 @@ public class TC_01 extends TestBaseRapor {
 
     @Test
     public void test04() throws InterruptedException { // TC_004
-        HotelListPage hotelListPage=new HotelListPage();
+        hotelListPage=new HotelListPage();
 
         //  Yönetici olarak giris yapar.
         // Logini Tikla  Kullanici adi  ve sifre degerlerini yazdirip, giris butonuna basin ve giris yapin
@@ -141,7 +142,7 @@ public class TC_01 extends TestBaseRapor {
 
     @Test
     public void test05() { // TC_005
-        HotelListPage hotelListPage=new HotelListPage();
+        hotelListPage=new HotelListPage();
 
 
         //  Yönetici olarak giris yapar.
@@ -175,17 +176,10 @@ public class TC_01 extends TestBaseRapor {
         extentTest.pass("kayit olunan isim kayit olundugu test edildi");
 
         Assert.assertTrue(hotelListPage.kayitEmail.isDisplayed());
-        System.out.println("Kayit oluna Email Adresi==>"+hotelListPage.kayitEmail.getText());
         extentTest.pass("kayit olunan email adresi ile kayit olundugu test edildi");
 
-
-
-
-
-
-
-
-
+        hotelListPage.anasayfaGiris();
+        hotelListPage.loginOutElementi.click();
 
     }
 }

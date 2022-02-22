@@ -10,10 +10,10 @@ import utilities.TestBaseRapor;
 
 public class TC_09 extends TestBaseRapor {
     //TC09-Recent Blog bolumu icerisindeki elementler tiklanabilir olmali.
-
+    HMCPage hmcPage=new HMCPage();
     @Test
     public void blog1LinkiTesti() {
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         extentTest = extentReports.createTest("TC09 Recent Blog linkleri Testi", "1. blog linkinin calisip calismadigi test edildi ");
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");
@@ -31,7 +31,7 @@ public class TC_09 extends TestBaseRapor {
 
     @Test
     public void blog2LinkiTesti() {
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         extentTest = extentReports.createTest("TC09 Recent Blog linkleri Testi", "2. blog linkinin calisip calismadigi test edildi ");
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");
@@ -67,7 +67,7 @@ public class TC_09 extends TestBaseRapor {
 
     @Test
     public void blog4LinkiTesti() {
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         extentTest = extentReports.createTest("TC09 Recent Blog linkleri Testi", "4. blog linkinin calisip calismadigi test edildi ");
         hmcPage.anasayfaGiris();
         extentTest.info("anasayfaya gidildi");

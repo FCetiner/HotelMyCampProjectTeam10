@@ -12,9 +12,11 @@ import utilities.JSUtils;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+
 public class TC_04 extends TestBaseRapor{
     HMCPage hmcPage=new HMCPage();
     SoftAssert softAssert=new SoftAssert();
+
 
     //TC_04-Welcome to our hotel bolumu gorunebilmeli, altindaki sosyal medya hesaplari tklanabilir olmali
 

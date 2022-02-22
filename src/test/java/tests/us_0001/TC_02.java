@@ -8,10 +8,11 @@ import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
     //TC_02-Kullanıcı, arka plandaki resimleri görebilmeli
+    HMCPage hmcPage=new HMCPage();
 
     @Test
     public void logoGorunuyorMuTesti(){
-        HMCPage hmcPage=new HMCPage();
+        hmcPage=new HMCPage();
         extentTest=extentReports.createTest("Logo testi","Site logosunun gorunurlugu testi");
         hmcPage.anasayfaGiris();
         extentTest.info("Ana sayfaya gidildi");

@@ -10,12 +10,13 @@ import utilities.TestBaseRapor;
 
 
 public class TC_01 extends TestBaseRapor {
+    HMCPage hmcPage = new HMCPage();
 
 //TC_01-Kullanıcı,  Home, Rooms, Restaurant, AboutBlog, Contact, ve Log in  butonlarini  tiklayabilmeli
     @Test
     public void homeButtonTest() {
         extentTest = extentReports.createTest("TC01 NevBar Butonlari calisiyor mu testi", "HomeButton Testi");
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         SoftAssert softAssert = new SoftAssert();
         //1-kullanici url'e gider
         hmcPage.anasayfaGiris();
@@ -35,7 +36,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void roomsButtonTest() {
         extentTest = extentReports.createTest("TC01 NevBar Butonlari calisiyor mu testi", "RoomsButton Testi");
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         SoftAssert softAssert = new SoftAssert();
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(3);
@@ -53,7 +54,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void restaurantButtonTest() {
         extentTest = extentReports.createTest("TC01 NevBar Butonlari calisiyor mu testi", "RestaurantButton Testi");
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         SoftAssert softAssert = new SoftAssert();
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(3);
@@ -71,7 +72,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void aboutButtonTest() {
         extentTest = extentReports.createTest("TC01 NevBar Butonlari calisiyor mu testi", "aboutButton Testi");
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         SoftAssert softAssert = new SoftAssert();
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(3);
@@ -90,7 +91,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void blogsButtonTest() {
         extentTest = extentReports.createTest("TC01 NevBar Butonlari calisiyor mu testi", "blogBlogButton Testi");
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         SoftAssert softAssert = new SoftAssert();
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(3);
@@ -108,7 +109,7 @@ public class TC_01 extends TestBaseRapor {
     @Test
     public void contactButtonTest() {
         extentTest = extentReports.createTest("TC01 NevBar Butonlari calisiyor mu testi", "contactBlogButton Testi");
-        HMCPage hmcPage = new HMCPage();
+        hmcPage = new HMCPage();
         SoftAssert softAssert = new SoftAssert();
         hmcPage.anasayfaGiris();
         ReusableMethods.waitFor(3);

@@ -17,9 +17,9 @@ public class TC_11 extends TestBaseRapor {
     @BeforeMethod
     public void sayfayaGit(){
         hmcPage.anasayfaGiris();
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(5);
         JSUtils.scrollIntoVIewJS(hmcPage.mainPageFooter);
-        ReusableMethods.waitFor(8);
+        ReusableMethods.waitFor(5);
     }
 
     @Test
