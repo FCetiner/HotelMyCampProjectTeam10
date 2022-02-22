@@ -11,18 +11,21 @@ import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
 
-    Actions actions=new Actions(Driver.getDriver());
-    HMCPage hmcPage =new HMCPage();
-    HotelRoomsPage roomsPage=new HotelRoomsPage();
+    Actions actions;
+    HMCPage hmcPage;
+    HotelRoomsPage roomsPage;
     /*  Yönetici olarak anasayfaya gidebilmeli
      **Kullanıcı url yi girer */
 
     @Test
     public void test01(){
-
+        actions=new Actions(Driver.getDriver());
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_01","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.anasayfaGiris();
         extentTest.info("Url ye gidildi");
+
     }
 
     /*
@@ -30,6 +33,7 @@ public class TC_01 extends TestBaseRapor {
 
     @Test
     public void test02(){
+        hmcPage =new HMCPage();
         Assert.assertTrue(hmcPage.ilkLoginLinki.isDisplayed());
         extentTest.pass("Log-in butonu görüldü");
 

@@ -12,12 +12,13 @@ import utilities.TestBaseRapor;
 import java.io.IOException;
 
 public class TC_002 extends TestBaseRapor {
-    HMCPage hmcPage = new HMCPage();
-    HotelListPage hotelListPage = new HotelListPage();
+    HMCPage hmcPage;
+    HotelListPage hotelListPage;
 
     @Test
     public void test() throws IOException {
-
+        hmcPage = new HMCPage();
+        hotelListPage = new HotelListPage();
         extentTest = extentReports.createTest("TC_002", "Yönetici olarak otel kayıt formuna ulaşabilmeli");
 
         //Hotel anasayfasina gidin
@@ -54,7 +55,6 @@ public class TC_002 extends TestBaseRapor {
         extentTest.pass(" Edit Hotel başlığının görünürlüğünü doğurlandı");
         ReusableMethods.getScreenshot("Edit Hotel başlığının görünürlüğünü doğurlandı");
 
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        hotelListPage.logOut.click();
+        Driver.closeDriver();
     }
 }
