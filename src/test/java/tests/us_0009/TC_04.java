@@ -21,6 +21,7 @@ public class TC_04 extends TestBaseRapor {
         hotelRoomReservationPage.userInfoUpdate();
         extentTest.pass("Update islemi Test edildi");
 
+
         Driver.closeDriver();
 
     }

@@ -20,5 +20,6 @@ public class TC_02 extends TestBaseRapor {
         extentTest.pass("Login islemi basarili");
 
         Driver.closeDriver();
+
     }
 }

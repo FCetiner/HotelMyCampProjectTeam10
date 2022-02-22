@@ -19,6 +19,7 @@ public class TC_05 extends TestBaseRapor {
         hotelRoomReservationPage.deleteReservation();
         extentTest.pass("Delete islemi Test edildi");
 
+
         Driver.closeDriver();
     }
 }
