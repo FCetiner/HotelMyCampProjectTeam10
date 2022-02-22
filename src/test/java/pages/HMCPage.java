@@ -1,3 +1,4 @@
+
 package pages;
 
 import jdk.jfr.consumer.RecordedMethod;
@@ -24,7 +25,7 @@ public class HMCPage {
 
 
 
-    //***************Ferhat-Funda Hanim-Çagri Bey**************************
+    //*****************Ferhat-Funda Hanim-Çagri Bey**************************
 
 
     public void anasayfaGiris() {
@@ -60,6 +61,14 @@ public class HMCPage {
 
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
+
+    @FindBy(id = "navLogout")
+    public WebElement loginOutElementi;
+
+
+    //xpath ="//li[text()='Username or password is incorrect, please correct them and try again']"
+    @FindBy (id = "divMessageResult")
+    public WebElement girisYapilamadiYazisi;
 
     @FindBy (xpath ="//li[@class='dropdown dropdown-user']" )
     public WebElement managerDrapDown;
@@ -113,7 +122,7 @@ public class HMCPage {
     @FindBy(id = "navContact")
     public WebElement mainPageContactButton;
 
-    //*************************************************
+    //**************************************************
 
     @FindBy(xpath = "//h1[.='Log in']")
     public WebElement loginPageLoginTextWebElement;
@@ -273,4 +282,6 @@ public class HMCPage {
     public WebElement sectionCounterOtelBilgileriBolumu;
 
 
+
 }
+

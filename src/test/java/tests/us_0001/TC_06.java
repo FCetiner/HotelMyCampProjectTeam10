@@ -1,8 +1,5 @@
 package tests.us_0001;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
@@ -13,11 +10,11 @@ import utilities.TestBaseRapor;
 
 public class TC_06 extends TestBaseRapor{
     //TC_06-Our rooms bolumu gorunur olmali ve kullaniciyi oda ile ilgili bilgilerin oldugu sayfaya yonlendirebilmeli
-
+    HMCPage hmcPage=new HMCPage();
     @Test
-    public void test() {
-        extentTest=extentReports.createTest("TC06 ","Our Rooms Title gorunurlugu ve View Room Detail butonunun ilgili sayfaya yonlendirdigi test edildi");
-        HMCPage hmcPage = new HMCPage();
+    public void roomReservationSectionTests() {
+        extentTest=extentReports.createTest("TC06 Room Reservation testi","Our Rooms Title gorunurlugu ve View Room Detail butonunun ilgili sayfaya yonlendirdigi test edildi");
+        hmcPage = new HMCPage();
         //1-kullanici url'e gider
         hmcPage.anasayfaGiris();
         extentTest.info("Anasayfaya gidildi");
