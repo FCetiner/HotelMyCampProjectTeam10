@@ -14,7 +14,7 @@ import utilities.TestBaseRapor;
 import java.util.List;
 
 public class TC_04 extends TestBaseRapor {
-        HMCPage hmcPage=new HMCPage();
+        HMCPage hmcPage;
     @Test
 public void reservationKayitTesti () throws InterruptedException {
 
@@ -72,6 +72,6 @@ public void reservationKayitTesti () throws InterruptedException {
        hotelRoomReservationPage.okButton.click();
 
         extentTest.pass("Reservation kayidi yapildi");
-
+        Driver.closeDriver();
     }
 }

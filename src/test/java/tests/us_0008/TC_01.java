@@ -6,7 +6,7 @@ import pages.HMCPage;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor{
-    HMCPage hmcPage=new HMCPage();
+    HMCPage hmcPage;
 
     @Test
     public void anasayfaGirisTesti(){
