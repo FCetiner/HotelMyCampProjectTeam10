@@ -10,9 +10,9 @@ import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
 
-    Actions actions=new Actions(Driver.getDriver());
-    HMCPage hmcPage =new HMCPage();
-    HotelRoomsPage roomsPage=new HotelRoomsPage();
+    Actions actions;
+    HMCPage hmcPage;
+    HotelRoomsPage roomsPage;
     /*
 
       **Step1
@@ -21,7 +21,9 @@ public class TC_02 extends TestBaseRapor {
 
     @Test
     public void test01(){
-
+        actions=new Actions(Driver.getDriver());
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.anasayfaGiris();
         extentTest.info("Url ye gidildi");
@@ -32,7 +34,9 @@ public class TC_02 extends TestBaseRapor {
      */
     @Test
     public void test02(){
-
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
+        actions=new Actions(Driver.getDriver());
         extentTest=extentReports.createTest("TC_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.girisYap();
         extentTest.info("Gecerli bilgilerle giris yapıldı");

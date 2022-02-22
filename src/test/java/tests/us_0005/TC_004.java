@@ -1,6 +1,7 @@
 package tests.us_0005;
 
 
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
@@ -14,12 +15,13 @@ import java.io.IOException;
 
 public class TC_004 extends TestBaseRapor {
 
-    HMCPage hmcPage = new HMCPage();
-    HotelListPage hotelListPage = new HotelListPage();
+    HMCPage hmcPage;
+    HotelListPage hotelListPage;
 
     @Test
     public void test() throws IOException {
-
+        hmcPage = new HMCPage();
+        hotelListPage = new HotelListPage();
         extentTest = extentReports.createTest("TC_004", "Yönetici olarak yapılan guncellemeyi gorebilmeli");
 
         //Hotel anasayfasina gidin
@@ -64,8 +66,7 @@ public class TC_004 extends TestBaseRapor {
 
 
 
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        hotelListPage.logOut.click();
+        Driver.closeDriver();
 
     }
 

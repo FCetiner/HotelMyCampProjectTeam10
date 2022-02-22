@@ -12,12 +12,13 @@ import utilities.TestBaseRapor;
 import java.io.IOException;
 
 public class TC_001 extends TestBaseRapor {
-    HMCPage hmcPage = new HMCPage();
-    HotelListPage hotelListPage = new HotelListPage();
+    HMCPage hmcPage;
+    HotelListPage hotelListPage;
 
     @Test
     public void test() throws IOException {
-
+        hmcPage = new HMCPage();
+        hotelListPage = new HotelListPage();
         extentTest = extentReports.createTest("TC_001", "Hotel anasayfasina gidilebilmeli ve Yönetici olarak giriş yapabilmeli");
         //Hotel anasayfasina gidin
         extentTest.info("web sitesi başarılıyla açıldı");
@@ -41,10 +42,9 @@ public class TC_001 extends TestBaseRapor {
         ReusableMethods.waitForVisibility(hotelListPage.managerTextElement, 2);
 
         ReusableMethods.getScreenshot("Giris yapildi");
-        extentTest.pass("driver başarılıyla kapatıldı");
+        extentTest.pass("driver basariyla kapatildi");
 
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        hotelListPage.logOut.click();
+       Driver.closeDriver();
 
 
     }

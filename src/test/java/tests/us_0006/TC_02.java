@@ -11,6 +11,7 @@ public class TC_02 extends TestBaseRapor {
     //1-Yonetici olarak ana sayfaya gidin
     @Test
     public void test01() {
+        hmcPage =new HMCPage();
         extentTest=extentReports.createTest("TC_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
       hmcPage.anasayfaGiris();
         extentTest.info("Url ye gidildi");
