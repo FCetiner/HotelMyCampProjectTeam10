@@ -1,5 +1,6 @@
 package tests.us_0007;
 
+import net.jodah.failsafe.internal.util.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -77,6 +78,10 @@ public class TC_05 extends TestBaseRapor {
         actions.moveToElement(roomsPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);
         roomsPage.logOutButton.click();
+
+
+
+
 
     }
 
