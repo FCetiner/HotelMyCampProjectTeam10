@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="package calistirma">
+    <test name="US001 package testi">
+        <packages>
+            <package name="tests.us_0001"></package>
+            <package name="tests.us_0002"></package>
+            <package name="tests.us_0003"></package>
+            <package name="tests.us_0004"></package>
+            <package name="tests.us_0005"></package>
+            <package name="tests.us_0006"></package>
+            <package name="tests.us_0007"></package>
+            <package name="tests.us_0008"></package>
+            <package name="tests.us_0009"></package>
+            <package name="tests.us_0010"></package>
+        </packages>
+    </test>
+</suite>
