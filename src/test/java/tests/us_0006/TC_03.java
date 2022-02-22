@@ -4,45 +4,29 @@ import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelRoomsPage;
 import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class TC_03 {
+public class TC_03 extends TestBaseRapor {
 
-    HMCPage hmcPage = new HMCPage();
-    HotelRoomsPage roomsPage = new HotelRoomsPage();
-    //1-Yonetici olarak ana sayfaya gidin
+    HMCPage hmcPage ;
+    HotelRoomsPage roomsPage ;
+
     @Test
     public void test01() {
+        hmcPage = new HMCPage();
         hmcPage.anasayfaGiris();
-    }
-    //2-Login yazisina tiklayin
-    @Test
-    public void test02() {
+        roomsPage = new HotelRoomsPage();
+        extentTest=extentReports.createTest("Yonetici girisi","Basarili giris yapildi");
         hmcPage.ilkLoginLinki.click();
-    }
-    //3-Yonetici olarak gecerli bir username girin
-    @Test
-    public void test03() {
         hmcPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
-    }
-    //4-Yonetici olarak gecerli bir password girin
-    @Test
-    public void test04(){
         hmcPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
-    }
-    //5-Login butonuna tiklayin
-    @Test
-    public void test05() {
         hmcPage.loginButonu.click();
-    }
-    //6-Hotel management yazisina tiklayin
-    @Test
-    public void test06() {
         hmcPage.hotelManagementLinki.click();
+        roomsPage.hotelRoomsLink.click();
+        extentTest.pass("yonetici basarili giris yapti");
+        Driver.closeDriver();
+
     }
 
-    //7-Hotel rooms yazisina tiklayin
-    @Test
-    public void test07() {
-       roomsPage.hotelRoomsLink.click();
-    }
 }

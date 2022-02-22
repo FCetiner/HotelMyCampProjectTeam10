@@ -30,7 +30,7 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//select[@id='IDHotel']")
     public WebElement hotelIdbox ;
 
-    @FindBy(xpath = "//input[@id='Code']")
+    @FindBy(xpath = "//input[@class='form-control input-lg required']")
     public WebElement codeBox ;
 
     @FindBy(xpath = "//input[@id='Name']")
