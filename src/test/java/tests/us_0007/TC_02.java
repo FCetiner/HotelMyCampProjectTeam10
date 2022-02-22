@@ -43,6 +43,8 @@ public class TC_02 extends TestBaseRapor {
         actions.moveToElement(roomsPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);
         roomsPage.logOutButton.click();
+
+        Driver.closeDriver();
     }
 
 }

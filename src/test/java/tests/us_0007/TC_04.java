@@ -12,17 +12,18 @@ import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC_04 extends TestBaseRapor {
-    HotelRoomsPage roomsPage=new HotelRoomsPage();
-    HMCPage hmcPage = new HMCPage();
+    HotelRoomsPage roomsPage;
+    HMCPage hmcPage;
 
-    Actions actions = new Actions(Driver.getDriver());
-    Faker faker = new Faker();
+    Actions actions;
+    Faker faker;
     /*Step 1
      *Kullanıcı url yi girer */
 
     @Test
     public void test01() {
 
+        hmcPage =new HMCPage();
         extentTest=extentReports.createTest("TC_04_01","Anasayfaya giris yapabilmeli.");
         hmcPage.anasayfaGiris();
         extentTest.info("Url ye gidildi");
@@ -33,6 +34,8 @@ public class TC_04 extends TestBaseRapor {
      */
     @Test
     public void test02() {
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_04_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.girisYap();
         extentTest.info("Gecerli bilgilerle log in yapıldı");
@@ -42,6 +45,8 @@ public class TC_04 extends TestBaseRapor {
      **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
     public void test03() {
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_04_03","\"Hotel Management\" buttonuna tiklayarak, \"Hotel Rooms\" butonuna tıklanmalı.");
         hmcPage.hotelManagementLinki.click();
         roomsPage.hotelRoomsLink.click();
@@ -52,6 +57,7 @@ public class TC_04 extends TestBaseRapor {
     **İlk sıradaki "Details" butonu tıklanır     */
     @Test
     public void test04() {
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_04_04","Hotel Rooms sayfasından \"Details\" butonuna tıklanmalı");
         roomsPage.detailsLink.click();
         extentTest.info("Details butonuna tıklandı");
@@ -61,18 +67,20 @@ public class TC_04 extends TestBaseRapor {
     **Sayfadaki tüm bilgiler değiştirilerek "Save" butonuna tıklanır */
     @Test
     public void test05() {
+
+        actions=new Actions(Driver.getDriver());
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_04_05","Sayfadaki tüm bilgiler değiştirilip \"Save\" nutonu tıklanmalı ");
         roomsPage.hotelIdbox.click();
         Select select = new Select(roomsPage.hotelIdbox);
-        select.selectByIndex(1);
+        select.selectByIndex(3);
 
 
-        actions.click(roomsPage.codeBox).sendKeys(Keys.CLEAR).sendKeys("9999").
-                sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.name().name())
+       /* actions.click(roomsPage.nameBox).sendKeys(Keys.CLEAR).sendKeys(faker.name().fullName())
                 .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.address().city())
                 .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.toString())
                 .sendKeys(Keys.TAB).sendKeys(Keys.CLEAR).sendKeys(faker.commerce().price())
-                .perform();
+                .perform(); */
 
         ReusableMethods.waitFor(3);
 
@@ -94,6 +102,7 @@ public class TC_04 extends TestBaseRapor {
         actions.moveToElement(roomsPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);
         roomsPage.logOutButton.click();
+        Driver.closeDriver();
 
     }
 

@@ -54,7 +54,7 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//input[@id='IsAvailable']")
     public WebElement isAvailableButon ;
 
-    @FindBy(xpath = "//button[@id='btnSubmit']")
+    @FindBy(xpath = "//button[@class='btn green']")
     public WebElement saveButon ;
 
     @FindBy(xpath = "//button[@id='btnDelete']")
@@ -66,7 +66,7 @@ public class HotelRoomsPage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement errorOkButon ;
 
-    @FindBy (xpath="//i[@class='dropdown dropdown-user']")
+    @FindBy (xpath="//i[@class='fa fa-angle-down']")
     public WebElement managerDropDownButton;
 
     @FindBy (xpath="//i[@class='icon-arrow-up']")

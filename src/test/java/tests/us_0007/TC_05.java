@@ -2,6 +2,7 @@ package tests.us_0007;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage;
 import pages.HotelRoomsPage;
@@ -11,9 +12,9 @@ import utilities.TestBaseRapor;
 
 public class TC_05 extends TestBaseRapor {
 
-    HMCPage hmcPage =new HMCPage();
-    HotelRoomsPage roomsPage = new HotelRoomsPage();
-    Actions actions=new Actions(Driver.getDriver());
+    HMCPage hmcPage;
+    HotelRoomsPage roomsPage ;
+    Actions actions;
 
 
 
@@ -23,6 +24,7 @@ public class TC_05 extends TestBaseRapor {
     @Test
     public void test01(){
 
+        hmcPage =new HMCPage();
         extentTest=extentReports.createTest("TC_05_01","Anasayfaya giris yapabilmeli.");
         hmcPage.anasayfaGiris();
         extentTest.info("Url ye gidildi");
@@ -32,6 +34,8 @@ public class TC_05 extends TestBaseRapor {
      */
     @Test
     public void test02(){
+
+        hmcPage =new HMCPage();
         extentTest=extentReports.createTest("TC_05_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.girisYap();
         extentTest.info("Gecerli bilgilerle log in yapıldı");
@@ -41,6 +45,9 @@ public class TC_05 extends TestBaseRapor {
      **"Hotel Management" sekmesinden "Hotels Rooms" butonuna tıklanır  */
     @Test
     public void test03(){
+
+        roomsPage=new HotelRoomsPage();
+        hmcPage =new HMCPage();
 
         extentTest=extentReports.createTest("TC_05_03","\"Hotel Management\" buttonuna tiklayarak, \"Hotel Rooms\" butonuna tıklanmalı.");
         hmcPage.hotelManagementLinki.click();
@@ -54,6 +61,7 @@ public class TC_05 extends TestBaseRapor {
     @Test
     public void test04(){
 
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_05_04","Hotel Rooms sayfasından \"Details\" butonuna tıklanmalı");
         roomsPage.detailsLink.click();
         extentTest.info("Details butonuna tıklandı");
@@ -64,6 +72,8 @@ public class TC_05 extends TestBaseRapor {
     @Test
     public void test05() throws InterruptedException {
 
+        actions=new Actions(Driver.getDriver());
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_05_05","Sayfanın sonuna gelinip \"Delete\" butonuna tıklanarak oda silinmeli");
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(3);
@@ -76,6 +86,11 @@ public class TC_05 extends TestBaseRapor {
         actions.moveToElement(roomsPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);
         roomsPage.logOutButton.click();
+        Driver.closeDriver();
+
+
+
+
 
     }
 

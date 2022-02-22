@@ -13,9 +13,10 @@ import utilities.TestBaseRapor;
 
 public class TC_03 extends TestBaseRapor {
 
-    Actions actions=new Actions(Driver.getDriver());
-    HMCPage hmcPage =new HMCPage();
-    HotelRoomsPage roomsPage = new HotelRoomsPage();
+
+    Actions actions;
+    HMCPage hmcPage;
+    HotelRoomsPage roomsPage;
     /* Step 1
      **Log-in yapıldıktan sonra "Hotel Management" sekmesinden "Hotel Rooms" sayfasına girilebilmeli
      * ve "List Of Rooms" yazısı görülmeli
@@ -24,6 +25,9 @@ public class TC_03 extends TestBaseRapor {
     @Test
     public void test01(){
 
+        actions=new Actions(Driver.getDriver());
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_03_01","Anasayfaya giris yapabilmeli.");
 
         hmcPage.anasayfaGiris();
@@ -36,8 +40,10 @@ public class TC_03 extends TestBaseRapor {
     @Test
     public void test02(){
             hmcPage =new HMCPage();
-        SoftAssert softAssert=new SoftAssert();
-        softAssert.assertTrue(hmcPage.hotelManagementLinki.isDisplayed());
+        actions=new Actions(Driver.getDriver());
+        roomsPage=new HotelRoomsPage();
+
+
 
         extentTest=extentReports.createTest("TC_03_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
         hmcPage.girisYap();
@@ -49,6 +55,9 @@ public class TC_03 extends TestBaseRapor {
     @Test
     public void test03(){
 
+        actions=new Actions(Driver.getDriver());
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_03_03","\"Hotel Management\" buttonuna tiklayarak, \"Hotel Rooms\" butonuna tıklanmalı.");
 
         hmcPage.hotelManagementLinki.click();
@@ -61,6 +70,9 @@ public class TC_03 extends TestBaseRapor {
      * */
     @Test
     public void test04(){
+        actions=new Actions(Driver.getDriver());
+        hmcPage =new HMCPage();
+        roomsPage=new HotelRoomsPage();
         extentTest=extentReports.createTest("TC_03_04","List Of Rooms yazısı görülmeli");
 
         Assert.assertTrue(roomsPage.roomKontrolLink.isDisplayed());
@@ -68,5 +80,6 @@ public class TC_03 extends TestBaseRapor {
         actions.moveToElement(roomsPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);
         roomsPage.logOutButton.click();
+        Driver.closeDriver();
     }
 }
