@@ -12,19 +12,19 @@ import utilities.TestBaseRapor;
 
 public class TC_03 extends TestBaseRapor {
 
-    KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
+    KullaniciHotelReservationPage kullaniciHotelReservationPage;
 
 
     @Test
     public void testCase03() throws InterruptedException {
 
         extentTest=extentReports.createTest("odalara bakma ve gorunurlugunu test etme","Cikan oda secenekleri tiklayabilmeli ve \"Categories\" text altindaki sonuclari tiklayabilmeli");
-        KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
+        kullaniciHotelReservationPage =new KullaniciHotelReservationPage();
 
         Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
         extentTest.info("Url gidildi");
 
-       hmcPage10.roomsButton.click();
+       kullaniciHotelReservationPage.roomsButton.click();
         extentTest.info("\"Rooms\" buttonuna tiklanildi");
 
 
@@ -33,15 +33,15 @@ public class TC_03 extends TestBaseRapor {
                 .perform();
 
 
-        hmcPage10.singleRoom.click();
+        kullaniciHotelReservationPage.singleRoom.click();
         extentTest.info("\"single\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.singleRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.singleRoom.isEnabled(), "erisilemiyor");
         Driver.getDriver().navigate().back();
 
 
-        hmcPage10.doubleRoom.click();
+        kullaniciHotelReservationPage.doubleRoom.click();
         extentTest.info("\"double\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.doubleRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.doubleRoom.isEnabled(), "erisilemiyor");
         Driver.getDriver().navigate().back();
        ReusableMethods.waitFor(1);
 
@@ -49,63 +49,63 @@ public class TC_03 extends TestBaseRapor {
         actions.sendKeys(Keys.PAGE_DOWN)
                 .perform();
 
-        ReusableMethods.waitFor(1);
-        hmcPage10.tribleRoom.click();
+        ReusableMethods.waitFor(2);
+        kullaniciHotelReservationPage.tribleRoom.click();
         extentTest.info("\"TRİBLE\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.tribleRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.tribleRoom.isEnabled(), "erisilemiyor");
         Driver.getDriver().navigate().back();
        ReusableMethods.waitFor(1);
-         hmcPage10.quadRoom.click();
+         kullaniciHotelReservationPage.quadRoom.click();
         extentTest.info("\"QUAD\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.quadRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.quadRoom.isEnabled(), "erisilemiyor");
 
         actions.sendKeys(Keys.PAGE_DOWN)
                 .perform();
 
         ReusableMethods.waitFor(1);
         Driver.getDriver().navigate().back();
-        hmcPage10.queenRoom.click();
+        kullaniciHotelReservationPage.queenRoom.click();
         extentTest.info("\"QUEEN \" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.queenRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.queenRoom.isEnabled(), "erisilemiyor");
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
 
         Driver.getDriver().navigate().back();
         ReusableMethods.waitFor(1);
-        hmcPage10.kingRoom.click();
+        kullaniciHotelReservationPage.kingRoom.click();
         extentTest.info("\"KING\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.kingRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.kingRoom.isEnabled(), "erisilemiyor");
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         ReusableMethods.waitFor(1);
         Driver.getDriver().navigate().back();
-        hmcPage10.twinRoom.click();
+        kullaniciHotelReservationPage.twinRoom.click();
         extentTest.info("\"TWIN\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.twinRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.twinRoom.isEnabled(), "erisilemiyor");
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         ReusableMethods.waitFor(1);
         Driver.getDriver().navigate().back();
         ReusableMethods.waitFor(1);
-        hmcPage10.doubleDoubleRoom.click();
+        kullaniciHotelReservationPage.doubleDoubleRoom.click();
         extentTest.info("\"DOUBLE-DOUBLE\" buttonuna tiklanildi");
-        Assert.assertTrue(hmcPage10.doubleDoubleRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.doubleDoubleRoom.isEnabled(), "erisilemiyor");
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Driver.getDriver().navigate().back();
 
         ReusableMethods.waitFor(1);
-        hmcPage10.studioRoom.click();
+        kullaniciHotelReservationPage.studioRoom.click();
         extentTest.info("\"STUDIO\" buttonuna tiklandi");
-        Assert.assertTrue(hmcPage10.studioRoom.isEnabled(), "erisilemiyor");
+        Assert.assertTrue(kullaniciHotelReservationPage.studioRoom.isEnabled(), "erisilemiyor");
 
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(1);
         extentTest.pass("\"Categories\" text yazisi altindaki oda type'lerinin erisebilirligi kontrol edildi");
-
+        Driver.closeDriver();
   }
 
 

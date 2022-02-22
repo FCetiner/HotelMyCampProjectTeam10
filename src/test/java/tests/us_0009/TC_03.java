@@ -6,10 +6,11 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_03 extends TestBaseRapor {
-    HotelRoomReservationPage elements=new HotelRoomReservationPage();
+    HotelRoomReservationPage elements;
 
     @Test
     public void hotelManagement() throws InterruptedException {
+        elements=new HotelRoomReservationPage();
         extentTest=extentReports.createTest("Hotel Management yazisi kontrolü","Hotel Management yazisi kontrol ediliyor.");
         extentTest.info("Anasayfaya gidildi");
 
@@ -19,10 +20,8 @@ public class TC_03 extends TestBaseRapor {
         elements.hotelManagementTextKontrol();
         extentTest.pass("Hotel Management yazisi basariyla test edildi");
 
+
         Driver.closeDriver();
-
-
-
 
     }
 }

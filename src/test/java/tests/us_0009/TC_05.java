@@ -6,7 +6,7 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_05 extends TestBaseRapor {
-    HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();
+    HotelRoomReservationPage hotelRoomReservationPage;
     @Test
     public void deleteReservation() throws InterruptedException {
         extentTest=extentReports.createTest("Delete Reservation kontrolü","Delete Reservation kontrol ediliyor.");

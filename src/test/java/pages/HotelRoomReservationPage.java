@@ -16,6 +16,8 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
@@ -169,10 +171,10 @@ public class HotelRoomReservationPage {
     public WebElement priceReservation;
 
     @FindBy (xpath = "//input[@id='DateStart']")
-    public WebElement dataStart;
+    public WebElement dateStartWebElement;
 
     @FindBy (xpath = "//input[@id='DateEnd']")
-    public WebElement dataEnd;
+    public WebElement dateEndWebElement;
 
     @FindBy(xpath = "//input[@id='AdultAmount']")
     public WebElement adultAmount;
@@ -202,13 +204,29 @@ public class HotelRoomReservationPage {
     @FindBy (xpath = "//button[@id='btnSubmit']")
     public WebElement saveButonu;
 
-@FindBy(xpath = "(//button[@class='btn default'])[2]")
-public WebElement baslangicDate;
-@FindBy(xpath = "(//button[@class='btn default'])[3]")
-    public WebElement bitisDate;
-@FindBy (xpath = "@FindBy (//div[@class='bootbox)\n")
-public WebElement saveDogrulama;
-@FindBy (xpath = "//button[@class='btn btn-primary']")
-public WebElement okButton;
+
+    @FindBy (xpath = " //div[@class='bootbox-body']")
+    public WebElement saveDogrulama;
+
+    @FindBy (xpath = "//button[@class='btn btn-primary']")
+    public WebElement okButton;
+
+
+    public void dateStart() {
+        LocalDate localDate = LocalDate.now();
+        LocalDate eklenmisLocalDate = localDate.plusMonths(3);
+        DateTimeFormatter duzenliDateStart = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String localDateStr = eklenmisLocalDate.format(duzenliDateStart);
+        dateStartWebElement.click();
+        dateStartWebElement.sendKeys(localDateStr);
+    }
+    public void dateEnd() {
+        LocalDate localDate = LocalDate.now();
+        LocalDate eklenmisLocalDate = localDate.plusMonths(3).plusDays(15);
+        DateTimeFormatter duzenliDateStart = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String localDateStr = eklenmisLocalDate.format(duzenliDateStart);
+        dateEndWebElement.click();
+        dateEndWebElement.sendKeys(localDateStr);
+    }
 
 }
