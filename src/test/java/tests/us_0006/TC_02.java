@@ -12,9 +12,11 @@ public class TC_02 extends TestBaseRapor {
 
     @Test
     public void test01() {
-         hmcPage = new HMCPage();
-         extentTest=extentReports.createTest("TC_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
-         hmcPage.anasayfaGiris();
+
+        hmcPage =new HMCPage();
+        extentTest=extentReports.createTest("TC_02","\"Log in\" buttonuna tiklayarak, giris yapabilmeli.");
+      hmcPage.anasayfaGiris();
+
         extentTest.info("Url ye gidildi");
         hmcPage.ilkLoginLinki.click();
         extentTest.info("\"Log in\" linkine tiklanildi");

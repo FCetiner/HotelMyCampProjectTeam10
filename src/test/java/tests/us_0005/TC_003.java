@@ -17,15 +17,18 @@ import java.io.IOException;
 
 
 public class TC_003 extends TestBaseRapor {
-    HMCPage hmcPage = new HMCPage();
-    HotelListPage hotelListPage = new HotelListPage();
-    Actions actions = new Actions(Driver.getDriver());
-    Faker faker = new Faker();
+    HMCPage hmcPage;
+    HotelListPage hotelListPage;
+    Actions actions;
+    Faker faker;
 
 
     @Test
     public void test() throws InterruptedException, IOException {
-
+        hmcPage = new HMCPage();
+        hotelListPage = new HotelListPage();
+        actions = new Actions(Driver.getDriver());
+        faker = new Faker();
         extentTest = extentReports.createTest("TC_003", "Yönetici olarak otel bilgilerini güncelleyebilmeli");
 
         //Hotel anasayfasina gidin
@@ -121,8 +124,7 @@ public class TC_003 extends TestBaseRapor {
         ReusableMethods.getScreenshot("OK butonuna tıklandı");
 
 
-        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
-        hotelListPage.logOut.click();
+        Driver.closeDriver();
 
     }
 }

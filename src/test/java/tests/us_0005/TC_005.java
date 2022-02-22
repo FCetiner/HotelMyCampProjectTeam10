@@ -13,12 +13,13 @@ import java.io.IOException;
 
 public class TC_005 extends TestBaseRapor {
 
-    HMCPage hmcPage = new HMCPage();
-    HotelListPage hotelListPage = new HotelListPage();
+    HMCPage hmcPage;
+    HotelListPage hotelListPage;
 
     @Test
     public void test() throws IOException {
-
+        hmcPage = new HMCPage();
+        hotelListPage = new HotelListPage();
         extentTest = extentReports.createTest("TC_005", "Yönetici olarak yapılan kayıtları silebilmeli");
 
         //Hotel anasayfasina gidin
@@ -71,5 +72,6 @@ public class TC_005 extends TestBaseRapor {
         extentTest.pass("Sayfa güncellendi");
         extentTest.pass("Silinen hotelin bulunmadığı doğrulandı");
         ReusableMethods.getScreenshot("Silinen hotelin bulunmadığı doğrulandı");
+        Driver.closeDriver();
     }
 }

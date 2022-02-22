@@ -11,12 +11,13 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
-    KullaniciHotelReservationPage hmcPage10mhmt=new KullaniciHotelReservationPage();
+    KullaniciHotelReservationPage hmcPage10mhmt;
 
 
 
     @Test
     public void testCase01() throws InterruptedException {
+        hmcPage10mhmt=new KullaniciHotelReservationPage();
         extentTest=extentReports.createTest("kullanici yeni kayit olusturma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         extentTest.info("Url acıldi");
@@ -82,7 +83,7 @@ public class TC_01 extends TestBaseRapor {
 
         extentTest.pass("\"User Data was inserted successfully\" text'i gozlenmesi gerekirken gorulemedi...");
 
-        Driver.closeDriver();
+Driver.closeDriver();
 
     }
 }

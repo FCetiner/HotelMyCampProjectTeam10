@@ -13,11 +13,11 @@ import utilities.TestBaseRapor;
 
 
 public class TC_01 extends TestBaseRapor {
-    HotelListPage hotelListPage=new HotelListPage();
+    HotelListPage hotelListPage;
 
     @Test
     public void test01() {
-
+        hotelListPage=new HotelListPage();
         //TC_001 Hoetel Sayafasina Gidelim https://www.hotelmycamp.com/
         hotelListPage = new HotelListPage();
         extentTest = extentReports.createTest("test01", "Anasayfa Giris Testi");
@@ -180,8 +180,8 @@ public class TC_01 extends TestBaseRapor {
         Assert.assertTrue(hotelListPage.kayitEmail.isDisplayed());
         extentTest.pass("kayit olunan email adresi ile kayit olundugu test edildi");
 
-        hotelListPage.anasayfaGiris();
-        hotelListPage.loginOutElementi.click();
-
+       // hotelListPage.anasayfaGiris();
+       // hotelListPage.loginOutElementi.click();
+Driver.closeDriver();
     }
 }

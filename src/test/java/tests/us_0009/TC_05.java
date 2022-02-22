@@ -2,10 +2,11 @@ package tests.us_0009;
 
 import org.testng.annotations.Test;
 import pages.HotelRoomReservationPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_05 extends TestBaseRapor {
-    HotelRoomReservationPage hotelRoomReservationPage=new HotelRoomReservationPage();
+    HotelRoomReservationPage hotelRoomReservationPage;
     @Test
     public void deleteReservation() throws InterruptedException {
         extentTest=extentReports.createTest("Delete Reservation kontrolü","Delete Reservation kontrol ediliyor.");
@@ -19,5 +20,6 @@ public class TC_05 extends TestBaseRapor {
         extentTest.pass("Delete islemi Test edildi");
 
 
+        Driver.closeDriver();
     }
 }
