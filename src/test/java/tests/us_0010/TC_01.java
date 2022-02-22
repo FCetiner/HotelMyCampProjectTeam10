@@ -15,23 +15,7 @@ import utilities.TestBaseRapor;
 public class TC_01 extends TestBaseRapor {
     KullaniciHotelReservationPage hmcPage10 = new KullaniciHotelReservationPage();
 
-    /* http://www.hotelmycamp.com/ url'e gidilir
- "Log in" buttonuna tiklanmali
-  "Create a new account" butonuna tiklanilmali
- "Username" boxuna tiklanmali, bilgiler girilmeli
- "Password" boxuna tiklanmali, bilgiler girilmeli
- "Email" boxuna tiklanmali, bilgiler girilmeli
- "Full Name" boxuna tiklanmali, bilgiler girilmeli
- "Phone No" boxuna tiklanmali, bilgiler girilmeli
- "Social Security Number" boxuna tiklanmali, bilgiler girilmeli
- "Driving License" boxuan tiklanmali, bilgiler girilmeli
- "Country" boxuna tiklanmali, bilgiler girilmeli
- "State" boxuna tiklanmali, bilgiler girilmeli, yoksa bos birakilmali
- "Address" boxuna tiklanmali, bilgiler girilmeli
- "Working Sector" boxuna tiklanmali, bilgiler girilmeli
- "Birth Date" boxuna tiklanmali, bilgiler girilmeli
- "Save" buttonu tiklanmali ve calisip calismadigi test edilmeli
- "User Data was inserted successfully" texti test edilmeli, "OK" buttonuna tiklanmali */
+
     @Test
     public void testCase01() {
         extentTest=extentReports.createTest("kullanici yeni kayit olusturma","\"Log in\" buttonuna tiklayarak, \"Create a new account\"'tan sonra \"save\" yapabilmeli.");
