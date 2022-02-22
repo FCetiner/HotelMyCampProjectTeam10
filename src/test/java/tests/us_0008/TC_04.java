@@ -41,9 +41,9 @@ public void reservationKayitTesti () throws InterruptedException {
 
         hotelRoomReservationPage.priceReservation.sendKeys("250");
         extentTest.info("Price girisi yapildi");
-        hotelRoomReservationPage.dataStart.sendKeys( "08/20/2022");
+        hotelRoomReservationPage.dateStart();
         extentTest.info("Date start girisi yapildi");
-        hotelRoomReservationPage.dataEnd.sendKeys("09/25/2022");
+        hotelRoomReservationPage.dateEnd();
         extentTest.info("Date end girisi yapildi");
         hotelRoomReservationPage.adultAmount.sendKeys(faker.number().digit());
         extentTest.info("Yetiskin sayisi yazildi");
@@ -67,9 +67,10 @@ public void reservationKayitTesti () throws InterruptedException {
         }
         hotelRoomReservationPage.saveButonu.click();
         ReusableMethods.waitFor(3);
-
+        Assert.assertTrue(hotelRoomReservationPage.saveDogrulama.isDisplayed());
        Assert.assertTrue(hotelRoomReservationPage.okButton.isEnabled());
        hotelRoomReservationPage.okButton.click();
+
         extentTest.pass("Reservation kayidi yapildi");
 
     }
