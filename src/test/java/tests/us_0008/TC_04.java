@@ -71,6 +71,6 @@ public void reservationKayitTesti () throws InterruptedException {
        Assert.assertTrue(hotelRoomReservationPage.okButton.isEnabled());
        hotelRoomReservationPage.okButton.click();
         extentTest.pass("Reservation kayidi yapildi");
-        Driver.closeDriver();
+
     }
 }

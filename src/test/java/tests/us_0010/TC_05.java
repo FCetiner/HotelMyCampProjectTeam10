@@ -61,6 +61,6 @@ public class TC_05 extends TestBaseRapor {
         System.out.println("approved yazisi"+hmcPage10.approved.getText());
         extentTest.pass("\"Reservations\" sayfasindaki reserve edilen oda kullanici sayfasinda goruldu");
         extentTest.info("Reserve edilen ayni oda, ayni tarihte baska kullanici tarafindan da reserve edilebiliyor");
-        Driver.closeDriver();
+
     }
 }

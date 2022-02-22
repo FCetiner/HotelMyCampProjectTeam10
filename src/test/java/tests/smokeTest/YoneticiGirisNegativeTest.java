@@ -57,6 +57,6 @@ public class YoneticiGirisNegativeTest extends TestBaseRapor {
         hmcPage.loginButonu.click();
         Assert.assertTrue(hmcPage.girisYapilamadiYazisi.isDisplayed());
         extentTest.pass("Yanlis usurname ve password testi pass");
-        Driver.closeDriver();
+
     }
 }

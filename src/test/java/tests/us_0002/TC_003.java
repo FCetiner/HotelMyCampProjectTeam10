@@ -8,11 +8,13 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_003 extends TestBaseRapor {
-    HMCPage hmcPage =new HMCPage();
-    SoftAssert softAssert=new SoftAssert();
+    HMCPage hmcPage;
+    SoftAssert softAssert;
 
     @Test
     public void yanlisUserNameTesti(){
+        hmcPage =new HMCPage();
+        softAssert=new SoftAssert();
         extentTest = extentReports.createTest("Yonetici girisi yanlıs username testi","Yonetici yanlis usename ile giris yapamadi");
         hmcPage.anasayfaGiris();
         hmcPage.ilkLoginLinki.click();
@@ -25,7 +27,7 @@ public class TC_003 extends TestBaseRapor {
        softAssert.assertTrue( hmcPage.girisYapilamadiYazisi.isDisplayed(),"Yanliş username");
         extentTest.pass("Yanlis username ile giris yapilamadi");
     }
-    @Test
+    @Test(priority = 2)
     public void yanlisPasswordTest(){
         extentTest = extentReports.createTest("Yonetici girisi yanlıs password testi","Yonetici yanlis password ile giris yapamadi");
         hmcPage.anasayfaGiris();
@@ -36,11 +38,11 @@ public class TC_003 extends TestBaseRapor {
         hmcPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCWrongPassword"));
         extentTest.info("Yanlis password girisi yapildi");
         hmcPage.loginButonu.click();
-        softAssert.assertTrue( hmcPage.girisYapilamadiYazisi.isDisplayed(),"Yaniş password");
+        softAssert.assertTrue( hmcPage.girisYapilamadiYazisi.isDisplayed(),"Yanliş password");
         extentTest.pass("Yanlis password ile giris yapilamadi");
 
     }
-    @Test
+    @Test(priority = 3)
     public void yanlisUserPasswordTest(){
         extentTest = extentReports.createTest("Yonetici girisi yanlıs username ve password testi","Yonetici yanlis usename ve password ile giris yapamadi");
         hmcPage.anasayfaGiris();
@@ -54,6 +56,6 @@ public class TC_003 extends TestBaseRapor {
         softAssert.assertTrue( hmcPage.girisYapilamadiYazisi.isDisplayed(),"Yaniş username, yanliş password");
         extentTest.pass("Yanlis username ve password ile giris yapilamadi");
         softAssert.assertAll();
-        Driver.closeDriver();
+    Driver.closeDriver();
     }
 }
