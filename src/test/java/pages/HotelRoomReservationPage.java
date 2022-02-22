@@ -123,6 +123,7 @@ public class HotelRoomReservationPage {
 
         adultAmountTextBox.sendKeys("3");
 
+        Thread.sleep(2000);
         saveButtonTextBox.click();
 
         Assert.assertTrue(saveButtonTextBox.isEnabled());

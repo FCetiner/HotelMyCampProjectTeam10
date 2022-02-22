@@ -2,6 +2,7 @@ package tests.us_0009;
 
 import org.testng.annotations.Test;
 import pages.HotelRoomReservationPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_02 extends TestBaseRapor {
@@ -24,6 +25,7 @@ public class TC_02 extends TestBaseRapor {
         elements.HMCLogin();
         extentTest.pass("Login islemi basarili");
 
+        Driver.closeDriver();
 
     }
 }

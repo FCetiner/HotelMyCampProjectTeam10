@@ -2,6 +2,7 @@ package tests.us_0009;
 
 import org.testng.annotations.Test;
 import pages.HotelRoomReservationPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_04 extends TestBaseRapor {
@@ -21,6 +22,7 @@ public class TC_04 extends TestBaseRapor {
         extentTest.pass("Update islemi Test edildi");
 
 
+        Driver.closeDriver();
 
     }
 }
