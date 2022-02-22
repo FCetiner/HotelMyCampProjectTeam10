@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 import pages.HotelRoomReservationPage;
 import utilities.TestBaseRapor;
 
-import javax.swing.text.Element;
-
 public class TC_03 extends TestBaseRapor {
     HotelRoomReservationPage elements=new HotelRoomReservationPage();
 

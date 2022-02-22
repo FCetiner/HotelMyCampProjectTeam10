@@ -1,13 +1,9 @@
 package tests.us_0007;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.HMCPage;
 import pages.HotelRoomsPage;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;

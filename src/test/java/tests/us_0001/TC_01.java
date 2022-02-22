@@ -1,6 +1,5 @@
 package tests.us_0001;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HMCPage;

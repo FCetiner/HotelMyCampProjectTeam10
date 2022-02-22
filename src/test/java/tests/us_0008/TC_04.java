@@ -2,7 +2,6 @@ package tests.us_0008;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
