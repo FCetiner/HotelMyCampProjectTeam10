@@ -7,6 +7,7 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_01 extends TestBaseRapor {
+
     @Test
     public void homePageTest(){
         extentTest=extentReports.createTest("Home Page Testi","Homepage Url'i Test edildi.");

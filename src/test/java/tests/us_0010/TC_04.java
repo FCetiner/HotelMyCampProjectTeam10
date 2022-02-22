@@ -34,14 +34,14 @@ import utilities.TestBaseRapor;
 //"OK" buttonuna tiklanmali
 
 public class TC_04 extends TestBaseRapor {
-
+    KullaniciHotelReservationPage hmcPage10;
 
 
  @Test
  public void testCase04(){
 
   extentTest=extentReports.createTest("kullanıcı kalacagi tarihlerde rezerve yapar","\"Book this room\" tiklayarak,\"Reservation was made successfully\" yazisi test edilerek,\"OK\" tiklayabilmeli");
-  KullaniciHotelReservationPage hmcPage10=new KullaniciHotelReservationPage();
+  hmcPage10=new KullaniciHotelReservationPage();
 
   Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
   extentTest.info("Url gidildi");
@@ -119,9 +119,11 @@ public class TC_04 extends TestBaseRapor {
   softAssert.assertTrue(hmcPage10.reservationsButton.isEnabled());
      extentTest.pass("ok butonuna tiklanmadi ama ana sayfaya yonlendirdigim icin tiklandi gozukuyor");
 
-  Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
-   hmcPage10.logOut.click();
+ // Driver.getDriver().navigate().to(ConfigReader.getProperty("HMCUrl"));
+ //  hmcPage10.logOut.click();
    softAssert.assertAll();
- }}
+   Driver.closeDriver();
+ }
+}
 
 
